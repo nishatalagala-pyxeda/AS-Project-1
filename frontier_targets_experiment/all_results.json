@@ -1,0 +1,1377 @@
+{
+  "manifest": {
+    "source": "/Users/nishatalagala/Downloads/Frontier HPC & Facility Data.xlsx",
+    "source_sha256": "56a48dd66382896890dfc2e4940ec90f894bb85795ee8e85ea2708dda05796bf",
+    "history_steps": 36,
+    "input_columns": [
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "I",
+      "O",
+      "P",
+      "Q",
+      "N"
+    ],
+    "calendar_features": [
+      "hour_sin",
+      "hour_cos",
+      "weekday_sin",
+      "weekday_cos"
+    ],
+    "input_notes": "Past calculated waste heat N is included for every model; no future inputs or H/PUE values are used.",
+    "splits": {
+      "train": {
+        "n": 26490,
+        "first_origin": "2023-01-01 05:50:00",
+        "last_origin": "2023-07-31 22:50:00",
+        "last_target": "2023-07-31 23:50:00"
+      },
+      "validation": {
+        "n": 8421,
+        "first_origin": "2023-08-01 00:00:00",
+        "last_origin": "2023-09-30 22:50:00",
+        "last_target": "2023-09-30 23:50:00"
+      },
+      "test": {
+        "n": 13242,
+        "first_origin": "2023-10-01 00:00:00",
+        "last_origin": "2023-12-31 22:50:00",
+        "last_target": "2023-12-31 23:50:00"
+      }
+    },
+    "normalization": "Training raw rows only; <=1.01 second timestamp offsets normalized; complete 10-minute grid; no imputation; exclude windows with any absent record.",
+    "configuration": "Fixed 32-unit LSTM, seed42, Adam .001, MAE or binary cross-entropy; max30 epochs/patience5. Trees: 31 leaves, 200 iterations, .05 learning rate, min30/leaf, L2=1. No tree hyperparameter search.",
+    "versions": {
+      "python": "3.12.14",
+      "numpy": "2.5.4",
+      "pandas": "2.2.3",
+      "torch": "2.15.0",
+      "sklearn": "1.9.1"
+    }
+  },
+  "tasks": [
+    {
+      "task": "temperature",
+      "kind": "regression",
+      "outputs": [
+        {
+          "target": "Loop 1",
+          "horizon_minutes": 10,
+          "unit": "\u00b0C"
+        },
+        {
+          "target": "Loop 1",
+          "horizon_minutes": 30,
+          "unit": "\u00b0C"
+        },
+        {
+          "target": "Loop 1",
+          "horizon_minutes": 60,
+          "unit": "\u00b0C"
+        },
+        {
+          "target": "Loop 2",
+          "horizon_minutes": 10,
+          "unit": "\u00b0C"
+        },
+        {
+          "target": "Loop 2",
+          "horizon_minutes": 30,
+          "unit": "\u00b0C"
+        },
+        {
+          "target": "Loop 2",
+          "horizon_minutes": 60,
+          "unit": "\u00b0C"
+        },
+        {
+          "target": "Loop 3",
+          "horizon_minutes": 10,
+          "unit": "\u00b0C"
+        },
+        {
+          "target": "Loop 3",
+          "horizon_minutes": 30,
+          "unit": "\u00b0C"
+        },
+        {
+          "target": "Loop 3",
+          "horizon_minutes": 60,
+          "unit": "\u00b0C"
+        }
+      ],
+      "metrics": [
+        {
+          "target": "Loop 1",
+          "horizon_minutes": 10,
+          "unit": "\u00b0C",
+          "model": "Persistence",
+          "MAE": 1.2615877389907837,
+          "RMSE": 2.3774542808532715,
+          "bias": 0.0007006317027844489,
+          "n": 13242
+        },
+        {
+          "target": "Loop 1",
+          "horizon_minutes": 30,
+          "unit": "\u00b0C",
+          "model": "Persistence",
+          "MAE": 1.7921135425567627,
+          "RMSE": 3.10927414894104,
+          "bias": 0.0023116671945899725,
+          "n": 13242
+        },
+        {
+          "target": "Loop 1",
+          "horizon_minutes": 60,
+          "unit": "\u00b0C",
+          "model": "Persistence",
+          "MAE": 2.165093421936035,
+          "RMSE": 3.6045079231262207,
+          "bias": 0.004904427565634251,
+          "n": 13242
+        },
+        {
+          "target": "Loop 2",
+          "horizon_minutes": 10,
+          "unit": "\u00b0C",
+          "model": "Persistence",
+          "MAE": 1.2405434846878052,
+          "RMSE": 2.3123157024383545,
+          "bias": 0.0006502880714833736,
+          "n": 13242
+        },
+        {
+          "target": "Loop 2",
+          "horizon_minutes": 30,
+          "unit": "\u00b0C",
+          "model": "Persistence",
+          "MAE": 1.7460771799087524,
+          "RMSE": 3.0011110305786133,
+          "bias": 0.0021732181776314974,
+          "n": 13242
+        },
+        {
+          "target": "Loop 2",
+          "horizon_minutes": 60,
+          "unit": "\u00b0C",
+          "model": "Persistence",
+          "MAE": 2.103093385696411,
+          "RMSE": 3.4764227867126465,
+          "bias": 0.004568795207887888,
+          "n": 13242
+        },
+        {
+          "target": "Loop 3",
+          "horizon_minutes": 10,
+          "unit": "\u00b0C",
+          "model": "Persistence",
+          "MAE": 0.6606000661849976,
+          "RMSE": 1.2452266216278076,
+          "bias": 1.6781556041678414e-05,
+          "n": 13242
+        },
+        {
+          "target": "Loop 3",
+          "horizon_minutes": 30,
+          "unit": "\u00b0C",
+          "model": "Persistence",
+          "MAE": 0.9308261871337891,
+          "RMSE": 1.5489001274108887,
+          "bias": 9.22984181670472e-05,
+          "n": 13242
+        },
+        {
+          "target": "Loop 3",
+          "horizon_minutes": 60,
+          "unit": "\u00b0C",
+          "model": "Persistence",
+          "MAE": 1.11371648311615,
+          "RMSE": 1.7673259973526,
+          "bias": 0.000415345246437937,
+          "n": 13242
+        },
+        {
+          "target": "Loop 1",
+          "horizon_minutes": 10,
+          "unit": "\u00b0C",
+          "model": "Trees",
+          "MAE": 1.6995111469502255,
+          "RMSE": 2.632371130384742,
+          "bias": 0.0993299413914483,
+          "n": 13242
+        },
+        {
+          "target": "Loop 1",
+          "horizon_minutes": 30,
+          "unit": "\u00b0C",
+          "model": "Trees",
+          "MAE": 2.07447302837177,
+          "RMSE": 3.051950090800753,
+          "bias": -0.005563940362595756,
+          "n": 13242
+        },
+        {
+          "target": "Loop 1",
+          "horizon_minutes": 60,
+          "unit": "\u00b0C",
+          "model": "Trees",
+          "MAE": 2.200137078643977,
+          "RMSE": 3.2814454541513802,
+          "bias": -0.37651137258068323,
+          "n": 13242
+        },
+        {
+          "target": "Loop 2",
+          "horizon_minutes": 10,
+          "unit": "\u00b0C",
+          "model": "Trees",
+          "MAE": 1.7083588132530123,
+          "RMSE": 2.620834643848982,
+          "bias": 0.08853099933367221,
+          "n": 13242
+        },
+        {
+          "target": "Loop 2",
+          "horizon_minutes": 30,
+          "unit": "\u00b0C",
+          "model": "Trees",
+          "MAE": 1.975910577942078,
+          "RMSE": 2.936851057727781,
+          "bias": 0.1082721753547505,
+          "n": 13242
+        },
+        {
+          "target": "Loop 2",
+          "horizon_minutes": 60,
+          "unit": "\u00b0C",
+          "model": "Trees",
+          "MAE": 2.137595761230634,
+          "RMSE": 3.1728771460216283,
+          "bias": -0.29490163017469156,
+          "n": 13242
+        },
+        {
+          "target": "Loop 3",
+          "horizon_minutes": 10,
+          "unit": "\u00b0C",
+          "model": "Trees",
+          "MAE": 1.1552078320741752,
+          "RMSE": 1.7432719880128813,
+          "bias": 0.5387924196709136,
+          "n": 13242
+        },
+        {
+          "target": "Loop 3",
+          "horizon_minutes": 30,
+          "unit": "\u00b0C",
+          "model": "Trees",
+          "MAE": 1.1041423627988647,
+          "RMSE": 1.5925238233454162,
+          "bias": 0.4072081520783926,
+          "n": 13242
+        },
+        {
+          "target": "Loop 3",
+          "horizon_minutes": 60,
+          "unit": "\u00b0C",
+          "model": "Trees",
+          "MAE": 1.096727334219101,
+          "RMSE": 1.5575413243882812,
+          "bias": 0.17600753132727412,
+          "n": 13242
+        },
+        {
+          "target": "Loop 1",
+          "horizon_minutes": 10,
+          "unit": "\u00b0C",
+          "model": "LSTM",
+          "MAE": 1.2778215408325195,
+          "RMSE": 2.320809841156006,
+          "bias": -0.032551273703575134,
+          "n": 13242
+        },
+        {
+          "target": "Loop 1",
+          "horizon_minutes": 30,
+          "unit": "\u00b0C",
+          "model": "LSTM",
+          "MAE": 1.9024293422698975,
+          "RMSE": 3.0102932453155518,
+          "bias": -0.5722627639770508,
+          "n": 13242
+        },
+        {
+          "target": "Loop 1",
+          "horizon_minutes": 60,
+          "unit": "\u00b0C",
+          "model": "LSTM",
+          "MAE": 2.2758827209472656,
+          "RMSE": 3.443871259689331,
+          "bias": -0.782849133014679,
+          "n": 13242
+        },
+        {
+          "target": "Loop 2",
+          "horizon_minutes": 10,
+          "unit": "\u00b0C",
+          "model": "LSTM",
+          "MAE": 1.2534435987472534,
+          "RMSE": 2.255147695541382,
+          "bias": -0.03350801020860672,
+          "n": 13242
+        },
+        {
+          "target": "Loop 2",
+          "horizon_minutes": 30,
+          "unit": "\u00b0C",
+          "model": "LSTM",
+          "MAE": 1.8581726551055908,
+          "RMSE": 2.9092659950256348,
+          "bias": -0.5706492066383362,
+          "n": 13242
+        },
+        {
+          "target": "Loop 2",
+          "horizon_minutes": 60,
+          "unit": "\u00b0C",
+          "model": "LSTM",
+          "MAE": 2.2177929878234863,
+          "RMSE": 3.3294031620025635,
+          "bias": -0.7926528453826904,
+          "n": 13242
+        },
+        {
+          "target": "Loop 3",
+          "horizon_minutes": 10,
+          "unit": "\u00b0C",
+          "model": "LSTM",
+          "MAE": 0.6679982542991638,
+          "RMSE": 1.2038546800613403,
+          "bias": 0.03985130786895752,
+          "n": 13242
+        },
+        {
+          "target": "Loop 3",
+          "horizon_minutes": 30,
+          "unit": "\u00b0C",
+          "model": "LSTM",
+          "MAE": 0.9301038980484009,
+          "RMSE": 1.457004189491272,
+          "bias": -0.10432632267475128,
+          "n": 13242
+        },
+        {
+          "target": "Loop 3",
+          "horizon_minutes": 60,
+          "unit": "\u00b0C",
+          "model": "LSTM",
+          "MAE": 1.0901875495910645,
+          "RMSE": 1.640998363494873,
+          "bias": -0.18374302983283997,
+          "n": 13242
+        }
+      ],
+      "paired_vs_persistence": [
+        {
+          "target": "Loop 1",
+          "horizon_minutes": 10,
+          "unit": "\u00b0C",
+          "model": "Trees",
+          "mean_loss_difference_vs_baseline": 0.4379234326079114,
+          "day_bootstrap_95pct": [
+            0.36094949886404176,
+            0.5162131664335796
+          ]
+        },
+        {
+          "target": "Loop 1",
+          "horizon_minutes": 10,
+          "unit": "\u00b0C",
+          "model": "LSTM",
+          "mean_loss_difference_vs_baseline": 0.016233697533607483,
+          "day_bootstrap_95pct": [
+            0.006558622493236653,
+            0.02657069017120984
+          ]
+        },
+        {
+          "target": "Loop 1",
+          "horizon_minutes": 30,
+          "unit": "\u00b0C",
+          "model": "Trees",
+          "mean_loss_difference_vs_baseline": 0.28235956010250607,
+          "day_bootstrap_95pct": [
+            0.20832557239835073,
+            0.35598044541679297
+          ]
+        },
+        {
+          "target": "Loop 1",
+          "horizon_minutes": 30,
+          "unit": "\u00b0C",
+          "model": "LSTM",
+          "mean_loss_difference_vs_baseline": 0.11031592637300491,
+          "day_bootstrap_95pct": [
+            0.064843964367519,
+            0.16525043579732407
+          ]
+        },
+        {
+          "target": "Loop 1",
+          "horizon_minutes": 60,
+          "unit": "\u00b0C",
+          "model": "Trees",
+          "mean_loss_difference_vs_baseline": 0.035043688036164755,
+          "day_bootstrap_95pct": [
+            -0.02486438381461329,
+            0.0987127327180451
+          ]
+        },
+        {
+          "target": "Loop 1",
+          "horizon_minutes": 60,
+          "unit": "\u00b0C",
+          "model": "LSTM",
+          "mean_loss_difference_vs_baseline": 0.11078929156064987,
+          "day_bootstrap_95pct": [
+            0.04843410388020082,
+            0.18401139588197604
+          ]
+        },
+        {
+          "target": "Loop 2",
+          "horizon_minutes": 10,
+          "unit": "\u00b0C",
+          "model": "Trees",
+          "mean_loss_difference_vs_baseline": 0.4678152665029175,
+          "day_bootstrap_95pct": [
+            0.3853327226085533,
+            0.5529121379450438
+          ]
+        },
+        {
+          "target": "Loop 2",
+          "horizon_minutes": 10,
+          "unit": "\u00b0C",
+          "model": "LSTM",
+          "mean_loss_difference_vs_baseline": 0.012900072149932384,
+          "day_bootstrap_95pct": [
+            0.0035194564041736097,
+            0.022730063576208825
+          ]
+        },
+        {
+          "target": "Loop 2",
+          "horizon_minutes": 30,
+          "unit": "\u00b0C",
+          "model": "Trees",
+          "mean_loss_difference_vs_baseline": 0.22983329023903193,
+          "day_bootstrap_95pct": [
+            0.16263856453863967,
+            0.2952851023890203
+          ]
+        },
+        {
+          "target": "Loop 2",
+          "horizon_minutes": 30,
+          "unit": "\u00b0C",
+          "model": "LSTM",
+          "mean_loss_difference_vs_baseline": 0.11209538578987122,
+          "day_bootstrap_95pct": [
+            0.06581812690093318,
+            0.1676476244808786
+          ]
+        },
+        {
+          "target": "Loop 2",
+          "horizon_minutes": 60,
+          "unit": "\u00b0C",
+          "model": "Trees",
+          "mean_loss_difference_vs_baseline": 0.03450208137301276,
+          "day_bootstrap_95pct": [
+            -0.021009563154987938,
+            0.09187435218463458
+          ]
+        },
+        {
+          "target": "Loop 2",
+          "horizon_minutes": 60,
+          "unit": "\u00b0C",
+          "model": "LSTM",
+          "mean_loss_difference_vs_baseline": 0.11469922959804535,
+          "day_bootstrap_95pct": [
+            0.05166444570857516,
+            0.18903908607896394
+          ]
+        },
+        {
+          "target": "Loop 3",
+          "horizon_minutes": 10,
+          "unit": "\u00b0C",
+          "model": "Trees",
+          "mean_loss_difference_vs_baseline": 0.4946077436893508,
+          "day_bootstrap_95pct": [
+            0.40888185945112004,
+            0.5800543409075054
+          ]
+        },
+        {
+          "target": "Loop 3",
+          "horizon_minutes": 10,
+          "unit": "\u00b0C",
+          "model": "LSTM",
+          "mean_loss_difference_vs_baseline": 0.007398187182843685,
+          "day_bootstrap_95pct": [
+            0.0011606725748347616,
+            0.013586065463475312
+          ]
+        },
+        {
+          "target": "Loop 3",
+          "horizon_minutes": 30,
+          "unit": "\u00b0C",
+          "model": "Trees",
+          "mean_loss_difference_vs_baseline": 0.17331623356827383,
+          "day_bootstrap_95pct": [
+            0.11881322993281426,
+            0.223601783977044
+          ]
+        },
+        {
+          "target": "Loop 3",
+          "horizon_minutes": 30,
+          "unit": "\u00b0C",
+          "model": "LSTM",
+          "mean_loss_difference_vs_baseline": -0.0007222078857012093,
+          "day_bootstrap_95pct": [
+            -0.0151314793567862,
+            0.015947396090916856
+          ]
+        },
+        {
+          "target": "Loop 3",
+          "horizon_minutes": 60,
+          "unit": "\u00b0C",
+          "model": "Trees",
+          "mean_loss_difference_vs_baseline": -0.01698908078517116,
+          "day_bootstrap_95pct": [
+            -0.05506419957824043,
+            0.019446135214196126
+          ]
+        },
+        {
+          "target": "Loop 3",
+          "horizon_minutes": 60,
+          "unit": "\u00b0C",
+          "model": "LSTM",
+          "mean_loss_difference_vs_baseline": -0.023528743535280228,
+          "day_bootstrap_95pct": [
+            -0.04454528054987947,
+            -0.0014170758880124113
+          ]
+        }
+      ],
+      "lstm_training": {
+        "seed": 42,
+        "best_epoch": 1,
+        "best_validation_loss": 0.15874487161636353,
+        "seconds": 14.831242416999885
+      },
+      "tree_seconds": 111.64312404100201,
+      "validation_normalized_MAE": {
+        "LSTM": 0.15874487161636353,
+        "Trees": 0.15492335522188203
+      },
+      "n_by_split": {
+        "train": 26490,
+        "validation": 8421,
+        "test": 13242
+      },
+      "elapsed_seconds": 126.48419004199968
+    },
+    {
+      "definition": "Currently all three return temperatures are at or below their training 95th percentiles; event = any loop exceeds its own threshold in next 60 minutes.",
+      "thresholds_C": [
+        37.11111068725586,
+        37.05555725097656,
+        41.72222137451172
+      ],
+      "safety_limit": false,
+      "baseline": "Logistic regression on current maximum standardized distance to threshold; plus constant training prevalence.",
+      "task": "temperature_events",
+      "kind": "classification",
+      "counts": {
+        "train": {
+          "n": 24176,
+          "positives": 3545,
+          "prevalence": 0.14663302898406982
+        },
+        "validation": {
+          "n": 8302,
+          "positives": 129,
+          "prevalence": 0.015538424253463745
+        },
+        "test": {
+          "n": 13103,
+          "positives": 210,
+          "prevalence": 0.01602686382830143
+        }
+      },
+      "status": "Fitted",
+      "metrics": [
+        {
+          "model": "Prevalence",
+          "AP": 0.016026864076928948,
+          "ROC_AUC": 0.5,
+          "Brier": 0.03282797401653987,
+          "log_loss": 0.18679303197647773,
+          "threshold_chosen_on_validation": 0.005,
+          "precision": 0.016026864076928948,
+          "recall": 1.0,
+          "F1": 0.03154811086907534,
+          "alerts": 13103,
+          "n": 13103
+        },
+        {
+          "model": "Simple logistic",
+          "AP": 0.1445463323888035,
+          "ROC_AUC": 0.6954482498808878,
+          "Brier": 0.035485297441482544,
+          "log_loss": 0.19334667921066284,
+          "threshold_chosen_on_validation": 0.225,
+          "precision": 0.24516129032258063,
+          "recall": 0.18095238095238095,
+          "F1": 0.20821917808219179,
+          "alerts": 155,
+          "n": 13103
+        },
+        {
+          "model": "Trees",
+          "AP": 0.14097140656715684,
+          "ROC_AUC": 0.8424309241264177,
+          "Brier": 0.03670135227889956,
+          "log_loss": 0.13555247130319104,
+          "threshold_chosen_on_validation": 0.065,
+          "precision": 0.05904475366679203,
+          "recall": 0.7476190476190476,
+          "F1": 0.1094457999302893,
+          "alerts": 2659,
+          "n": 13103
+        },
+        {
+          "model": "LSTM",
+          "AP": 0.10051419674498138,
+          "ROC_AUC": 0.7845763481845076,
+          "Brier": 0.051808249205350876,
+          "log_loss": 0.1865677833557129,
+          "threshold_chosen_on_validation": 0.14500000000000002,
+          "precision": 0.04639653572533251,
+          "recall": 0.7142857142857143,
+          "F1": 0.08713331397037467,
+          "alerts": 3233,
+          "n": 13103
+        }
+      ],
+      "lstm_training": {
+        "seed": 42,
+        "best_epoch": 6,
+        "best_validation_loss": 0.09258579462766647,
+        "seconds": 25.692830916988896
+      },
+      "test_positive_clusters": 46,
+      "paired_Brier_vs_simple_logistic": [
+        {
+          "model": "Trees",
+          "mean_loss_difference_vs_baseline": 0.0012160526893975115,
+          "day_bootstrap_95pct": [
+            -0.008172202844755849,
+            0.011986769086163309
+          ]
+        },
+        {
+          "model": "LSTM",
+          "mean_loss_difference_vs_baseline": 0.016322951763868332,
+          "day_bootstrap_95pct": [
+            0.005272033488913712,
+            0.028230464485859932
+          ]
+        }
+      ],
+      "elapsed_seconds": 37.93550537500414
+    },
+    {
+      "definition": "Currently normal total flow; event = flow falls below 5% of training median within 60 minutes.",
+      "flow_threshold_gpm": 164.16000366210938,
+      "safety_limit": false,
+      "episodes": [
+        {
+          "split": "train",
+          "episodes": [
+            {
+              "start": "2023-04-01 08:10:00",
+              "end": "2023-04-02 04:00:00",
+              "n": 120
+            },
+            {
+              "start": "2023-04-02 04:20:00",
+              "end": "2023-04-02 04:50:00",
+              "n": 4
+            }
+          ]
+        },
+        {
+          "split": "validation",
+          "episodes": []
+        },
+        {
+          "split": "test",
+          "episodes": []
+        }
+      ],
+      "task": "cooling_transitions",
+      "kind": "classification",
+      "counts": {
+        "train": {
+          "n": 26366,
+          "positives": 7,
+          "prevalence": 0.000265493436018005
+        },
+        "validation": {
+          "n": 8421,
+          "positives": 0,
+          "prevalence": 0.0
+        },
+        "test": {
+          "n": 13242,
+          "positives": 0,
+          "prevalence": 0.0
+        }
+      },
+      "status": "Not fitted: at least one split lacks both positive and negative examples; out-of-time event skill cannot be assessed."
+    },
+    {
+      "task": "waste_heat",
+      "kind": "regression",
+      "outputs": [
+        {
+          "target": "Waste heat",
+          "horizon_minutes": 10,
+          "unit": "MW"
+        },
+        {
+          "target": "Waste heat",
+          "horizon_minutes": 30,
+          "unit": "MW"
+        },
+        {
+          "target": "Waste heat",
+          "horizon_minutes": 60,
+          "unit": "MW"
+        }
+      ],
+      "metrics": [
+        {
+          "target": "Waste heat",
+          "horizon_minutes": 10,
+          "unit": "MW",
+          "model": "Persistence",
+          "MAE": 0.8624877333641052,
+          "RMSE": 1.4914919137954712,
+          "bias": -0.00011703035852406174,
+          "n": 13242
+        },
+        {
+          "target": "Waste heat",
+          "horizon_minutes": 30,
+          "unit": "MW",
+          "model": "Persistence",
+          "MAE": 1.2884669303894043,
+          "RMSE": 2.098177909851074,
+          "bias": -0.0002825565170496702,
+          "n": 13242
+        },
+        {
+          "target": "Waste heat",
+          "horizon_minutes": 60,
+          "unit": "MW",
+          "model": "Persistence",
+          "MAE": 1.5633965730667114,
+          "RMSE": 2.4954018592834473,
+          "bias": -0.0002938663528766483,
+          "n": 13242
+        },
+        {
+          "target": "Waste heat",
+          "horizon_minutes": 10,
+          "unit": "MW",
+          "model": "Trees",
+          "MAE": 1.3082523567499085,
+          "RMSE": 1.915101961770211,
+          "bias": 0.30774853449485634,
+          "n": 13242
+        },
+        {
+          "target": "Waste heat",
+          "horizon_minutes": 30,
+          "unit": "MW",
+          "model": "Trees",
+          "MAE": 1.4597640567053245,
+          "RMSE": 2.074113810122776,
+          "bias": 0.02447446482118992,
+          "n": 13242
+        },
+        {
+          "target": "Waste heat",
+          "horizon_minutes": 60,
+          "unit": "MW",
+          "model": "Trees",
+          "MAE": 1.5537654630365394,
+          "RMSE": 2.253239363067089,
+          "bias": -0.33255825850117143,
+          "n": 13242
+        },
+        {
+          "target": "Waste heat",
+          "horizon_minutes": 10,
+          "unit": "MW",
+          "model": "LSTM",
+          "MAE": 0.8555991649627686,
+          "RMSE": 1.4487597942352295,
+          "bias": -0.019431017339229584,
+          "n": 13242
+        },
+        {
+          "target": "Waste heat",
+          "horizon_minutes": 30,
+          "unit": "MW",
+          "model": "LSTM",
+          "MAE": 1.2612122297286987,
+          "RMSE": 1.9656461477279663,
+          "bias": -0.34210410714149475,
+          "n": 13242
+        },
+        {
+          "target": "Waste heat",
+          "horizon_minutes": 60,
+          "unit": "MW",
+          "model": "LSTM",
+          "MAE": 1.4897074699401855,
+          "RMSE": 2.286409616470337,
+          "bias": -0.520697295665741,
+          "n": 13242
+        }
+      ],
+      "paired_vs_persistence": [
+        {
+          "target": "Waste heat",
+          "horizon_minutes": 10,
+          "unit": "MW",
+          "model": "Trees",
+          "mean_loss_difference_vs_baseline": 0.4457645754628496,
+          "day_bootstrap_95pct": [
+            0.3758021340346095,
+            0.5130136811021747
+          ]
+        },
+        {
+          "target": "Waste heat",
+          "horizon_minutes": 10,
+          "unit": "MW",
+          "model": "LSTM",
+          "mean_loss_difference_vs_baseline": -0.006888585165143013,
+          "day_bootstrap_95pct": [
+            -0.011056628364369851,
+            -0.0022794948158129454
+          ]
+        },
+        {
+          "target": "Waste heat",
+          "horizon_minutes": 30,
+          "unit": "MW",
+          "model": "Trees",
+          "mean_loss_difference_vs_baseline": 0.17129705694146127,
+          "day_bootstrap_95pct": [
+            0.11412457768811927,
+            0.22675575282089666
+          ]
+        },
+        {
+          "target": "Waste heat",
+          "horizon_minutes": 30,
+          "unit": "MW",
+          "model": "LSTM",
+          "mean_loss_difference_vs_baseline": -0.027254663407802582,
+          "day_bootstrap_95pct": [
+            -0.04500454408116914,
+            -0.008256020356306298
+          ]
+        },
+        {
+          "target": "Waste heat",
+          "horizon_minutes": 60,
+          "unit": "MW",
+          "model": "Trees",
+          "mean_loss_difference_vs_baseline": -0.009631162162855656,
+          "day_bootstrap_95pct": [
+            -0.06485731765281169,
+            0.042122006667110176
+          ]
+        },
+        {
+          "target": "Waste heat",
+          "horizon_minutes": 60,
+          "unit": "MW",
+          "model": "LSTM",
+          "mean_loss_difference_vs_baseline": -0.07368908822536469,
+          "day_bootstrap_95pct": [
+            -0.10560650191492202,
+            -0.04139373527605439
+          ]
+        }
+      ],
+      "lstm_training": {
+        "seed": 42,
+        "best_epoch": 1,
+        "best_validation_loss": 0.43769481778144836,
+        "seconds": 16.827609042011318
+      },
+      "tree_seconds": 41.62999766599387,
+      "validation_normalized_MAE": {
+        "LSTM": 0.43769481778144836,
+        "Trees": 0.437705069206578
+      },
+      "n_by_split": {
+        "train": 26490,
+        "validation": 8421,
+        "test": 13242
+      },
+      "elapsed_seconds": 58.46407966699917,
+      "additional_lstm_runs": [
+        {
+          "seed": 43,
+          "training": {
+            "seed": 43,
+            "best_epoch": 1,
+            "best_validation_loss": 0.4391353726387024,
+            "seconds": 13.60427237499971
+          },
+          "metrics": [
+            {
+              "horizon_minutes": 10,
+              "MAE": 0.8549655079841614,
+              "RMSE": 1.4548155069351196,
+              "improvement_vs_persistence_pct": 0.8721530437469482
+            },
+            {
+              "horizon_minutes": 30,
+              "MAE": 1.257642388343811,
+              "RMSE": 1.9736915826797485,
+              "improvement_vs_persistence_pct": 2.3923397064208984
+            },
+            {
+              "horizon_minutes": 60,
+              "MAE": 1.4904305934906006,
+              "RMSE": 2.295626640319824,
+              "improvement_vs_persistence_pct": 4.667144775390625
+            }
+          ],
+          "paired_vs_persistence": [
+            {
+              "horizon_minutes": 10,
+              "model": "LSTM",
+              "mean_loss_difference_vs_baseline": -0.007522259373217821,
+              "day_bootstrap_95pct": [
+                -0.010847677808740866,
+                -0.004246768216306987
+              ]
+            },
+            {
+              "horizon_minutes": 30,
+              "model": "LSTM",
+              "mean_loss_difference_vs_baseline": -0.030824650079011917,
+              "day_bootstrap_95pct": [
+                -0.04406588999020242,
+                -0.016539444858702033
+              ]
+            },
+            {
+              "horizon_minutes": 60,
+              "model": "LSTM",
+              "mean_loss_difference_vs_baseline": -0.0729660764336586,
+              "day_bootstrap_95pct": [
+                -0.10227988211517007,
+                -0.044639024316671
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 44,
+          "training": {
+            "seed": 44,
+            "best_epoch": 2,
+            "best_validation_loss": 0.4383413791656494,
+            "seconds": 14.509170874996926
+          },
+          "metrics": [
+            {
+              "horizon_minutes": 10,
+              "MAE": 0.8737759590148926,
+              "RMSE": 1.439833641052246,
+              "improvement_vs_persistence_pct": -1.3087987899780273
+            },
+            {
+              "horizon_minutes": 30,
+              "MAE": 1.255393624305725,
+              "RMSE": 1.9375348091125488,
+              "improvement_vs_persistence_pct": 2.5668740272521973
+            },
+            {
+              "horizon_minutes": 60,
+              "MAE": 1.476292610168457,
+              "RMSE": 2.2428903579711914,
+              "improvement_vs_persistence_pct": 5.571455001831055
+            }
+          ],
+          "paired_vs_persistence": [
+            {
+              "horizon_minutes": 10,
+              "model": "LSTM",
+              "mean_loss_difference_vs_baseline": 0.011288214474916458,
+              "day_bootstrap_95pct": [
+                0.0011788812953841554,
+                0.021536387522264548
+              ]
+            },
+            {
+              "horizon_minutes": 30,
+              "model": "LSTM",
+              "mean_loss_difference_vs_baseline": -0.03307344391942024,
+              "day_bootstrap_95pct": [
+                -0.056374960487263634,
+                -0.008435785665192135
+              ]
+            },
+            {
+              "horizon_minutes": 60,
+              "model": "LSTM",
+              "mean_loss_difference_vs_baseline": -0.08710411936044693,
+              "day_bootstrap_95pct": [
+                -0.12687271297886824,
+                -0.04958765758630505
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "task": "accessory_power",
+      "kind": "regression",
+      "outputs": [
+        {
+          "target": "Accessory power",
+          "horizon_minutes": 10,
+          "unit": "MW"
+        },
+        {
+          "target": "Accessory power",
+          "horizon_minutes": 30,
+          "unit": "MW"
+        },
+        {
+          "target": "Accessory power",
+          "horizon_minutes": 60,
+          "unit": "MW"
+        }
+      ],
+      "metrics": [
+        {
+          "target": "Accessory power",
+          "horizon_minutes": 10,
+          "unit": "MW",
+          "model": "Persistence",
+          "MAE": 0.021555406972765923,
+          "RMSE": 0.046728070825338364,
+          "bias": 4.3045022835030977e-07,
+          "n": 13242
+        },
+        {
+          "target": "Accessory power",
+          "horizon_minutes": 30,
+          "unit": "MW",
+          "model": "Persistence",
+          "MAE": 0.041269123554229736,
+          "RMSE": 0.06985915452241898,
+          "bias": -2.37878657571855e-06,
+          "n": 13242
+        },
+        {
+          "target": "Accessory power",
+          "horizon_minutes": 60,
+          "unit": "MW",
+          "model": "Persistence",
+          "MAE": 0.04703112691640854,
+          "RMSE": 0.07750466465950012,
+          "bias": -1.0753677997854538e-05,
+          "n": 13242
+        },
+        {
+          "target": "Accessory power",
+          "horizon_minutes": 10,
+          "unit": "MW",
+          "model": "Trees",
+          "MAE": 0.019512988747706655,
+          "RMSE": 0.03840510754015183,
+          "bias": 0.0001226083689273013,
+          "n": 13242
+        },
+        {
+          "target": "Accessory power",
+          "horizon_minutes": 30,
+          "unit": "MW",
+          "model": "Trees",
+          "MAE": 0.034150930539284745,
+          "RMSE": 0.05465625072315918,
+          "bias": -0.0031035154486836808,
+          "n": 13242
+        },
+        {
+          "target": "Accessory power",
+          "horizon_minutes": 60,
+          "unit": "MW",
+          "model": "Trees",
+          "MAE": 0.04096356420052382,
+          "RMSE": 0.06363616206315019,
+          "bias": -0.007167771534390187,
+          "n": 13242
+        },
+        {
+          "target": "Accessory power",
+          "horizon_minutes": 10,
+          "unit": "MW",
+          "model": "LSTM",
+          "MAE": 0.02284320257604122,
+          "RMSE": 0.03844337537884712,
+          "bias": 0.003500888356938958,
+          "n": 13242
+        },
+        {
+          "target": "Accessory power",
+          "horizon_minutes": 30,
+          "unit": "MW",
+          "model": "LSTM",
+          "MAE": 0.03630024194717407,
+          "RMSE": 0.05652998760342598,
+          "bias": -0.0025262865237891674,
+          "n": 13242
+        },
+        {
+          "target": "Accessory power",
+          "horizon_minutes": 60,
+          "unit": "MW",
+          "model": "LSTM",
+          "MAE": 0.04168609902262688,
+          "RMSE": 0.06436086446046829,
+          "bias": -0.008899745531380177,
+          "n": 13242
+        }
+      ],
+      "paired_vs_persistence": [
+        {
+          "target": "Accessory power",
+          "horizon_minutes": 10,
+          "unit": "MW",
+          "model": "Trees",
+          "mean_loss_difference_vs_baseline": -0.0020424187080923003,
+          "day_bootstrap_95pct": [
+            -0.0027300048821200227,
+            -0.0014235631752478502
+          ]
+        },
+        {
+          "target": "Accessory power",
+          "horizon_minutes": 10,
+          "unit": "MW",
+          "model": "LSTM",
+          "mean_loss_difference_vs_baseline": 0.0012877947883680463,
+          "day_bootstrap_95pct": [
+            0.00043328488950001567,
+            0.002163331708252257
+          ]
+        },
+        {
+          "target": "Accessory power",
+          "horizon_minutes": 30,
+          "unit": "MW",
+          "model": "Trees",
+          "mean_loss_difference_vs_baseline": -0.007118190795862536,
+          "day_bootstrap_95pct": [
+            -0.00894124773785306,
+            -0.005386412361521922
+          ]
+        },
+        {
+          "target": "Accessory power",
+          "horizon_minutes": 30,
+          "unit": "MW",
+          "model": "LSTM",
+          "mean_loss_difference_vs_baseline": -0.0049688806757330894,
+          "day_bootstrap_95pct": [
+            -0.007061472614367188,
+            -0.002903476162237258
+          ]
+        },
+        {
+          "target": "Accessory power",
+          "horizon_minutes": 60,
+          "unit": "MW",
+          "model": "Trees",
+          "mean_loss_difference_vs_baseline": -0.006067564265416438,
+          "day_bootstrap_95pct": [
+            -0.007875910436457566,
+            -0.004446533849521765
+          ]
+        },
+        {
+          "target": "Accessory power",
+          "horizon_minutes": 60,
+          "unit": "MW",
+          "model": "LSTM",
+          "mean_loss_difference_vs_baseline": -0.0053450302220880985,
+          "day_bootstrap_95pct": [
+            -0.007091202730041346,
+            -0.0036387291973199168
+          ]
+        }
+      ],
+      "lstm_training": {
+        "seed": 42,
+        "best_epoch": 6,
+        "best_validation_loss": 0.22372078895568848,
+        "seconds": 28.60201987500477
+      },
+      "tree_seconds": 41.784435499997926,
+      "validation_normalized_MAE": {
+        "LSTM": 0.22372078895568848,
+        "Trees": 0.21188461028809585
+      },
+      "n_by_split": {
+        "train": 26490,
+        "validation": 8421,
+        "test": 13242
+      },
+      "elapsed_seconds": 70.39455300000554
+    },
+    {
+      "definition": "Within next 30 minutes, at least one total-power reading differs from current power by more than training 95th percentile of maximum 30-minute absolute changes.",
+      "change_threshold_MW": 7.176400184631348,
+      "baseline": "Logistic regression on current power, last 10/30-minute absolute changes, and past-hour variability; plus constant training prevalence.",
+      "task": "power_ramps",
+      "kind": "classification",
+      "counts": {
+        "train": {
+          "n": 26490,
+          "positives": 1324,
+          "prevalence": 0.04998112469911575
+        },
+        "validation": {
+          "n": 8421,
+          "positives": 78,
+          "prevalence": 0.009262558072805405
+        },
+        "test": {
+          "n": 13242,
+          "positives": 247,
+          "prevalence": 0.018652770668268204
+        }
+      },
+      "status": "Fitted",
+      "metrics": [
+        {
+          "model": "Prevalence",
+          "AP": 0.01865277148466999,
+          "ROC_AUC": 0.5,
+          "Brier": 0.01928631131573974,
+          "log_loss": 0.10620278674237585,
+          "threshold_chosen_on_validation": 0.005,
+          "precision": 0.01865277148466999,
+          "recall": 1.0,
+          "F1": 0.03662243309363185,
+          "alerts": 13242,
+          "n": 13242
+        },
+        {
+          "model": "Simple logistic",
+          "AP": 0.11868341109910405,
+          "ROC_AUC": 0.7759253403286533,
+          "Brier": 0.0181127842515707,
+          "log_loss": 0.08768904954195023,
+          "threshold_chosen_on_validation": 0.13,
+          "precision": 0.17016317016317017,
+          "recall": 0.29554655870445345,
+          "F1": 0.21597633136094674,
+          "alerts": 429,
+          "n": 13242
+        },
+        {
+          "model": "Trees",
+          "AP": 0.18255461898459377,
+          "ROC_AUC": 0.8432090822848402,
+          "Brier": 0.018080924899131375,
+          "log_loss": 0.07700956050879969,
+          "threshold_chosen_on_validation": 0.195,
+          "precision": 0.19244604316546762,
+          "recall": 0.4331983805668016,
+          "F1": 0.26650062266500624,
+          "alerts": 556,
+          "n": 13242
+        },
+        {
+          "model": "LSTM",
+          "AP": 0.15297227002728145,
+          "ROC_AUC": 0.8080452930354715,
+          "Brier": 0.020418433472514153,
+          "log_loss": 0.0903850570321083,
+          "threshold_chosen_on_validation": 0.07500000000000001,
+          "precision": 0.08476339053562143,
+          "recall": 0.659919028340081,
+          "F1": 0.15023041474654378,
+          "alerts": 1923,
+          "n": 13242
+        }
+      ],
+      "lstm_training": {
+        "seed": 42,
+        "best_epoch": 15,
+        "best_validation_loss": 0.04523652419447899,
+        "seconds": 48.25560975000553
+      },
+      "test_positive_clusters": 99,
+      "paired_Brier_vs_simple_logistic": [
+        {
+          "model": "Trees",
+          "mean_loss_difference_vs_baseline": -3.1859458506108136e-05,
+          "day_bootstrap_95pct": [
+            -0.0016614961685449006,
+            0.0016165586608536454
+          ]
+        },
+        {
+          "model": "LSTM",
+          "mean_loss_difference_vs_baseline": 0.00230564852245152,
+          "day_bootstrap_95pct": [
+            0.000623605424404021,
+            0.00447572244907855
+          ]
+        }
+      ],
+      "elapsed_seconds": 64.45358349999879
+    }
+  ]
+}

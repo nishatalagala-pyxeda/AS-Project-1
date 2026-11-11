@@ -1,0 +1,540 @@
+{
+  "task": "temperature",
+  "kind": "regression",
+  "outputs": [
+    {
+      "target": "Loop 1",
+      "horizon_minutes": 10,
+      "unit": "\u00b0C"
+    },
+    {
+      "target": "Loop 1",
+      "horizon_minutes": 30,
+      "unit": "\u00b0C"
+    },
+    {
+      "target": "Loop 1",
+      "horizon_minutes": 60,
+      "unit": "\u00b0C"
+    },
+    {
+      "target": "Loop 2",
+      "horizon_minutes": 10,
+      "unit": "\u00b0C"
+    },
+    {
+      "target": "Loop 2",
+      "horizon_minutes": 30,
+      "unit": "\u00b0C"
+    },
+    {
+      "target": "Loop 2",
+      "horizon_minutes": 60,
+      "unit": "\u00b0C"
+    },
+    {
+      "target": "Loop 3",
+      "horizon_minutes": 10,
+      "unit": "\u00b0C"
+    },
+    {
+      "target": "Loop 3",
+      "horizon_minutes": 30,
+      "unit": "\u00b0C"
+    },
+    {
+      "target": "Loop 3",
+      "horizon_minutes": 60,
+      "unit": "\u00b0C"
+    }
+  ],
+  "metrics": [
+    {
+      "target": "Loop 1",
+      "horizon_minutes": 10,
+      "unit": "\u00b0C",
+      "model": "Persistence",
+      "MAE": 1.2615877389907837,
+      "RMSE": 2.3774542808532715,
+      "bias": 0.0007006317027844489,
+      "n": 13242
+    },
+    {
+      "target": "Loop 1",
+      "horizon_minutes": 30,
+      "unit": "\u00b0C",
+      "model": "Persistence",
+      "MAE": 1.7921135425567627,
+      "RMSE": 3.10927414894104,
+      "bias": 0.0023116671945899725,
+      "n": 13242
+    },
+    {
+      "target": "Loop 1",
+      "horizon_minutes": 60,
+      "unit": "\u00b0C",
+      "model": "Persistence",
+      "MAE": 2.165093421936035,
+      "RMSE": 3.6045079231262207,
+      "bias": 0.004904427565634251,
+      "n": 13242
+    },
+    {
+      "target": "Loop 2",
+      "horizon_minutes": 10,
+      "unit": "\u00b0C",
+      "model": "Persistence",
+      "MAE": 1.2405434846878052,
+      "RMSE": 2.3123157024383545,
+      "bias": 0.0006502880714833736,
+      "n": 13242
+    },
+    {
+      "target": "Loop 2",
+      "horizon_minutes": 30,
+      "unit": "\u00b0C",
+      "model": "Persistence",
+      "MAE": 1.7460771799087524,
+      "RMSE": 3.0011110305786133,
+      "bias": 0.0021732181776314974,
+      "n": 13242
+    },
+    {
+      "target": "Loop 2",
+      "horizon_minutes": 60,
+      "unit": "\u00b0C",
+      "model": "Persistence",
+      "MAE": 2.103093385696411,
+      "RMSE": 3.4764227867126465,
+      "bias": 0.004568795207887888,
+      "n": 13242
+    },
+    {
+      "target": "Loop 3",
+      "horizon_minutes": 10,
+      "unit": "\u00b0C",
+      "model": "Persistence",
+      "MAE": 0.6606000661849976,
+      "RMSE": 1.2452266216278076,
+      "bias": 1.6781556041678414e-05,
+      "n": 13242
+    },
+    {
+      "target": "Loop 3",
+      "horizon_minutes": 30,
+      "unit": "\u00b0C",
+      "model": "Persistence",
+      "MAE": 0.9308261871337891,
+      "RMSE": 1.5489001274108887,
+      "bias": 9.22984181670472e-05,
+      "n": 13242
+    },
+    {
+      "target": "Loop 3",
+      "horizon_minutes": 60,
+      "unit": "\u00b0C",
+      "model": "Persistence",
+      "MAE": 1.11371648311615,
+      "RMSE": 1.7673259973526,
+      "bias": 0.000415345246437937,
+      "n": 13242
+    },
+    {
+      "target": "Loop 1",
+      "horizon_minutes": 10,
+      "unit": "\u00b0C",
+      "model": "Trees",
+      "MAE": 1.6995111469502255,
+      "RMSE": 2.632371130384742,
+      "bias": 0.0993299413914483,
+      "n": 13242
+    },
+    {
+      "target": "Loop 1",
+      "horizon_minutes": 30,
+      "unit": "\u00b0C",
+      "model": "Trees",
+      "MAE": 2.07447302837177,
+      "RMSE": 3.051950090800753,
+      "bias": -0.005563940362595756,
+      "n": 13242
+    },
+    {
+      "target": "Loop 1",
+      "horizon_minutes": 60,
+      "unit": "\u00b0C",
+      "model": "Trees",
+      "MAE": 2.200137078643977,
+      "RMSE": 3.2814454541513802,
+      "bias": -0.37651137258068323,
+      "n": 13242
+    },
+    {
+      "target": "Loop 2",
+      "horizon_minutes": 10,
+      "unit": "\u00b0C",
+      "model": "Trees",
+      "MAE": 1.7083588132530123,
+      "RMSE": 2.620834643848982,
+      "bias": 0.08853099933367221,
+      "n": 13242
+    },
+    {
+      "target": "Loop 2",
+      "horizon_minutes": 30,
+      "unit": "\u00b0C",
+      "model": "Trees",
+      "MAE": 1.975910577942078,
+      "RMSE": 2.936851057727781,
+      "bias": 0.1082721753547505,
+      "n": 13242
+    },
+    {
+      "target": "Loop 2",
+      "horizon_minutes": 60,
+      "unit": "\u00b0C",
+      "model": "Trees",
+      "MAE": 2.137595761230634,
+      "RMSE": 3.1728771460216283,
+      "bias": -0.29490163017469156,
+      "n": 13242
+    },
+    {
+      "target": "Loop 3",
+      "horizon_minutes": 10,
+      "unit": "\u00b0C",
+      "model": "Trees",
+      "MAE": 1.1552078320741752,
+      "RMSE": 1.7432719880128813,
+      "bias": 0.5387924196709136,
+      "n": 13242
+    },
+    {
+      "target": "Loop 3",
+      "horizon_minutes": 30,
+      "unit": "\u00b0C",
+      "model": "Trees",
+      "MAE": 1.1041423627988647,
+      "RMSE": 1.5925238233454162,
+      "bias": 0.4072081520783926,
+      "n": 13242
+    },
+    {
+      "target": "Loop 3",
+      "horizon_minutes": 60,
+      "unit": "\u00b0C",
+      "model": "Trees",
+      "MAE": 1.096727334219101,
+      "RMSE": 1.5575413243882812,
+      "bias": 0.17600753132727412,
+      "n": 13242
+    },
+    {
+      "target": "Loop 1",
+      "horizon_minutes": 10,
+      "unit": "\u00b0C",
+      "model": "LSTM",
+      "MAE": 1.2778215408325195,
+      "RMSE": 2.320809841156006,
+      "bias": -0.032551273703575134,
+      "n": 13242
+    },
+    {
+      "target": "Loop 1",
+      "horizon_minutes": 30,
+      "unit": "\u00b0C",
+      "model": "LSTM",
+      "MAE": 1.9024293422698975,
+      "RMSE": 3.0102932453155518,
+      "bias": -0.5722627639770508,
+      "n": 13242
+    },
+    {
+      "target": "Loop 1",
+      "horizon_minutes": 60,
+      "unit": "\u00b0C",
+      "model": "LSTM",
+      "MAE": 2.2758827209472656,
+      "RMSE": 3.443871259689331,
+      "bias": -0.782849133014679,
+      "n": 13242
+    },
+    {
+      "target": "Loop 2",
+      "horizon_minutes": 10,
+      "unit": "\u00b0C",
+      "model": "LSTM",
+      "MAE": 1.2534435987472534,
+      "RMSE": 2.255147695541382,
+      "bias": -0.03350801020860672,
+      "n": 13242
+    },
+    {
+      "target": "Loop 2",
+      "horizon_minutes": 30,
+      "unit": "\u00b0C",
+      "model": "LSTM",
+      "MAE": 1.8581726551055908,
+      "RMSE": 2.9092659950256348,
+      "bias": -0.5706492066383362,
+      "n": 13242
+    },
+    {
+      "target": "Loop 2",
+      "horizon_minutes": 60,
+      "unit": "\u00b0C",
+      "model": "LSTM",
+      "MAE": 2.2177929878234863,
+      "RMSE": 3.3294031620025635,
+      "bias": -0.7926528453826904,
+      "n": 13242
+    },
+    {
+      "target": "Loop 3",
+      "horizon_minutes": 10,
+      "unit": "\u00b0C",
+      "model": "LSTM",
+      "MAE": 0.6679982542991638,
+      "RMSE": 1.2038546800613403,
+      "bias": 0.03985130786895752,
+      "n": 13242
+    },
+    {
+      "target": "Loop 3",
+      "horizon_minutes": 30,
+      "unit": "\u00b0C",
+      "model": "LSTM",
+      "MAE": 0.9301038980484009,
+      "RMSE": 1.457004189491272,
+      "bias": -0.10432632267475128,
+      "n": 13242
+    },
+    {
+      "target": "Loop 3",
+      "horizon_minutes": 60,
+      "unit": "\u00b0C",
+      "model": "LSTM",
+      "MAE": 1.0901875495910645,
+      "RMSE": 1.640998363494873,
+      "bias": -0.18374302983283997,
+      "n": 13242
+    }
+  ],
+  "paired_vs_persistence": [
+    {
+      "target": "Loop 1",
+      "horizon_minutes": 10,
+      "unit": "\u00b0C",
+      "model": "Trees",
+      "mean_loss_difference_vs_baseline": 0.4379234326079114,
+      "day_bootstrap_95pct": [
+        0.36094949886404176,
+        0.5162131664335796
+      ]
+    },
+    {
+      "target": "Loop 1",
+      "horizon_minutes": 10,
+      "unit": "\u00b0C",
+      "model": "LSTM",
+      "mean_loss_difference_vs_baseline": 0.016233697533607483,
+      "day_bootstrap_95pct": [
+        0.006558622493236653,
+        0.02657069017120984
+      ]
+    },
+    {
+      "target": "Loop 1",
+      "horizon_minutes": 30,
+      "unit": "\u00b0C",
+      "model": "Trees",
+      "mean_loss_difference_vs_baseline": 0.28235956010250607,
+      "day_bootstrap_95pct": [
+        0.20832557239835073,
+        0.35598044541679297
+      ]
+    },
+    {
+      "target": "Loop 1",
+      "horizon_minutes": 30,
+      "unit": "\u00b0C",
+      "model": "LSTM",
+      "mean_loss_difference_vs_baseline": 0.11031592637300491,
+      "day_bootstrap_95pct": [
+        0.064843964367519,
+        0.16525043579732407
+      ]
+    },
+    {
+      "target": "Loop 1",
+      "horizon_minutes": 60,
+      "unit": "\u00b0C",
+      "model": "Trees",
+      "mean_loss_difference_vs_baseline": 0.035043688036164755,
+      "day_bootstrap_95pct": [
+        -0.02486438381461329,
+        0.0987127327180451
+      ]
+    },
+    {
+      "target": "Loop 1",
+      "horizon_minutes": 60,
+      "unit": "\u00b0C",
+      "model": "LSTM",
+      "mean_loss_difference_vs_baseline": 0.11078929156064987,
+      "day_bootstrap_95pct": [
+        0.04843410388020082,
+        0.18401139588197604
+      ]
+    },
+    {
+      "target": "Loop 2",
+      "horizon_minutes": 10,
+      "unit": "\u00b0C",
+      "model": "Trees",
+      "mean_loss_difference_vs_baseline": 0.4678152665029175,
+      "day_bootstrap_95pct": [
+        0.3853327226085533,
+        0.5529121379450438
+      ]
+    },
+    {
+      "target": "Loop 2",
+      "horizon_minutes": 10,
+      "unit": "\u00b0C",
+      "model": "LSTM",
+      "mean_loss_difference_vs_baseline": 0.012900072149932384,
+      "day_bootstrap_95pct": [
+        0.0035194564041736097,
+        0.022730063576208825
+      ]
+    },
+    {
+      "target": "Loop 2",
+      "horizon_minutes": 30,
+      "unit": "\u00b0C",
+      "model": "Trees",
+      "mean_loss_difference_vs_baseline": 0.22983329023903193,
+      "day_bootstrap_95pct": [
+        0.16263856453863967,
+        0.2952851023890203
+      ]
+    },
+    {
+      "target": "Loop 2",
+      "horizon_minutes": 30,
+      "unit": "\u00b0C",
+      "model": "LSTM",
+      "mean_loss_difference_vs_baseline": 0.11209538578987122,
+      "day_bootstrap_95pct": [
+        0.06581812690093318,
+        0.1676476244808786
+      ]
+    },
+    {
+      "target": "Loop 2",
+      "horizon_minutes": 60,
+      "unit": "\u00b0C",
+      "model": "Trees",
+      "mean_loss_difference_vs_baseline": 0.03450208137301276,
+      "day_bootstrap_95pct": [
+        -0.021009563154987938,
+        0.09187435218463458
+      ]
+    },
+    {
+      "target": "Loop 2",
+      "horizon_minutes": 60,
+      "unit": "\u00b0C",
+      "model": "LSTM",
+      "mean_loss_difference_vs_baseline": 0.11469922959804535,
+      "day_bootstrap_95pct": [
+        0.05166444570857516,
+        0.18903908607896394
+      ]
+    },
+    {
+      "target": "Loop 3",
+      "horizon_minutes": 10,
+      "unit": "\u00b0C",
+      "model": "Trees",
+      "mean_loss_difference_vs_baseline": 0.4946077436893508,
+      "day_bootstrap_95pct": [
+        0.40888185945112004,
+        0.5800543409075054
+      ]
+    },
+    {
+      "target": "Loop 3",
+      "horizon_minutes": 10,
+      "unit": "\u00b0C",
+      "model": "LSTM",
+      "mean_loss_difference_vs_baseline": 0.007398187182843685,
+      "day_bootstrap_95pct": [
+        0.0011606725748347616,
+        0.013586065463475312
+      ]
+    },
+    {
+      "target": "Loop 3",
+      "horizon_minutes": 30,
+      "unit": "\u00b0C",
+      "model": "Trees",
+      "mean_loss_difference_vs_baseline": 0.17331623356827383,
+      "day_bootstrap_95pct": [
+        0.11881322993281426,
+        0.223601783977044
+      ]
+    },
+    {
+      "target": "Loop 3",
+      "horizon_minutes": 30,
+      "unit": "\u00b0C",
+      "model": "LSTM",
+      "mean_loss_difference_vs_baseline": -0.0007222078857012093,
+      "day_bootstrap_95pct": [
+        -0.0151314793567862,
+        0.015947396090916856
+      ]
+    },
+    {
+      "target": "Loop 3",
+      "horizon_minutes": 60,
+      "unit": "\u00b0C",
+      "model": "Trees",
+      "mean_loss_difference_vs_baseline": -0.01698908078517116,
+      "day_bootstrap_95pct": [
+        -0.05506419957824043,
+        0.019446135214196126
+      ]
+    },
+    {
+      "target": "Loop 3",
+      "horizon_minutes": 60,
+      "unit": "\u00b0C",
+      "model": "LSTM",
+      "mean_loss_difference_vs_baseline": -0.023528743535280228,
+      "day_bootstrap_95pct": [
+        -0.04454528054987947,
+        -0.0014170758880124113
+      ]
+    }
+  ],
+  "lstm_training": {
+    "seed": 42,
+    "best_epoch": 1,
+    "best_validation_loss": 0.15874487161636353,
+    "seconds": 14.831242416999885
+  },
+  "tree_seconds": 111.64312404100201,
+  "validation_normalized_MAE": {
+    "LSTM": 0.15874487161636353,
+    "Trees": 0.15492335522188203
+  },
+  "n_by_split": {
+    "train": 26490,
+    "validation": 8421,
+    "test": 13242
+  },
+  "elapsed_seconds": 126.48419004199968
+}

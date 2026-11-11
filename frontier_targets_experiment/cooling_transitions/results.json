@@ -1,0 +1,50 @@
+{
+  "definition": "Currently normal total flow; event = flow falls below 5% of training median within 60 minutes.",
+  "flow_threshold_gpm": 164.16000366210938,
+  "safety_limit": false,
+  "episodes": [
+    {
+      "split": "train",
+      "episodes": [
+        {
+          "start": "2023-04-01 08:10:00",
+          "end": "2023-04-02 04:00:00",
+          "n": 120
+        },
+        {
+          "start": "2023-04-02 04:20:00",
+          "end": "2023-04-02 04:50:00",
+          "n": 4
+        }
+      ]
+    },
+    {
+      "split": "validation",
+      "episodes": []
+    },
+    {
+      "split": "test",
+      "episodes": []
+    }
+  ],
+  "task": "cooling_transitions",
+  "kind": "classification",
+  "counts": {
+    "train": {
+      "n": 26366,
+      "positives": 7,
+      "prevalence": 0.000265493436018005
+    },
+    "validation": {
+      "n": 8421,
+      "positives": 0,
+      "prevalence": 0.0
+    },
+    "test": {
+      "n": 13242,
+      "positives": 0,
+      "prevalence": 0.0
+    }
+  },
+  "status": "Not fitted: at least one split lacks both positive and negative examples; out-of-time event skill cannot be assessed."
+}

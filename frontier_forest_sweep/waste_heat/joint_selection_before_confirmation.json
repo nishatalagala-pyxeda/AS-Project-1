@@ -1,0 +1,26 @@
+[
+  {
+    "budget_bytes": null,
+    "model": "ET_own_d6_n256",
+    "development_mean_relative_MAE": 0.9067426519841613,
+    "packed_bytes": 514572
+  },
+  {
+    "budget_bytes": 32768,
+    "model": "ET_own_d4_n16",
+    "development_mean_relative_MAE": 0.9132835638729416,
+    "packed_bytes": 8988
+  },
+  {
+    "budget_bytes": 131072,
+    "model": "ET_own_d6_n64",
+    "development_mean_relative_MAE": 0.9074621778066273,
+    "packed_bytes": 129840
+  },
+  {
+    "budget_bytes": 524288,
+    "model": "ET_own_d6_n256",
+    "development_mean_relative_MAE": 0.9067426519841613,
+    "packed_bytes": 514572
+  }
+]

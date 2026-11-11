@@ -1,0 +1,29 @@
+# Source data and local environments
+*.xlsx
+*.xls
+.venv/
+.runs/
+venv/
+.env
+.env.*
+.DS_Store
+__pycache__/
+*.py[cod]
+
+# Generated predictions, fitted Python models, and host libraries
+*.npz
+*.npy
+*.joblib
+*.pkl
+*.pt
+*.so
+*.dylib
+*.bin
+*.log
+*.tmp
+frontier_full_benchmark/accessory_power/preliminary_float32_archive/
+
+# Keep the two compact shared-model C exports; regenerate larger exports.
+frontier_forest_sweep/*/confirmation/*/forest.c
+!frontier_forest_sweep/accessory_power/confirmation/ET_all_d6_n16/forest.c
+!frontier_forest_sweep/waste_heat/confirmation/ET_own_d4_n16/forest.c

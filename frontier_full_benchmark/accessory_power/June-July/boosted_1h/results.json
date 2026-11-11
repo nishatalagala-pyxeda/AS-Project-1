@@ -1,0 +1,84 @@
+{
+  "model": "boosted_1h",
+  "fold": {
+    "name": "June-July",
+    "train_end": "2023-05-01",
+    "validation_end": "2023-06-01",
+    "score_end": "2023-08-01"
+  },
+  "metrics": [
+    {
+      "horizon_minutes": 10,
+      "MAE_MW": 0.01753433979528018,
+      "RMSE_MW": 0.027805815033346205,
+      "bias_MW": -0.002444777573993144,
+      "MAE_relative_to_persistence": 0.9347097620856603,
+      "peak_MAE_MW": 0.054843175748631075,
+      "peak_n": 256,
+      "interval90_coverage": 0.9716486397902327,
+      "interval90_mean_width_MW": 0.1435072019186154,
+      "n": 6102
+    },
+    {
+      "horizon_minutes": 30,
+      "MAE_MW": 0.03795677590156406,
+      "RMSE_MW": 0.05454211785345116,
+      "bias_MW": -0.0063162324253200645,
+      "MAE_relative_to_persistence": 0.997520278479551,
+      "peak_MAE_MW": 0.14039995418522344,
+      "peak_n": 256,
+      "interval90_coverage": 0.9288757784333006,
+      "interval90_mean_width_MW": 0.20351917246336892,
+      "n": 6102
+    },
+    {
+      "horizon_minutes": 60,
+      "MAE_MW": 0.04119625256841049,
+      "RMSE_MW": 0.058663690389727824,
+      "bias_MW": -0.01958654881057782,
+      "MAE_relative_to_persistence": 0.9021051073494305,
+      "peak_MAE_MW": 0.16831743803459367,
+      "peak_n": 256,
+      "interval90_coverage": 0.9359226483120289,
+      "interval90_mean_width_MW": 0.22649667716223754,
+      "n": 6102
+    },
+    {
+      "horizon_minutes": 120,
+      "MAE_MW": 0.043837337116734945,
+      "RMSE_MW": 0.05967012929880865,
+      "bias_MW": -0.010576487202675042,
+      "MAE_relative_to_persistence": 0.876168677946889,
+      "peak_MAE_MW": 0.16205710888350572,
+      "peak_n": 256,
+      "interval90_coverage": 0.9452638479187152,
+      "interval90_mean_width_MW": 0.2338464361439339,
+      "n": 6102
+    },
+    {
+      "horizon_minutes": 360,
+      "MAE_MW": 0.046244726591889655,
+      "RMSE_MW": 0.06316155429259726,
+      "bias_MW": -0.012596496829653778,
+      "MAE_relative_to_persistence": 0.7972367670007565,
+      "peak_MAE_MW": 0.17783376192499595,
+      "peak_n": 256,
+      "interval90_coverage": 0.9380530973451328,
+      "interval90_mean_width_MW": 0.24050478444608284,
+      "n": 6102
+    }
+  ],
+  "training": {
+    "max_iter": 120,
+    "max_bins": 63,
+    "max_leaf_nodes": 31,
+    "loss": "absolute_error",
+    "seconds": 5.585500749992207
+  },
+  "peak_threshold_MW": 0.7461000084877014,
+  "counts": {
+    "train": 16595,
+    "validation": 1867,
+    "score": 6102
+  }
+}

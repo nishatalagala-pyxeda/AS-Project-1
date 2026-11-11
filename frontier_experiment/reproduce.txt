@@ -1,0 +1,25 @@
+Reproducing the experiment
+
+Use Python 3.12. The recorded run used macOS on Apple Silicon and CPU training.
+Install requirements.txt in an isolated environment. Then run:
+
+python run_experiment.py --source "/absolute/path/Frontier HPC & Facility Data.xlsx" --deps /path/to/isolated/site-packages --output /path/to/new/results
+
+For the recorded run, the Python executable was:
+/Users/nishatalagala/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3
+
+Extra libraries were installed in /private/tmp/frontier_experiment_deps,
+without modifying the bundled dependency directory.
+
+The script reads the workbook directly and verifies timestamp ordering.
+It saves scaling parameters, three LSTM checkpoints, tree models, training
+history, test predictions, results.json, comparison.png and report.html.
+It does not alter the source workbook. Run into a new output directory to
+preserve this experiment. Matching seeds do not guarantee identical numeric
+results across operating systems, CPU architectures or package versions.
+
+The source's timestamps have no documented timezone. Calendar features use
+the recorded wall-clock labels without assigning a timezone.
+
+The 95% uncertainty intervals resample calendar days, not individual rows.
+They are exploratory and conditional on the chosen temporal holdout.

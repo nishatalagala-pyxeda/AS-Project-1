@@ -1,0 +1,368 @@
+{
+  "source": "/Users/nishatalagala/Downloads/Frontier HPC & Facility Data.xlsx",
+  "source_sha256": "56a48dd66382896890dfc2e4940ec90f894bb85795ee8e85ea2708dda05796bf",
+  "target": "Frontier total power (MW)",
+  "lookback_steps": 36,
+  "horizons_minutes": [
+    10,
+    30,
+    60
+  ],
+  "features": [
+    "loop1_return_C",
+    "loop1_flow_gpm",
+    "loop2_return_C",
+    "loop2_flow_gpm",
+    "loop3_return_C",
+    "loop3_flow_gpm",
+    "supply_C",
+    "compute_MW",
+    "accessory_MW",
+    "total_MW"
+  ],
+  "calendar_features": [
+    "hour_sin",
+    "hour_cos",
+    "weekday_sin",
+    "weekday_cos"
+  ],
+  "timestamp_handling": "Round <=1.01 second offsets to nearest minute; reindex 10-minute grid; no imputation; exclude any window with missing input or future-grid record.",
+  "splits": {
+    "train": {
+      "n": 26490,
+      "origin_start": "2023-01-01 05:50:00",
+      "origin_end": "2023-07-31 22:50:00",
+      "last_target": "2023-07-31 23:50:00"
+    },
+    "validation": {
+      "n": 8421,
+      "origin_start": "2023-08-01 00:00:00",
+      "origin_end": "2023-09-30 22:50:00",
+      "last_target": "2023-09-30 23:50:00"
+    },
+    "test": {
+      "n": 13242,
+      "origin_start": "2023-10-01 00:00:00",
+      "origin_end": "2023-12-31 22:50:00",
+      "last_target": "2023-12-31 23:50:00"
+    }
+  },
+  "lstm": {
+    "architecture": "LSTM(14 inputs,32 hidden) -> Linear(32,3); standardized residual targets; MAE loss",
+    "max_epochs": 30,
+    "patience": 5,
+    "batch_size": 256,
+    "learning_rate": 0.001,
+    "runs": [
+      {
+        "seed": 42,
+        "validation_MAE_MW": 1.203896164894104,
+        "best_epoch": 8,
+        "seconds": 25.86857529199915
+      },
+      {
+        "seed": 43,
+        "validation_MAE_MW": 1.1866148710250854,
+        "best_epoch": 10,
+        "seconds": 36.901001582999015
+      },
+      {
+        "seed": 44,
+        "validation_MAE_MW": 1.203200340270996,
+        "best_epoch": 5,
+        "seconds": 23.008821166993584
+      }
+    ]
+  },
+  "trees": {
+    "algorithm": "HistGradientBoostingRegressor",
+    "loss": "absolute_error",
+    "max_iter": 200,
+    "learning_rate": 0.05,
+    "input": "Same 36 x 14 input values, flattened",
+    "chosen_max_leaf_nodes": 31,
+    "candidates": [
+      {
+        "max_leaf_nodes": 15,
+        "validation_MAE_MW": 1.1331574438280636,
+        "seconds": 23.97276116599096
+      },
+      {
+        "max_leaf_nodes": 31,
+        "validation_MAE_MW": 1.1191196882525618,
+        "seconds": 38.76729862501088
+      }
+    ]
+  },
+  "peak_threshold_MW_training_95pct": 18.96739959716797,
+  "metrics": [
+    {
+      "model": "Persistence",
+      "horizon_minutes": 10,
+      "MAE_MW": 0.5325992107391357,
+      "RMSE_MW": 1.234954595565796,
+      "bias_MW": 0.00018295574409421533,
+      "peak_MAE_MW": 1.3787930011749268,
+      "peak_n": 546,
+      "n": 13242
+    },
+    {
+      "model": "Persistence",
+      "horizon_minutes": 30,
+      "MAE_MW": 1.201125979423523,
+      "RMSE_MW": 2.1366806030273438,
+      "bias_MW": 0.00036818539956584573,
+      "peak_MAE_MW": 3.4909286499023438,
+      "peak_n": 546,
+      "n": 13242
+    },
+    {
+      "model": "Persistence",
+      "horizon_minutes": 60,
+      "MAE_MW": 1.6053611040115356,
+      "RMSE_MW": 2.714139461517334,
+      "bias_MW": 0.0006092439871281385,
+      "peak_MAE_MW": 5.009407043457031,
+      "peak_n": 546,
+      "n": 13242
+    },
+    {
+      "model": "Boosted trees",
+      "horizon_minutes": 10,
+      "MAE_MW": 0.5413600768828037,
+      "RMSE_MW": 1.1995131450162952,
+      "bias_MW": -0.09630997454701079,
+      "peak_MAE_MW": 1.4538523119650573,
+      "peak_n": 546,
+      "n": 13242
+    },
+    {
+      "model": "Boosted trees",
+      "horizon_minutes": 30,
+      "MAE_MW": 1.2021948738365609,
+      "RMSE_MW": 1.9231718594640823,
+      "bias_MW": -0.29994678998506497,
+      "peak_MAE_MW": 4.809143029237953,
+      "peak_n": 546,
+      "n": 13242
+    },
+    {
+      "model": "Boosted trees",
+      "horizon_minutes": 60,
+      "MAE_MW": 1.6146659446239882,
+      "RMSE_MW": 2.451599835555937,
+      "bias_MW": -0.626622288634165,
+      "peak_MAE_MW": 7.310083273500411,
+      "peak_n": 546,
+      "n": 13242
+    },
+    {
+      "model": "LSTM seed 42",
+      "horizon_minutes": 10,
+      "MAE_MW": 0.5368934273719788,
+      "RMSE_MW": 1.2281718254089355,
+      "bias_MW": 0.0007024039514362812,
+      "peak_MAE_MW": 1.404628872871399,
+      "peak_n": 546,
+      "n": 13242
+    },
+    {
+      "model": "LSTM seed 42",
+      "horizon_minutes": 30,
+      "MAE_MW": 1.375525951385498,
+      "RMSE_MW": 2.1484358310699463,
+      "bias_MW": -0.6060088276863098,
+      "peak_MAE_MW": 6.152843475341797,
+      "peak_n": 546,
+      "n": 13242
+    },
+    {
+      "model": "LSTM seed 42",
+      "horizon_minutes": 60,
+      "MAE_MW": 1.7480822801589966,
+      "RMSE_MW": 2.621579647064209,
+      "bias_MW": -0.8127104043960571,
+      "peak_MAE_MW": 7.699549674987793,
+      "peak_n": 546,
+      "n": 13242
+    },
+    {
+      "model": "LSTM seed 43",
+      "horizon_minutes": 10,
+      "MAE_MW": 0.5409390926361084,
+      "RMSE_MW": 1.2259658575057983,
+      "bias_MW": -0.014579792506992817,
+      "peak_MAE_MW": 1.4128954410552979,
+      "peak_n": 546,
+      "n": 13242
+    },
+    {
+      "model": "LSTM seed 43",
+      "horizon_minutes": 30,
+      "MAE_MW": 1.4145236015319824,
+      "RMSE_MW": 2.212644100189209,
+      "bias_MW": -0.6985291838645935,
+      "peak_MAE_MW": 6.256406307220459,
+      "peak_n": 546,
+      "n": 13242
+    },
+    {
+      "model": "LSTM seed 43",
+      "horizon_minutes": 60,
+      "MAE_MW": 1.7773650884628296,
+      "RMSE_MW": 2.692919969558716,
+      "bias_MW": -0.9841992855072021,
+      "peak_MAE_MW": 8.008054733276367,
+      "peak_n": 546,
+      "n": 13242
+    },
+    {
+      "model": "LSTM seed 44",
+      "horizon_minutes": 10,
+      "MAE_MW": 0.5340805053710938,
+      "RMSE_MW": 1.2319614887237549,
+      "bias_MW": -0.004509379621595144,
+      "peak_MAE_MW": 1.390876054763794,
+      "peak_n": 546,
+      "n": 13242
+    },
+    {
+      "model": "LSTM seed 44",
+      "horizon_minutes": 30,
+      "MAE_MW": 1.2792080640792847,
+      "RMSE_MW": 2.042544364929199,
+      "bias_MW": -0.44759711623191833,
+      "peak_MAE_MW": 5.44025182723999,
+      "peak_n": 546,
+      "n": 13242
+    },
+    {
+      "model": "LSTM seed 44",
+      "horizon_minutes": 60,
+      "MAE_MW": 1.6640911102294922,
+      "RMSE_MW": 2.540950059890747,
+      "bias_MW": -0.7434960603713989,
+      "peak_MAE_MW": 7.321930408477783,
+      "peak_n": 546,
+      "n": 13242
+    },
+    {
+      "model": "LSTM ensemble",
+      "horizon_minutes": 10,
+      "MAE_MW": 0.5359280705451965,
+      "RMSE_MW": 1.2285223007202148,
+      "bias_MW": -0.006128924433141947,
+      "peak_MAE_MW": 1.4009438753128052,
+      "peak_n": 546,
+      "n": 13242
+    },
+    {
+      "model": "LSTM ensemble",
+      "horizon_minutes": 30,
+      "MAE_MW": 1.3301764726638794,
+      "RMSE_MW": 2.1028964519500732,
+      "bias_MW": -0.5840450525283813,
+      "peak_MAE_MW": 5.9465203285217285,
+      "peak_n": 546,
+      "n": 13242
+    },
+    {
+      "model": "LSTM ensemble",
+      "horizon_minutes": 60,
+      "MAE_MW": 1.7018258571624756,
+      "RMSE_MW": 2.5870683193206787,
+      "bias_MW": -0.8468018770217896,
+      "peak_MAE_MW": 7.676511764526367,
+      "peak_n": 546,
+      "n": 13242
+    }
+  ],
+  "paired_comparisons": [
+    {
+      "model": "LSTM seed 42",
+      "horizon_minutes": 10,
+      "LSTM_minus_tree_MAE_MW": -0.00446663420680809,
+      "day_bootstrap_95pct": [
+        -0.00966101053220382,
+        0.0008054971914859363
+      ],
+      "individual_seed_MAE_range_MW": [
+        0.5340805053710938,
+        0.5409390926361084
+      ]
+    },
+    {
+      "model": "LSTM ensemble",
+      "horizon_minutes": 10,
+      "LSTM_minus_tree_MAE_MW": -0.005432052483719488,
+      "day_bootstrap_95pct": [
+        -0.010471212352761397,
+        -0.000510394312126478
+      ],
+      "individual_seed_MAE_range_MW": [
+        0.5340805053710938,
+        0.5409390926361084
+      ]
+    },
+    {
+      "model": "LSTM seed 42",
+      "horizon_minutes": 30,
+      "LSTM_minus_tree_MAE_MW": 0.17333103034054603,
+      "day_bootstrap_95pct": [
+        0.13344388126628265,
+        0.21941767335665485
+      ],
+      "individual_seed_MAE_range_MW": [
+        1.2792080640792847,
+        1.4145236015319824
+      ]
+    },
+    {
+      "model": "LSTM ensemble",
+      "horizon_minutes": 30,
+      "LSTM_minus_tree_MAE_MW": 0.12798165843196324,
+      "day_bootstrap_95pct": [
+        0.09158169407684956,
+        0.16613819289068993
+      ],
+      "individual_seed_MAE_range_MW": [
+        1.2792080640792847,
+        1.4145236015319824
+      ]
+    },
+    {
+      "model": "LSTM seed 42",
+      "horizon_minutes": 60,
+      "LSTM_minus_tree_MAE_MW": 0.13341639829948246,
+      "day_bootstrap_95pct": [
+        0.09757712528982354,
+        0.17115968302077836
+      ],
+      "individual_seed_MAE_range_MW": [
+        1.6640911102294922,
+        1.7773650884628296
+      ]
+    },
+    {
+      "model": "LSTM ensemble",
+      "horizon_minutes": 60,
+      "LSTM_minus_tree_MAE_MW": 0.08716000217501473,
+      "day_bootstrap_95pct": [
+        0.05764517309266096,
+        0.12026024573807059
+      ],
+      "individual_seed_MAE_range_MW": [
+        1.6640911102294922,
+        1.7773650884628296
+      ]
+    }
+  ],
+  "versions": {
+    "python": "3.12.14",
+    "torch": "2.15.0",
+    "sklearn": "1.9.1",
+    "numpy": "2.5.4",
+    "pandas": "2.2.3"
+  },
+  "elapsed_seconds": 155.32367933299975
+}

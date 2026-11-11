@@ -1,0 +1,16 @@
+[
+  {
+    "target": "accessory_power",
+    "development_evaluations": 360,
+    "confirmation_models_verified": 11,
+    "selection_verified": true,
+    "source_unchanged": true
+  },
+  {
+    "target": "waste_heat",
+    "development_evaluations": 360,
+    "confirmation_models_verified": 13,
+    "selection_verified": true,
+    "source_unchanged": true
+  }
+]

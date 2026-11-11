@@ -1,0 +1,34 @@
+Run from /Users/nishatalagala/Documents/ChatGPT/Arjun 2:
+
+/Users/nishatalagala/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 frontier_forest_sweep/run_sweep.py
+/Users/nishatalagala/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 frontier_forest_sweep/build_report.py
+
+The scripts use the isolated dependencies at /private/tmp/frontier_experiment_deps.
+Package versions are recorded per target in manifest.json. Versions match the
+requirements.txt in ../frontier_full_benchmark.
+
+The source workbook is read only. Common origins, gap handling and six-hour
+engineered features are imported from ../frontier_full_benchmark/data.py.
+
+Scope: RandomForestRegressor and ExtraTreesRegressor; 1/4/16/64/128/256 trees;
+maximum depth 2/4/6/8/12; own-target or all-telemetry features; minimum leaf 10;
+max_features 0.7; seed 42; joint five-output normalized residual prediction.
+Within each depth/input/family group, warm_start adds trees in increasing order.
+Predictions from every configuration are scored on development periods; only
+preselected finalists are fitted and evaluated on reused Q4 confirmation.
+
+Model-array budgets: 32768, 131072, 524288 bytes. These exclude firmware, buffers,
+features, runtime, scale and metadata. Each packed internal node is 16 bytes;
+each leaf is five float32 values (20 bytes); each root is int32 (4 bytes).
+
+The C exporter is validated by compiling with the host cc compiler and comparing
+with sklearn forecasts. It accepts precomputed float32 features in metadata order.
+The .so files are host libraries, not ESP32 binaries. Raw .bin files are little
+endian. forest.c provides static arrays and an inference function; full sensor
+and rolling-feature integration is not implemented. No ESP32 energy measured.
+
+Q4 has been inspected previously; it is not a fresh holdout. Selection uses mean
+relative MAE over three development folds, with equal fold weights. Per-horizon
+selection and a single joint-model selection are both reported. Maximum model
+array size across development folds determines budget eligibility; final fitted
+sizes are reported separately. No final-period error is used to reselect models.

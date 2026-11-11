@@ -1,0 +1,328 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Frontier forecasting experiment</title>
+<style>body{font:16px/1.5 system-ui;max-width:1150px;margin:40px auto;padding:0 24px;color:#23303b}table{border-collapse:collapse;font-size:14px}td,th{padding:8px 12px;border-bottom:1px solid #ddd;text-align:right}th{background:#f1f4f6}img{max-width:100%}code{background:#f1f4f6}h1,h2{line-height:1.2}</style></head><body>
+<h1>LSTM versus boosted trees for Frontier total power</h1>
+<p>Target: total power 10, 30 and 60 minutes ahead. All models were evaluated on exactly the same held-out forecast origins. Lower errors are better. This is a modest benchmark on one chronological holdout, not a comprehensive hyperparameter search.</p>
+<h2>What this experiment found</h2>
+<p><strong>Persistence had the lowest mean absolute error at every horizon.</strong> Neither the small LSTM nor the selected boosted trees established an improvement on that primary metric. Trees beat every individual LSTM run at 30 and 60 minutes; at 10 minutes their errors were close.</p>
+<p>Trees reduced root-mean-square error compared with persistence at all three horizons, including about 10% at 30 and 60 minutes. However, persistence also had lower absolute error on the high-demand subset. A model can reduce large squared errors overall while still underpredicting sustained peaks; the metrics answer different questions.</p>
+<p>The three LSTM runs had 30-minute MAE between 1.279 and 1.415 MW and 60-minute MAE between 1.664 and 1.777 MW. Averaging their predictions improved on some individual runs but did not beat the baseline. The day-bootstrap intervals favor trees over seed 42 and the LSTM ensemble at 30 and 60 minutes; the seed-42 comparison at 10 minutes is inconclusive.</p>
+<p>Practical choice from this benchmark: retain persistence for a simple MAE-focused forecast. Consider trees if reducing squared error is the priority. Further LSTM work needs evidence from broader chronological backtests, alternative lookback windows or workload/scheduler information.</p><img src="comparison.png" alt="Forecast error by horizon"><h2>Held-out results</h2><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>model</th>
+      <th>horizon_minutes</th>
+      <th>MAE_MW</th>
+      <th>RMSE_MW</th>
+      <th>bias_MW</th>
+      <th>peak_MAE_MW</th>
+      <th>peak_n</th>
+      <th>n</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Persistence</td>
+      <td>10</td>
+      <td>0.5326</td>
+      <td>1.2350</td>
+      <td>0.0002</td>
+      <td>1.3788</td>
+      <td>546</td>
+      <td>13242</td>
+    </tr>
+    <tr>
+      <td>Persistence</td>
+      <td>30</td>
+      <td>1.2011</td>
+      <td>2.1367</td>
+      <td>0.0004</td>
+      <td>3.4909</td>
+      <td>546</td>
+      <td>13242</td>
+    </tr>
+    <tr>
+      <td>Persistence</td>
+      <td>60</td>
+      <td>1.6054</td>
+      <td>2.7141</td>
+      <td>0.0006</td>
+      <td>5.0094</td>
+      <td>546</td>
+      <td>13242</td>
+    </tr>
+    <tr>
+      <td>Boosted trees</td>
+      <td>10</td>
+      <td>0.5414</td>
+      <td>1.1995</td>
+      <td>-0.0963</td>
+      <td>1.4539</td>
+      <td>546</td>
+      <td>13242</td>
+    </tr>
+    <tr>
+      <td>Boosted trees</td>
+      <td>30</td>
+      <td>1.2022</td>
+      <td>1.9232</td>
+      <td>-0.2999</td>
+      <td>4.8091</td>
+      <td>546</td>
+      <td>13242</td>
+    </tr>
+    <tr>
+      <td>Boosted trees</td>
+      <td>60</td>
+      <td>1.6147</td>
+      <td>2.4516</td>
+      <td>-0.6266</td>
+      <td>7.3101</td>
+      <td>546</td>
+      <td>13242</td>
+    </tr>
+    <tr>
+      <td>LSTM seed 42</td>
+      <td>10</td>
+      <td>0.5369</td>
+      <td>1.2282</td>
+      <td>0.0007</td>
+      <td>1.4046</td>
+      <td>546</td>
+      <td>13242</td>
+    </tr>
+    <tr>
+      <td>LSTM seed 42</td>
+      <td>30</td>
+      <td>1.3755</td>
+      <td>2.1484</td>
+      <td>-0.6060</td>
+      <td>6.1528</td>
+      <td>546</td>
+      <td>13242</td>
+    </tr>
+    <tr>
+      <td>LSTM seed 42</td>
+      <td>60</td>
+      <td>1.7481</td>
+      <td>2.6216</td>
+      <td>-0.8127</td>
+      <td>7.6995</td>
+      <td>546</td>
+      <td>13242</td>
+    </tr>
+    <tr>
+      <td>LSTM seed 43</td>
+      <td>10</td>
+      <td>0.5409</td>
+      <td>1.2260</td>
+      <td>-0.0146</td>
+      <td>1.4129</td>
+      <td>546</td>
+      <td>13242</td>
+    </tr>
+    <tr>
+      <td>LSTM seed 43</td>
+      <td>30</td>
+      <td>1.4145</td>
+      <td>2.2126</td>
+      <td>-0.6985</td>
+      <td>6.2564</td>
+      <td>546</td>
+      <td>13242</td>
+    </tr>
+    <tr>
+      <td>LSTM seed 43</td>
+      <td>60</td>
+      <td>1.7774</td>
+      <td>2.6929</td>
+      <td>-0.9842</td>
+      <td>8.0081</td>
+      <td>546</td>
+      <td>13242</td>
+    </tr>
+    <tr>
+      <td>LSTM seed 44</td>
+      <td>10</td>
+      <td>0.5341</td>
+      <td>1.2320</td>
+      <td>-0.0045</td>
+      <td>1.3909</td>
+      <td>546</td>
+      <td>13242</td>
+    </tr>
+    <tr>
+      <td>LSTM seed 44</td>
+      <td>30</td>
+      <td>1.2792</td>
+      <td>2.0425</td>
+      <td>-0.4476</td>
+      <td>5.4403</td>
+      <td>546</td>
+      <td>13242</td>
+    </tr>
+    <tr>
+      <td>LSTM seed 44</td>
+      <td>60</td>
+      <td>1.6641</td>
+      <td>2.5410</td>
+      <td>-0.7435</td>
+      <td>7.3219</td>
+      <td>546</td>
+      <td>13242</td>
+    </tr>
+    <tr>
+      <td>LSTM ensemble</td>
+      <td>10</td>
+      <td>0.5359</td>
+      <td>1.2285</td>
+      <td>-0.0061</td>
+      <td>1.4009</td>
+      <td>546</td>
+      <td>13242</td>
+    </tr>
+    <tr>
+      <td>LSTM ensemble</td>
+      <td>30</td>
+      <td>1.3302</td>
+      <td>2.1029</td>
+      <td>-0.5840</td>
+      <td>5.9465</td>
+      <td>546</td>
+      <td>13242</td>
+    </tr>
+    <tr>
+      <td>LSTM ensemble</td>
+      <td>60</td>
+      <td>1.7018</td>
+      <td>2.5871</td>
+      <td>-0.8468</td>
+      <td>7.6765</td>
+      <td>546</td>
+      <td>13242</td>
+    </tr>
+  </tbody>
+</table>
+<p>Peak means actual target power at or above the training-period 95th percentile (18.967 MW). LSTM ensemble averages three independently initialized models and uses three times the individual-model inference effort. Seed 42 is the predeclared individual-model comparison; it was not selected on test performance.</p>
+<h2>Data and validation</h2><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>n</th>
+      <th>origin_start</th>
+      <th>origin_end</th>
+      <th>last_target</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>train</th>
+      <td>26490</td>
+      <td>2023-01-01 05:50:00</td>
+      <td>2023-07-31 22:50:00</td>
+      <td>2023-07-31 23:50:00</td>
+    </tr>
+    <tr>
+      <th>validation</th>
+      <td>8421</td>
+      <td>2023-08-01 00:00:00</td>
+      <td>2023-09-30 22:50:00</td>
+      <td>2023-09-30 23:50:00</td>
+    </tr>
+    <tr>
+      <th>test</th>
+      <td>13242</td>
+      <td>2023-10-01 00:00:00</td>
+      <td>2023-12-31 22:50:00</td>
+      <td>2023-12-31 23:50:00</td>
+    </tr>
+  </tbody>
+</table>
+<p>Six-hour input history (36 observations); ten physical/power fields plus four calendar features at each time step. Trees receive the same sequence flattened. Both algorithms predict changes from current total power; persistence predicts no change. Input standardization uses January–July data only. Target windows stay within their assigned split. Historical context before validation/test boundaries is allowed because it is available at forecast time.</p>
+<p>Timestamps within 1.01 seconds of minute boundaries are normalized. Data are reindexed to a complete 10-minute grid. No missing values are imputed; windows spanning any absent record are excluded. The error-prone average return-temperature field and calculated PUE/waste-heat fields are excluded. Other outliers and zero-flow records are retained. All input measurements are assumed available without reporting delay.</p>
+<h2>Training choices</h2><p>LSTM: one 32-unit recurrent layer and three linear outputs; MAE loss, Adam learning rate 0.001, batch size 256, up to 30 epochs, early stopping after five validation epochs without improvement. Three seeds: 42, 43, 44. Each run restores its best validation checkpoint.</p>
+<p>Trees: one histogram gradient-boosting regressor per horizon, 200 iterations, learning rate 0.05, MAE loss, 30 minimum samples per leaf and L2 penalty 1. Maximum leaf counts 15 and 31 were compared on validation mean MAE; selected value: 31. No model was refit on validation data.</p>
+<h2>Paired uncertainty checks</h2><pre>[
+  {
+    "model": "LSTM seed 42",
+    "horizon_minutes": 10,
+    "LSTM_minus_tree_MAE_MW": -0.00446663420680809,
+    "day_bootstrap_95pct": [
+      -0.00966101053220382,
+      0.0008054971914859363
+    ],
+    "individual_seed_MAE_range_MW": [
+      0.5340805053710938,
+      0.5409390926361084
+    ]
+  },
+  {
+    "model": "LSTM ensemble",
+    "horizon_minutes": 10,
+    "LSTM_minus_tree_MAE_MW": -0.005432052483719488,
+    "day_bootstrap_95pct": [
+      -0.010471212352761397,
+      -0.000510394312126478
+    ],
+    "individual_seed_MAE_range_MW": [
+      0.5340805053710938,
+      0.5409390926361084
+    ]
+  },
+  {
+    "model": "LSTM seed 42",
+    "horizon_minutes": 30,
+    "LSTM_minus_tree_MAE_MW": 0.17333103034054603,
+    "day_bootstrap_95pct": [
+      0.13344388126628265,
+      0.21941767335665485
+    ],
+    "individual_seed_MAE_range_MW": [
+      1.2792080640792847,
+      1.4145236015319824
+    ]
+  },
+  {
+    "model": "LSTM ensemble",
+    "horizon_minutes": 30,
+    "LSTM_minus_tree_MAE_MW": 0.12798165843196324,
+    "day_bootstrap_95pct": [
+      0.09158169407684956,
+      0.16613819289068993
+    ],
+    "individual_seed_MAE_range_MW": [
+      1.2792080640792847,
+      1.4145236015319824
+    ]
+  },
+  {
+    "model": "LSTM seed 42",
+    "horizon_minutes": 60,
+    "LSTM_minus_tree_MAE_MW": 0.13341639829948246,
+    "day_bootstrap_95pct": [
+      0.09757712528982354,
+      0.17115968302077836
+    ],
+    "individual_seed_MAE_range_MW": [
+      1.6640911102294922,
+      1.7773650884628296
+    ]
+  },
+  {
+    "model": "LSTM ensemble",
+    "horizon_minutes": 60,
+    "LSTM_minus_tree_MAE_MW": 0.08716000217501473,
+    "day_bootstrap_95pct": [
+      0.05764517309266096,
+      0.12026024573807059
+    ],
+    "individual_seed_MAE_range_MW": [
+      1.6640911102294922,
+      1.7773650884628296
+    ]
+  }
+]</pre>
+<p>Intervals resample entire calendar days together (2,000 paired bootstrap draws). Negative LSTM-minus-tree differences favor LSTM. They are approximate and do not capture dependence across days or uncertainty from other yearly operating regimes.</p>
+<h2>Limits and reproducibility</h2><p>Only one year and one site; the final test quarter has no missing grid records, while earlier training periods do. No job scheduler, utilization, weather or maintenance labels. Model hyperparameter searches were deliberately small and are not matched in compute. This comparison establishes performance for this configuration and holdout, not universal superiority.</p>
+<p>Source SHA-256: <code>56a48dd66382896890dfc2e4940ec90f894bb85795ee8e85ea2708dda05796bf</code>. Original workbook unchanged. Runtime versions: {'python': '3.12.14', 'torch': '2.15.0', 'sklearn': '1.9.1', 'numpy': '2.5.4', 'pandas': '2.2.3'}. Total experiment time: 2.6 minutes.</p>
+<p><a href="results.json">Detailed results</a> · <a href="run_experiment.py">Experiment code</a> · <a href="training_history.json">Training history</a></p>
+</body></html>

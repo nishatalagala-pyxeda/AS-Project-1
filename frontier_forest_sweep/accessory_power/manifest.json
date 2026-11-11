@@ -1,0 +1,896 @@
+{
+  "target": "accessory_power",
+  "source": "/Users/nishatalagala/Downloads/Frontier HPC & Facility Data.xlsx",
+  "source_sha256": "56a48dd66382896890dfc2e4940ec90f894bb85795ee8e85ea2708dda05796bf",
+  "configs": [
+    {
+      "id": "RF_own_d2_n1",
+      "family": "RF",
+      "own": true,
+      "depth": 2,
+      "trees": 1
+    },
+    {
+      "id": "RF_own_d2_n4",
+      "family": "RF",
+      "own": true,
+      "depth": 2,
+      "trees": 4
+    },
+    {
+      "id": "RF_own_d2_n16",
+      "family": "RF",
+      "own": true,
+      "depth": 2,
+      "trees": 16
+    },
+    {
+      "id": "RF_own_d2_n64",
+      "family": "RF",
+      "own": true,
+      "depth": 2,
+      "trees": 64
+    },
+    {
+      "id": "RF_own_d2_n128",
+      "family": "RF",
+      "own": true,
+      "depth": 2,
+      "trees": 128
+    },
+    {
+      "id": "RF_own_d2_n256",
+      "family": "RF",
+      "own": true,
+      "depth": 2,
+      "trees": 256
+    },
+    {
+      "id": "RF_own_d4_n1",
+      "family": "RF",
+      "own": true,
+      "depth": 4,
+      "trees": 1
+    },
+    {
+      "id": "RF_own_d4_n4",
+      "family": "RF",
+      "own": true,
+      "depth": 4,
+      "trees": 4
+    },
+    {
+      "id": "RF_own_d4_n16",
+      "family": "RF",
+      "own": true,
+      "depth": 4,
+      "trees": 16
+    },
+    {
+      "id": "RF_own_d4_n64",
+      "family": "RF",
+      "own": true,
+      "depth": 4,
+      "trees": 64
+    },
+    {
+      "id": "RF_own_d4_n128",
+      "family": "RF",
+      "own": true,
+      "depth": 4,
+      "trees": 128
+    },
+    {
+      "id": "RF_own_d4_n256",
+      "family": "RF",
+      "own": true,
+      "depth": 4,
+      "trees": 256
+    },
+    {
+      "id": "RF_own_d6_n1",
+      "family": "RF",
+      "own": true,
+      "depth": 6,
+      "trees": 1
+    },
+    {
+      "id": "RF_own_d6_n4",
+      "family": "RF",
+      "own": true,
+      "depth": 6,
+      "trees": 4
+    },
+    {
+      "id": "RF_own_d6_n16",
+      "family": "RF",
+      "own": true,
+      "depth": 6,
+      "trees": 16
+    },
+    {
+      "id": "RF_own_d6_n64",
+      "family": "RF",
+      "own": true,
+      "depth": 6,
+      "trees": 64
+    },
+    {
+      "id": "RF_own_d6_n128",
+      "family": "RF",
+      "own": true,
+      "depth": 6,
+      "trees": 128
+    },
+    {
+      "id": "RF_own_d6_n256",
+      "family": "RF",
+      "own": true,
+      "depth": 6,
+      "trees": 256
+    },
+    {
+      "id": "RF_own_d8_n1",
+      "family": "RF",
+      "own": true,
+      "depth": 8,
+      "trees": 1
+    },
+    {
+      "id": "RF_own_d8_n4",
+      "family": "RF",
+      "own": true,
+      "depth": 8,
+      "trees": 4
+    },
+    {
+      "id": "RF_own_d8_n16",
+      "family": "RF",
+      "own": true,
+      "depth": 8,
+      "trees": 16
+    },
+    {
+      "id": "RF_own_d8_n64",
+      "family": "RF",
+      "own": true,
+      "depth": 8,
+      "trees": 64
+    },
+    {
+      "id": "RF_own_d8_n128",
+      "family": "RF",
+      "own": true,
+      "depth": 8,
+      "trees": 128
+    },
+    {
+      "id": "RF_own_d8_n256",
+      "family": "RF",
+      "own": true,
+      "depth": 8,
+      "trees": 256
+    },
+    {
+      "id": "RF_own_d12_n1",
+      "family": "RF",
+      "own": true,
+      "depth": 12,
+      "trees": 1
+    },
+    {
+      "id": "RF_own_d12_n4",
+      "family": "RF",
+      "own": true,
+      "depth": 12,
+      "trees": 4
+    },
+    {
+      "id": "RF_own_d12_n16",
+      "family": "RF",
+      "own": true,
+      "depth": 12,
+      "trees": 16
+    },
+    {
+      "id": "RF_own_d12_n64",
+      "family": "RF",
+      "own": true,
+      "depth": 12,
+      "trees": 64
+    },
+    {
+      "id": "RF_own_d12_n128",
+      "family": "RF",
+      "own": true,
+      "depth": 12,
+      "trees": 128
+    },
+    {
+      "id": "RF_own_d12_n256",
+      "family": "RF",
+      "own": true,
+      "depth": 12,
+      "trees": 256
+    },
+    {
+      "id": "RF_all_d2_n1",
+      "family": "RF",
+      "own": false,
+      "depth": 2,
+      "trees": 1
+    },
+    {
+      "id": "RF_all_d2_n4",
+      "family": "RF",
+      "own": false,
+      "depth": 2,
+      "trees": 4
+    },
+    {
+      "id": "RF_all_d2_n16",
+      "family": "RF",
+      "own": false,
+      "depth": 2,
+      "trees": 16
+    },
+    {
+      "id": "RF_all_d2_n64",
+      "family": "RF",
+      "own": false,
+      "depth": 2,
+      "trees": 64
+    },
+    {
+      "id": "RF_all_d2_n128",
+      "family": "RF",
+      "own": false,
+      "depth": 2,
+      "trees": 128
+    },
+    {
+      "id": "RF_all_d2_n256",
+      "family": "RF",
+      "own": false,
+      "depth": 2,
+      "trees": 256
+    },
+    {
+      "id": "RF_all_d4_n1",
+      "family": "RF",
+      "own": false,
+      "depth": 4,
+      "trees": 1
+    },
+    {
+      "id": "RF_all_d4_n4",
+      "family": "RF",
+      "own": false,
+      "depth": 4,
+      "trees": 4
+    },
+    {
+      "id": "RF_all_d4_n16",
+      "family": "RF",
+      "own": false,
+      "depth": 4,
+      "trees": 16
+    },
+    {
+      "id": "RF_all_d4_n64",
+      "family": "RF",
+      "own": false,
+      "depth": 4,
+      "trees": 64
+    },
+    {
+      "id": "RF_all_d4_n128",
+      "family": "RF",
+      "own": false,
+      "depth": 4,
+      "trees": 128
+    },
+    {
+      "id": "RF_all_d4_n256",
+      "family": "RF",
+      "own": false,
+      "depth": 4,
+      "trees": 256
+    },
+    {
+      "id": "RF_all_d6_n1",
+      "family": "RF",
+      "own": false,
+      "depth": 6,
+      "trees": 1
+    },
+    {
+      "id": "RF_all_d6_n4",
+      "family": "RF",
+      "own": false,
+      "depth": 6,
+      "trees": 4
+    },
+    {
+      "id": "RF_all_d6_n16",
+      "family": "RF",
+      "own": false,
+      "depth": 6,
+      "trees": 16
+    },
+    {
+      "id": "RF_all_d6_n64",
+      "family": "RF",
+      "own": false,
+      "depth": 6,
+      "trees": 64
+    },
+    {
+      "id": "RF_all_d6_n128",
+      "family": "RF",
+      "own": false,
+      "depth": 6,
+      "trees": 128
+    },
+    {
+      "id": "RF_all_d6_n256",
+      "family": "RF",
+      "own": false,
+      "depth": 6,
+      "trees": 256
+    },
+    {
+      "id": "RF_all_d8_n1",
+      "family": "RF",
+      "own": false,
+      "depth": 8,
+      "trees": 1
+    },
+    {
+      "id": "RF_all_d8_n4",
+      "family": "RF",
+      "own": false,
+      "depth": 8,
+      "trees": 4
+    },
+    {
+      "id": "RF_all_d8_n16",
+      "family": "RF",
+      "own": false,
+      "depth": 8,
+      "trees": 16
+    },
+    {
+      "id": "RF_all_d8_n64",
+      "family": "RF",
+      "own": false,
+      "depth": 8,
+      "trees": 64
+    },
+    {
+      "id": "RF_all_d8_n128",
+      "family": "RF",
+      "own": false,
+      "depth": 8,
+      "trees": 128
+    },
+    {
+      "id": "RF_all_d8_n256",
+      "family": "RF",
+      "own": false,
+      "depth": 8,
+      "trees": 256
+    },
+    {
+      "id": "RF_all_d12_n1",
+      "family": "RF",
+      "own": false,
+      "depth": 12,
+      "trees": 1
+    },
+    {
+      "id": "RF_all_d12_n4",
+      "family": "RF",
+      "own": false,
+      "depth": 12,
+      "trees": 4
+    },
+    {
+      "id": "RF_all_d12_n16",
+      "family": "RF",
+      "own": false,
+      "depth": 12,
+      "trees": 16
+    },
+    {
+      "id": "RF_all_d12_n64",
+      "family": "RF",
+      "own": false,
+      "depth": 12,
+      "trees": 64
+    },
+    {
+      "id": "RF_all_d12_n128",
+      "family": "RF",
+      "own": false,
+      "depth": 12,
+      "trees": 128
+    },
+    {
+      "id": "RF_all_d12_n256",
+      "family": "RF",
+      "own": false,
+      "depth": 12,
+      "trees": 256
+    },
+    {
+      "id": "ET_own_d2_n1",
+      "family": "ET",
+      "own": true,
+      "depth": 2,
+      "trees": 1
+    },
+    {
+      "id": "ET_own_d2_n4",
+      "family": "ET",
+      "own": true,
+      "depth": 2,
+      "trees": 4
+    },
+    {
+      "id": "ET_own_d2_n16",
+      "family": "ET",
+      "own": true,
+      "depth": 2,
+      "trees": 16
+    },
+    {
+      "id": "ET_own_d2_n64",
+      "family": "ET",
+      "own": true,
+      "depth": 2,
+      "trees": 64
+    },
+    {
+      "id": "ET_own_d2_n128",
+      "family": "ET",
+      "own": true,
+      "depth": 2,
+      "trees": 128
+    },
+    {
+      "id": "ET_own_d2_n256",
+      "family": "ET",
+      "own": true,
+      "depth": 2,
+      "trees": 256
+    },
+    {
+      "id": "ET_own_d4_n1",
+      "family": "ET",
+      "own": true,
+      "depth": 4,
+      "trees": 1
+    },
+    {
+      "id": "ET_own_d4_n4",
+      "family": "ET",
+      "own": true,
+      "depth": 4,
+      "trees": 4
+    },
+    {
+      "id": "ET_own_d4_n16",
+      "family": "ET",
+      "own": true,
+      "depth": 4,
+      "trees": 16
+    },
+    {
+      "id": "ET_own_d4_n64",
+      "family": "ET",
+      "own": true,
+      "depth": 4,
+      "trees": 64
+    },
+    {
+      "id": "ET_own_d4_n128",
+      "family": "ET",
+      "own": true,
+      "depth": 4,
+      "trees": 128
+    },
+    {
+      "id": "ET_own_d4_n256",
+      "family": "ET",
+      "own": true,
+      "depth": 4,
+      "trees": 256
+    },
+    {
+      "id": "ET_own_d6_n1",
+      "family": "ET",
+      "own": true,
+      "depth": 6,
+      "trees": 1
+    },
+    {
+      "id": "ET_own_d6_n4",
+      "family": "ET",
+      "own": true,
+      "depth": 6,
+      "trees": 4
+    },
+    {
+      "id": "ET_own_d6_n16",
+      "family": "ET",
+      "own": true,
+      "depth": 6,
+      "trees": 16
+    },
+    {
+      "id": "ET_own_d6_n64",
+      "family": "ET",
+      "own": true,
+      "depth": 6,
+      "trees": 64
+    },
+    {
+      "id": "ET_own_d6_n128",
+      "family": "ET",
+      "own": true,
+      "depth": 6,
+      "trees": 128
+    },
+    {
+      "id": "ET_own_d6_n256",
+      "family": "ET",
+      "own": true,
+      "depth": 6,
+      "trees": 256
+    },
+    {
+      "id": "ET_own_d8_n1",
+      "family": "ET",
+      "own": true,
+      "depth": 8,
+      "trees": 1
+    },
+    {
+      "id": "ET_own_d8_n4",
+      "family": "ET",
+      "own": true,
+      "depth": 8,
+      "trees": 4
+    },
+    {
+      "id": "ET_own_d8_n16",
+      "family": "ET",
+      "own": true,
+      "depth": 8,
+      "trees": 16
+    },
+    {
+      "id": "ET_own_d8_n64",
+      "family": "ET",
+      "own": true,
+      "depth": 8,
+      "trees": 64
+    },
+    {
+      "id": "ET_own_d8_n128",
+      "family": "ET",
+      "own": true,
+      "depth": 8,
+      "trees": 128
+    },
+    {
+      "id": "ET_own_d8_n256",
+      "family": "ET",
+      "own": true,
+      "depth": 8,
+      "trees": 256
+    },
+    {
+      "id": "ET_own_d12_n1",
+      "family": "ET",
+      "own": true,
+      "depth": 12,
+      "trees": 1
+    },
+    {
+      "id": "ET_own_d12_n4",
+      "family": "ET",
+      "own": true,
+      "depth": 12,
+      "trees": 4
+    },
+    {
+      "id": "ET_own_d12_n16",
+      "family": "ET",
+      "own": true,
+      "depth": 12,
+      "trees": 16
+    },
+    {
+      "id": "ET_own_d12_n64",
+      "family": "ET",
+      "own": true,
+      "depth": 12,
+      "trees": 64
+    },
+    {
+      "id": "ET_own_d12_n128",
+      "family": "ET",
+      "own": true,
+      "depth": 12,
+      "trees": 128
+    },
+    {
+      "id": "ET_own_d12_n256",
+      "family": "ET",
+      "own": true,
+      "depth": 12,
+      "trees": 256
+    },
+    {
+      "id": "ET_all_d2_n1",
+      "family": "ET",
+      "own": false,
+      "depth": 2,
+      "trees": 1
+    },
+    {
+      "id": "ET_all_d2_n4",
+      "family": "ET",
+      "own": false,
+      "depth": 2,
+      "trees": 4
+    },
+    {
+      "id": "ET_all_d2_n16",
+      "family": "ET",
+      "own": false,
+      "depth": 2,
+      "trees": 16
+    },
+    {
+      "id": "ET_all_d2_n64",
+      "family": "ET",
+      "own": false,
+      "depth": 2,
+      "trees": 64
+    },
+    {
+      "id": "ET_all_d2_n128",
+      "family": "ET",
+      "own": false,
+      "depth": 2,
+      "trees": 128
+    },
+    {
+      "id": "ET_all_d2_n256",
+      "family": "ET",
+      "own": false,
+      "depth": 2,
+      "trees": 256
+    },
+    {
+      "id": "ET_all_d4_n1",
+      "family": "ET",
+      "own": false,
+      "depth": 4,
+      "trees": 1
+    },
+    {
+      "id": "ET_all_d4_n4",
+      "family": "ET",
+      "own": false,
+      "depth": 4,
+      "trees": 4
+    },
+    {
+      "id": "ET_all_d4_n16",
+      "family": "ET",
+      "own": false,
+      "depth": 4,
+      "trees": 16
+    },
+    {
+      "id": "ET_all_d4_n64",
+      "family": "ET",
+      "own": false,
+      "depth": 4,
+      "trees": 64
+    },
+    {
+      "id": "ET_all_d4_n128",
+      "family": "ET",
+      "own": false,
+      "depth": 4,
+      "trees": 128
+    },
+    {
+      "id": "ET_all_d4_n256",
+      "family": "ET",
+      "own": false,
+      "depth": 4,
+      "trees": 256
+    },
+    {
+      "id": "ET_all_d6_n1",
+      "family": "ET",
+      "own": false,
+      "depth": 6,
+      "trees": 1
+    },
+    {
+      "id": "ET_all_d6_n4",
+      "family": "ET",
+      "own": false,
+      "depth": 6,
+      "trees": 4
+    },
+    {
+      "id": "ET_all_d6_n16",
+      "family": "ET",
+      "own": false,
+      "depth": 6,
+      "trees": 16
+    },
+    {
+      "id": "ET_all_d6_n64",
+      "family": "ET",
+      "own": false,
+      "depth": 6,
+      "trees": 64
+    },
+    {
+      "id": "ET_all_d6_n128",
+      "family": "ET",
+      "own": false,
+      "depth": 6,
+      "trees": 128
+    },
+    {
+      "id": "ET_all_d6_n256",
+      "family": "ET",
+      "own": false,
+      "depth": 6,
+      "trees": 256
+    },
+    {
+      "id": "ET_all_d8_n1",
+      "family": "ET",
+      "own": false,
+      "depth": 8,
+      "trees": 1
+    },
+    {
+      "id": "ET_all_d8_n4",
+      "family": "ET",
+      "own": false,
+      "depth": 8,
+      "trees": 4
+    },
+    {
+      "id": "ET_all_d8_n16",
+      "family": "ET",
+      "own": false,
+      "depth": 8,
+      "trees": 16
+    },
+    {
+      "id": "ET_all_d8_n64",
+      "family": "ET",
+      "own": false,
+      "depth": 8,
+      "trees": 64
+    },
+    {
+      "id": "ET_all_d8_n128",
+      "family": "ET",
+      "own": false,
+      "depth": 8,
+      "trees": 128
+    },
+    {
+      "id": "ET_all_d8_n256",
+      "family": "ET",
+      "own": false,
+      "depth": 8,
+      "trees": 256
+    },
+    {
+      "id": "ET_all_d12_n1",
+      "family": "ET",
+      "own": false,
+      "depth": 12,
+      "trees": 1
+    },
+    {
+      "id": "ET_all_d12_n4",
+      "family": "ET",
+      "own": false,
+      "depth": 12,
+      "trees": 4
+    },
+    {
+      "id": "ET_all_d12_n16",
+      "family": "ET",
+      "own": false,
+      "depth": 12,
+      "trees": 16
+    },
+    {
+      "id": "ET_all_d12_n64",
+      "family": "ET",
+      "own": false,
+      "depth": 12,
+      "trees": 64
+    },
+    {
+      "id": "ET_all_d12_n128",
+      "family": "ET",
+      "own": false,
+      "depth": 12,
+      "trees": 128
+    },
+    {
+      "id": "ET_all_d12_n256",
+      "family": "ET",
+      "own": false,
+      "depth": 12,
+      "trees": 256
+    }
+  ],
+  "folds": [
+    {
+      "name": "June-July",
+      "train_end": "2023-05-01",
+      "validation_end": "2023-06-01",
+      "score_end": "2023-08-01"
+    },
+    {
+      "name": "August",
+      "train_end": "2023-07-01",
+      "validation_end": "2023-08-01",
+      "score_end": "2023-09-01"
+    },
+    {
+      "name": "September",
+      "train_end": "2023-08-01",
+      "validation_end": "2023-09-01",
+      "score_end": "2023-10-01"
+    },
+    {
+      "name": "confirmation",
+      "train_end": "2023-09-01",
+      "validation_end": "2023-10-01",
+      "score_end": "2024-01-01"
+    }
+  ],
+  "horizons_minutes": [
+    10,
+    30,
+    60,
+    120,
+    360
+  ],
+  "min_samples_leaf": 10,
+  "max_features": 0.7,
+  "seed": 42,
+  "history_steps": 36,
+  "selection": "Mean relative MAE across three development score periods, equal fold weight. Per-horizon overall and size-budget champions. Size limit applies to maximum packed size across development folds.",
+  "caveats": [
+    "Q4 was inspected previously and is exploratory reused confirmation.",
+    "Budgets cover forest arrays only; firmware, feature processing, buffers and runtime are extra.",
+    "No ESP32 hardware or power measured.",
+    "Bounded capacity sweep; not exhaustive across all forest hyperparameters."
+  ],
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.5.4",
+    "sklearn": "1.9.1"
+  }
+}

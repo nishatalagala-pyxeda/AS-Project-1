@@ -1,0 +1,110 @@
+{
+  "definition": "Currently all three return temperatures are at or below their training 95th percentiles; event = any loop exceeds its own threshold in next 60 minutes.",
+  "thresholds_C": [
+    37.11111068725586,
+    37.05555725097656,
+    41.72222137451172
+  ],
+  "safety_limit": false,
+  "baseline": "Logistic regression on current maximum standardized distance to threshold; plus constant training prevalence.",
+  "task": "temperature_events",
+  "kind": "classification",
+  "counts": {
+    "train": {
+      "n": 24176,
+      "positives": 3545,
+      "prevalence": 0.14663302898406982
+    },
+    "validation": {
+      "n": 8302,
+      "positives": 129,
+      "prevalence": 0.015538424253463745
+    },
+    "test": {
+      "n": 13103,
+      "positives": 210,
+      "prevalence": 0.01602686382830143
+    }
+  },
+  "status": "Fitted",
+  "metrics": [
+    {
+      "model": "Prevalence",
+      "AP": 0.016026864076928948,
+      "ROC_AUC": 0.5,
+      "Brier": 0.03282797401653987,
+      "log_loss": 0.18679303197647773,
+      "threshold_chosen_on_validation": 0.005,
+      "precision": 0.016026864076928948,
+      "recall": 1.0,
+      "F1": 0.03154811086907534,
+      "alerts": 13103,
+      "n": 13103
+    },
+    {
+      "model": "Simple logistic",
+      "AP": 0.1445463323888035,
+      "ROC_AUC": 0.6954482498808878,
+      "Brier": 0.035485297441482544,
+      "log_loss": 0.19334667921066284,
+      "threshold_chosen_on_validation": 0.225,
+      "precision": 0.24516129032258063,
+      "recall": 0.18095238095238095,
+      "F1": 0.20821917808219179,
+      "alerts": 155,
+      "n": 13103
+    },
+    {
+      "model": "Trees",
+      "AP": 0.14097140656715684,
+      "ROC_AUC": 0.8424309241264177,
+      "Brier": 0.03670135227889956,
+      "log_loss": 0.13555247130319104,
+      "threshold_chosen_on_validation": 0.065,
+      "precision": 0.05904475366679203,
+      "recall": 0.7476190476190476,
+      "F1": 0.1094457999302893,
+      "alerts": 2659,
+      "n": 13103
+    },
+    {
+      "model": "LSTM",
+      "AP": 0.10051419674498138,
+      "ROC_AUC": 0.7845763481845076,
+      "Brier": 0.051808249205350876,
+      "log_loss": 0.1865677833557129,
+      "threshold_chosen_on_validation": 0.14500000000000002,
+      "precision": 0.04639653572533251,
+      "recall": 0.7142857142857143,
+      "F1": 0.08713331397037467,
+      "alerts": 3233,
+      "n": 13103
+    }
+  ],
+  "lstm_training": {
+    "seed": 42,
+    "best_epoch": 6,
+    "best_validation_loss": 0.09258579462766647,
+    "seconds": 25.692830916988896
+  },
+  "test_positive_clusters": 46,
+  "paired_Brier_vs_simple_logistic": [
+    {
+      "model": "Trees",
+      "mean_loss_difference_vs_baseline": 0.0012160526893975115,
+      "day_bootstrap_95pct": [
+        -0.008172202844755849,
+        0.011986769086163309
+      ]
+    },
+    {
+      "model": "LSTM",
+      "mean_loss_difference_vs_baseline": 0.016322951763868332,
+      "day_bootstrap_95pct": [
+        0.005272033488913712,
+        0.028230464485859932
+      ]
+    }
+  ],
+  "elapsed_seconds": 37.93550537500414
+}

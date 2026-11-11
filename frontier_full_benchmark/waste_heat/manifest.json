@@ -1,0 +1,141 @@
+{
+  "source": "/Users/nishatalagala/Downloads/Frontier HPC & Facility Data.xlsx",
+  "source_sha256": "56a48dd66382896890dfc2e4940ec90f894bb85795ee8e85ea2708dda05796bf",
+  "target_column": "N",
+  "horizons_minutes": [
+    10,
+    30,
+    60,
+    120,
+    360
+  ],
+  "configs": [
+    {
+      "id": "ridge_own24h",
+      "family": "Ridge",
+      "history": 144,
+      "own": true
+    },
+    {
+      "id": "ridge_1h",
+      "family": "Ridge",
+      "history": 6
+    },
+    {
+      "id": "ridge_6h",
+      "family": "Ridge",
+      "history": 36
+    },
+    {
+      "id": "ridge_24h",
+      "family": "Ridge",
+      "history": 144
+    },
+    {
+      "id": "extra_trees_6h",
+      "family": "Extra Trees",
+      "history": 36
+    },
+    {
+      "id": "random_forest_6h",
+      "family": "Random forest",
+      "history": 36
+    },
+    {
+      "id": "boosted_1h",
+      "family": "Boosted trees",
+      "history": 6
+    },
+    {
+      "id": "boosted_6h",
+      "family": "Boosted trees",
+      "history": 36
+    },
+    {
+      "id": "boosted_24h",
+      "family": "Boosted trees",
+      "history": 144
+    },
+    {
+      "id": "boosted_own6h",
+      "family": "Boosted trees",
+      "history": 36,
+      "own": true
+    },
+    {
+      "id": "lstm_1h",
+      "family": "LSTM",
+      "history": 6
+    },
+    {
+      "id": "lstm_6h",
+      "family": "LSTM",
+      "history": 36
+    },
+    {
+      "id": "gru_6h",
+      "family": "GRU",
+      "history": 36
+    },
+    {
+      "id": "tcn_6h",
+      "family": "TCN",
+      "history": 36
+    },
+    {
+      "id": "tcn_24h",
+      "family": "TCN",
+      "history": 144
+    }
+  ],
+  "folds": [
+    {
+      "name": "June-July",
+      "train_end": "2023-05-01",
+      "validation_end": "2023-06-01",
+      "score_end": "2023-08-01"
+    },
+    {
+      "name": "August",
+      "train_end": "2023-07-01",
+      "validation_end": "2023-08-01",
+      "score_end": "2023-09-01"
+    },
+    {
+      "name": "September",
+      "train_end": "2023-08-01",
+      "validation_end": "2023-09-01",
+      "score_end": "2023-10-01"
+    },
+    {
+      "name": "confirmation",
+      "train_end": "2023-09-01",
+      "validation_end": "2023-10-01",
+      "score_end": "2024-01-01"
+    }
+  ],
+  "common_origins": 45858,
+  "input_columns": [
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "I",
+    "O",
+    "P",
+    "Q",
+    "N"
+  ],
+  "protocol": "Common origins require 24h+one step of complete history and all next6h readings. No imputation. All five future targets stay within split. Train-only scaling and quantiles; validation-only early stopping, Ridge alpha and interval calibration. No Q4 tuning in this run.",
+  "confirmation_caveat": "October\u2013December was inspected in earlier experiments; reused confirmation is exploratory, not a fresh independent lockbox.",
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.5.4",
+    "pandas": "2.2.3",
+    "torch": "2.15.0",
+    "sklearn": "1.9.1"
+  },
+  "adaptive_calibration_note": "Exploratory diagnostic motivated by static accessory-power intervals under-covering confirmation. Specified before waste-heat confirmation. Both 7-day and 30-day windows are reported without choosing one on confirmation. Only resolved forecast errors with target time <= current forecast origin are used."
+}

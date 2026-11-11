@@ -1,0 +1,62 @@
+Broad benchmark of accessory-power forecasting followed by waste heat
+
+Python 3.12; pinned packages in requirements.txt. Install them in an isolated
+environment. The recorded run uses the bundled Python plus packages located at
+/private/tmp/frontier_experiment_deps. Original workbook is never modified.
+
+Run from this directory with the same Python/dependency environment:
+python run_benchmark.py --target accessory_power
+python adaptive_intervals.py accessory_power
+python run_benchmark.py --target accessory_power --report-only
+python verify_results.py accessory_power
+python run_benchmark.py --target waste_heat
+python adaptive_intervals.py waste_heat
+python run_benchmark.py --target waste_heat --report-only
+python verify_results.py waste_heat
+python build_overview.py
+
+Options: --source /absolute/path/to/data.xlsx --deps /isolated/site-packages
+--output /path/to/new/benchmark. Use a new output directory for changed settings.
+Completed model/period evaluations are reused on restart; the source hash and
+candidate definitions are checked. Incomplete results are rerun.
+
+Reports only, without model training:
+python run_benchmark.py --target accessory_power --report-only
+python run_benchmark.py --target waste_heat --report-only
+
+Three development scoring periods: June–July, August, September. Each has its
+own earlier training and validation periods. Equal average relative MAE across
+the three scoring periods selects a model independently for each horizon.
+Only afterward is October–December scored. That quarter was examined during
+earlier exploratory work; it is a reused confirmation period, not a lockbox.
+
+Histories 1h,6h,24h are tested through prespecified configurations, not every
+combination of family/parameter. Forecast horizons:10,30,60,120,360 minutes.
+All candidates use identical common evaluation origins, even if a short-history
+or target-only model could operate at more timestamps in production.
+
+Every model's validation and scoring forecasts are saved in predictions.npz.
+Models, normalizations, learning histories, selected Ridge alphas and runtime
+metadata are kept beside their results.json. Selected neural configurations
+are repeated with seeds43/44; seed42 remains the original reported forecast.
+
+Initial accessory-power float32 Ridge fits raised a conditioning warning.
+They are retained in preliminary_float32_archive for traceability, excluded
+from rankings, and replaced by float64 fits before final verification.
+
+CPU profiling found single-thread convolution faster for this small TCN.
+TCN fits after that adjustment use one PyTorch thread; initial accessory fits
+used four. Other neural fits and numerical libraries use up to four threads.
+Numerical outcomes can vary slightly across hardware/library/thread versions.
+
+This is a bounded research benchmark, not exhaustive optimization of each
+family. No weather, scheduler or equipment-state inputs are available. Waste
+heat is an estimate derived using the source workbook's fixed assumptions.
+
+Rolling prediction intervals were added as an exploratory follow-up after the
+static accessory-power bands undercovered confirmation. Seven-day and30-day
+windows are both reported without selecting one on confirmation. The same
+diagnostic was specified before running waste-heat confirmation. At each origin
+only forecast errors whose target timestamp has passed can enter calibration.
+Independent verification checks temporal availability and reconstructs sampled
+rolling quantiles with a separate array-based implementation.

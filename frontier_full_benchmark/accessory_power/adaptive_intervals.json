@@ -1,0 +1,406 @@
+{
+  "note": "Exploratory diagnostic added after static intervals undercovered confirmation. Both 7-day and 30-day windows are reported without selecting a winner on confirmation. Only resolved forecast errors with target time <= current forecast origin are used.",
+  "rows": [
+    {
+      "fold": "June-July",
+      "horizon_minutes": 10,
+      "model": "boosted_6h",
+      "window_days": 7,
+      "coverage": 0.8967551622418879,
+      "mean_width_MW": 0.08426368955952013,
+      "n": 6102,
+      "fallback_n": 1
+    },
+    {
+      "fold": "June-July",
+      "horizon_minutes": 10,
+      "model": "boosted_6h",
+      "window_days": 30,
+      "coverage": 0.9034742707309079,
+      "mean_width_MW": 0.08616843310836683,
+      "n": 6102,
+      "fallback_n": 1
+    },
+    {
+      "fold": "June-July",
+      "horizon_minutes": 30,
+      "model": "boosted_6h",
+      "window_days": 7,
+      "coverage": 0.8941330711242216,
+      "mean_width_MW": 0.16867129441608,
+      "n": 6102,
+      "fallback_n": 3
+    },
+    {
+      "fold": "June-July",
+      "horizon_minutes": 30,
+      "model": "boosted_6h",
+      "window_days": 30,
+      "coverage": 0.900196656833825,
+      "mean_width_MW": 0.17355153010579152,
+      "n": 6102,
+      "fallback_n": 3
+    },
+    {
+      "fold": "June-July",
+      "horizon_minutes": 60,
+      "model": "boosted_6h",
+      "window_days": 7,
+      "coverage": 0.8970829236315963,
+      "mean_width_MW": 0.18142235311741675,
+      "n": 6102,
+      "fallback_n": 6
+    },
+    {
+      "fold": "June-July",
+      "horizon_minutes": 60,
+      "model": "boosted_6h",
+      "window_days": 30,
+      "coverage": 0.9110127826941986,
+      "mean_width_MW": 0.1912128100789404,
+      "n": 6102,
+      "fallback_n": 6
+    },
+    {
+      "fold": "June-July",
+      "horizon_minutes": 120,
+      "model": "ridge_own24h",
+      "window_days": 7,
+      "coverage": 0.8965912815470337,
+      "mean_width_MW": 0.17517909840031884,
+      "n": 6102,
+      "fallback_n": 12
+    },
+    {
+      "fold": "June-July",
+      "horizon_minutes": 120,
+      "model": "ridge_own24h",
+      "window_days": 30,
+      "coverage": 0.9041297935103245,
+      "mean_width_MW": 0.18079301327627487,
+      "n": 6102,
+      "fallback_n": 12
+    },
+    {
+      "fold": "June-July",
+      "horizon_minutes": 360,
+      "model": "ridge_own24h",
+      "window_days": 7,
+      "coverage": 0.895771878072763,
+      "mean_width_MW": 0.19422369534507153,
+      "n": 6102,
+      "fallback_n": 36
+    },
+    {
+      "fold": "June-July",
+      "horizon_minutes": 360,
+      "model": "ridge_own24h",
+      "window_days": 30,
+      "coverage": 0.8988856112749918,
+      "mean_width_MW": 0.19815893611039306,
+      "n": 6102,
+      "fallback_n": 36
+    },
+    {
+      "fold": "August",
+      "horizon_minutes": 10,
+      "model": "boosted_6h",
+      "window_days": 7,
+      "coverage": 0.9115157732751987,
+      "mean_width_MW": 0.06385031395328639,
+      "n": 3899,
+      "fallback_n": 0
+    },
+    {
+      "fold": "August",
+      "horizon_minutes": 10,
+      "model": "boosted_6h",
+      "window_days": 30,
+      "coverage": 0.922031290074378,
+      "mean_width_MW": 0.06771573776380298,
+      "n": 3899,
+      "fallback_n": 0
+    },
+    {
+      "fold": "August",
+      "horizon_minutes": 30,
+      "model": "boosted_6h",
+      "window_days": 7,
+      "coverage": 0.9099769171582457,
+      "mean_width_MW": 0.12223923048026962,
+      "n": 3899,
+      "fallback_n": 0
+    },
+    {
+      "fold": "August",
+      "horizon_minutes": 30,
+      "model": "boosted_6h",
+      "window_days": 30,
+      "coverage": 0.9145934855091049,
+      "mean_width_MW": 0.11683447949328533,
+      "n": 3899,
+      "fallback_n": 0
+    },
+    {
+      "fold": "August",
+      "horizon_minutes": 60,
+      "model": "boosted_6h",
+      "window_days": 7,
+      "coverage": 0.9097204411387535,
+      "mean_width_MW": 0.159029496431395,
+      "n": 3899,
+      "fallback_n": 0
+    },
+    {
+      "fold": "August",
+      "horizon_minutes": 60,
+      "model": "boosted_6h",
+      "window_days": 30,
+      "coverage": 0.9068992049243396,
+      "mean_width_MW": 0.14575071378157342,
+      "n": 3899,
+      "fallback_n": 0
+    },
+    {
+      "fold": "August",
+      "horizon_minutes": 120,
+      "model": "ridge_own24h",
+      "window_days": 7,
+      "coverage": 0.8984354962810978,
+      "mean_width_MW": 0.17332824267100974,
+      "n": 3899,
+      "fallback_n": 0
+    },
+    {
+      "fold": "August",
+      "horizon_minutes": 120,
+      "model": "ridge_own24h",
+      "window_days": 30,
+      "coverage": 0.9022826365734804,
+      "mean_width_MW": 0.15840840411654744,
+      "n": 3899,
+      "fallback_n": 0
+    },
+    {
+      "fold": "August",
+      "horizon_minutes": 360,
+      "model": "ridge_own24h",
+      "window_days": 7,
+      "coverage": 0.897409592203129,
+      "mean_width_MW": 0.20666506188835454,
+      "n": 3899,
+      "fallback_n": 0
+    },
+    {
+      "fold": "August",
+      "horizon_minutes": 360,
+      "model": "ridge_own24h",
+      "window_days": 30,
+      "coverage": 0.9097204411387535,
+      "mean_width_MW": 0.17449947063339816,
+      "n": 3899,
+      "fallback_n": 0
+    },
+    {
+      "fold": "September",
+      "horizon_minutes": 10,
+      "model": "boosted_6h",
+      "window_days": 7,
+      "coverage": 0.891062144095073,
+      "mean_width_MW": 0.04327678834708197,
+      "n": 4039,
+      "fallback_n": 0
+    },
+    {
+      "fold": "September",
+      "horizon_minutes": 10,
+      "model": "boosted_6h",
+      "window_days": 30,
+      "coverage": 0.906907650408517,
+      "mean_width_MW": 0.046222112605797186,
+      "n": 4039,
+      "fallback_n": 0
+    },
+    {
+      "fold": "September",
+      "horizon_minutes": 30,
+      "model": "boosted_6h",
+      "window_days": 7,
+      "coverage": 0.8903193859866304,
+      "mean_width_MW": 0.07248927425651433,
+      "n": 4039,
+      "fallback_n": 0
+    },
+    {
+      "fold": "September",
+      "horizon_minutes": 30,
+      "model": "boosted_6h",
+      "window_days": 30,
+      "coverage": 0.9041842040108938,
+      "mean_width_MW": 0.0794132804110074,
+      "n": 4039,
+      "fallback_n": 0
+    },
+    {
+      "fold": "September",
+      "horizon_minutes": 60,
+      "model": "boosted_6h",
+      "window_days": 7,
+      "coverage": 0.8875959395890072,
+      "mean_width_MW": 0.10634841569704512,
+      "n": 4039,
+      "fallback_n": 0
+    },
+    {
+      "fold": "September",
+      "horizon_minutes": 60,
+      "model": "boosted_6h",
+      "window_days": 30,
+      "coverage": 0.9036890319385986,
+      "mean_width_MW": 0.11535715466504068,
+      "n": 4039,
+      "fallback_n": 0
+    },
+    {
+      "fold": "September",
+      "horizon_minutes": 120,
+      "model": "ridge_own24h",
+      "window_days": 7,
+      "coverage": 0.8915573161673681,
+      "mean_width_MW": 0.12175695745432699,
+      "n": 4039,
+      "fallback_n": 0
+    },
+    {
+      "fold": "September",
+      "horizon_minutes": 120,
+      "model": "ridge_own24h",
+      "window_days": 30,
+      "coverage": 0.9192869522158951,
+      "mean_width_MW": 0.14005644879273532,
+      "n": 4039,
+      "fallback_n": 0
+    },
+    {
+      "fold": "September",
+      "horizon_minutes": 360,
+      "model": "ridge_own24h",
+      "window_days": 7,
+      "coverage": 0.8898242139143352,
+      "mean_width_MW": 0.13056355597169053,
+      "n": 4039,
+      "fallback_n": 0
+    },
+    {
+      "fold": "September",
+      "horizon_minutes": 360,
+      "model": "ridge_own24h",
+      "window_days": 30,
+      "coverage": 0.9178014359990097,
+      "mean_width_MW": 0.14287714700749324,
+      "n": 4039,
+      "fallback_n": 0
+    },
+    {
+      "fold": "confirmation",
+      "horizon_minutes": 10,
+      "model": "boosted_6h",
+      "window_days": 7,
+      "coverage": 0.8950196790796245,
+      "mean_width_MW": 0.10905917141979281,
+      "n": 13212,
+      "fallback_n": 0
+    },
+    {
+      "fold": "confirmation",
+      "horizon_minutes": 10,
+      "model": "boosted_6h",
+      "window_days": 30,
+      "coverage": 0.8802603693611868,
+      "mean_width_MW": 0.09909736638928979,
+      "n": 13212,
+      "fallback_n": 0
+    },
+    {
+      "fold": "confirmation",
+      "horizon_minutes": 30,
+      "model": "boosted_6h",
+      "window_days": 7,
+      "coverage": 0.8897971541023312,
+      "mean_width_MW": 0.15713590052394896,
+      "n": 13212,
+      "fallback_n": 0
+    },
+    {
+      "fold": "confirmation",
+      "horizon_minutes": 30,
+      "model": "boosted_6h",
+      "window_days": 30,
+      "coverage": 0.8695882531032395,
+      "mean_width_MW": 0.1468249762344306,
+      "n": 13212,
+      "fallback_n": 0
+    },
+    {
+      "fold": "confirmation",
+      "horizon_minutes": 60,
+      "model": "boosted_6h",
+      "window_days": 7,
+      "coverage": 0.8927490160460188,
+      "mean_width_MW": 0.18343147571712254,
+      "n": 13212,
+      "fallback_n": 0
+    },
+    {
+      "fold": "confirmation",
+      "horizon_minutes": 60,
+      "model": "boosted_6h",
+      "window_days": 30,
+      "coverage": 0.8817741447169241,
+      "mean_width_MW": 0.17818007194712235,
+      "n": 13212,
+      "fallback_n": 0
+    },
+    {
+      "fold": "confirmation",
+      "horizon_minutes": 120,
+      "model": "ridge_own24h",
+      "window_days": 7,
+      "coverage": 0.8913109294580684,
+      "mean_width_MW": 0.19556720700262228,
+      "n": 13212,
+      "fallback_n": 0
+    },
+    {
+      "fold": "confirmation",
+      "horizon_minutes": 120,
+      "model": "ridge_own24h",
+      "window_days": 30,
+      "coverage": 0.8816984559491371,
+      "mean_width_MW": 0.1906785607029892,
+      "n": 13212,
+      "fallback_n": 0
+    },
+    {
+      "fold": "confirmation",
+      "horizon_minutes": 360,
+      "model": "ridge_own24h",
+      "window_days": 7,
+      "coverage": 0.8901755979412656,
+      "mean_width_MW": 0.21394444977080193,
+      "n": 13212,
+      "fallback_n": 0
+    },
+    {
+      "fold": "confirmation",
+      "horizon_minutes": 360,
+      "model": "ridge_own24h",
+      "window_days": 30,
+      "coverage": 0.8795034816833182,
+      "mean_width_MW": 0.20946587710461684,
+      "n": 13212,
+      "fallback_n": 0
+    }
+  ],
+  "future_error_violations": 0
+}

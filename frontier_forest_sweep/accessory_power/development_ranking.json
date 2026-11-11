@@ -1,0 +1,2042 @@
+[
+  {
+    "config": {
+      "id": "RF_own_d2_n1",
+      "family": "RF",
+      "own": true,
+      "depth": 2,
+      "trees": 1
+    },
+    "development_relative_MAE": [
+      1.3152680100827365,
+      1.137579343913738,
+      1.0842064765078225,
+      1.029338882079642,
+      0.9371665812702412
+    ],
+    "maximum_development_packed_bytes": 132
+  },
+  {
+    "config": {
+      "id": "RF_own_d2_n4",
+      "family": "RF",
+      "own": true,
+      "depth": 2,
+      "trees": 4
+    },
+    "development_relative_MAE": [
+      1.2423948118938541,
+      1.0733684931179843,
+      1.0083720207661713,
+      0.9524636523028439,
+      0.8691991615987672
+    ],
+    "maximum_development_packed_bytes": 528
+  },
+  {
+    "config": {
+      "id": "RF_own_d2_n16",
+      "family": "RF",
+      "own": true,
+      "depth": 2,
+      "trees": 16
+    },
+    "development_relative_MAE": [
+      1.2202588423227252,
+      1.0591757889740763,
+      0.9960049754595147,
+      0.9455419769184,
+      0.8666145293292392
+    ],
+    "maximum_development_packed_bytes": 2112
+  },
+  {
+    "config": {
+      "id": "RF_own_d2_n64",
+      "family": "RF",
+      "own": true,
+      "depth": 2,
+      "trees": 64
+    },
+    "development_relative_MAE": [
+      1.2195527631087961,
+      1.0565270721858564,
+      0.9941699641764045,
+      0.9458357731320985,
+      0.8655140866394379
+    ],
+    "maximum_development_packed_bytes": 8448
+  },
+  {
+    "config": {
+      "id": "RF_own_d2_n128",
+      "family": "RF",
+      "own": true,
+      "depth": 2,
+      "trees": 128
+    },
+    "development_relative_MAE": [
+      1.2209496198136718,
+      1.0577679678045495,
+      0.9958301916563412,
+      0.9464875894731876,
+      0.8661918775297132
+    ],
+    "maximum_development_packed_bytes": 16896
+  },
+  {
+    "config": {
+      "id": "RF_own_d2_n256",
+      "family": "RF",
+      "own": true,
+      "depth": 2,
+      "trees": 256
+    },
+    "development_relative_MAE": [
+      1.222197840485002,
+      1.0591379599727067,
+      0.9966645645423066,
+      0.9469816178061347,
+      0.8663363838907342
+    ],
+    "maximum_development_packed_bytes": 33792
+  },
+  {
+    "config": {
+      "id": "RF_own_d4_n1",
+      "family": "RF",
+      "own": true,
+      "depth": 4,
+      "trees": 1
+    },
+    "development_relative_MAE": [
+      1.2784971766205286,
+      1.086816576224855,
+      1.015488554027245,
+      0.9721025501845766,
+      0.8807925837371838
+    ],
+    "maximum_development_packed_bytes": 564
+  },
+  {
+    "config": {
+      "id": "RF_own_d4_n4",
+      "family": "RF",
+      "own": true,
+      "depth": 4,
+      "trees": 4
+    },
+    "development_relative_MAE": [
+      1.1986029668818439,
+      1.0214612052938825,
+      0.9612173283598425,
+      0.9183177311495475,
+      0.8348977860020552
+    ],
+    "maximum_development_packed_bytes": 2256
+  },
+  {
+    "config": {
+      "id": "RF_own_d4_n16",
+      "family": "RF",
+      "own": true,
+      "depth": 4,
+      "trees": 16
+    },
+    "development_relative_MAE": [
+      1.1830836407742402,
+      1.0116664385594987,
+      0.9469417456364907,
+      0.908391775541549,
+      0.8314159202387702
+    ],
+    "maximum_development_packed_bytes": 9024
+  },
+  {
+    "config": {
+      "id": "RF_own_d4_n64",
+      "family": "RF",
+      "own": true,
+      "depth": 4,
+      "trees": 64
+    },
+    "development_relative_MAE": [
+      1.1794467708650684,
+      1.0150028532537236,
+      0.9519209221742683,
+      0.9109946673949838,
+      0.8314295277644422
+    ],
+    "maximum_development_packed_bytes": 36096
+  },
+  {
+    "config": {
+      "id": "RF_own_d4_n128",
+      "family": "RF",
+      "own": true,
+      "depth": 4,
+      "trees": 128
+    },
+    "development_relative_MAE": [
+      1.1787939326682026,
+      1.0146534535637826,
+      0.9530609148905658,
+      0.9115024043625071,
+      0.831474976481484
+    ],
+    "maximum_development_packed_bytes": 72192
+  },
+  {
+    "config": {
+      "id": "RF_own_d4_n256",
+      "family": "RF",
+      "own": true,
+      "depth": 4,
+      "trees": 256
+    },
+    "development_relative_MAE": [
+      1.1772466741431655,
+      1.0130995495552229,
+      0.9521913830629,
+      0.9110393102684275,
+      0.8322838552890532
+    ],
+    "maximum_development_packed_bytes": 144384
+  },
+  {
+    "config": {
+      "id": "RF_own_d6_n1",
+      "family": "RF",
+      "own": true,
+      "depth": 6,
+      "trees": 1
+    },
+    "development_relative_MAE": [
+      1.2521280373956867,
+      1.0744344353493733,
+      1.01051364929609,
+      0.9676455117894077,
+      0.8723598896121233
+    ],
+    "maximum_development_packed_bytes": 2112
+  },
+  {
+    "config": {
+      "id": "RF_own_d6_n4",
+      "family": "RF",
+      "own": true,
+      "depth": 6,
+      "trees": 4
+    },
+    "development_relative_MAE": [
+      1.193891101215659,
+      1.0159096176825033,
+      0.9533196860838146,
+      0.9105270745515036,
+      0.832892796747906
+    ],
+    "maximum_development_packed_bytes": 8340
+  },
+  {
+    "config": {
+      "id": "RF_own_d6_n16",
+      "family": "RF",
+      "own": true,
+      "depth": 6,
+      "trees": 16
+    },
+    "development_relative_MAE": [
+      1.1873554812561122,
+      1.0188352338815123,
+      0.950750020130624,
+      0.9087014887443754,
+      0.8286120263701978
+    ],
+    "maximum_development_packed_bytes": 33252
+  },
+  {
+    "config": {
+      "id": "RF_own_d6_n64",
+      "family": "RF",
+      "own": true,
+      "depth": 6,
+      "trees": 64
+    },
+    "development_relative_MAE": [
+      1.183791649357495,
+      1.0185608118106593,
+      0.9467322609525919,
+      0.907736842273318,
+      0.8246581874972944
+    ],
+    "maximum_development_packed_bytes": 130200
+  },
+  {
+    "config": {
+      "id": "RF_own_d6_n128",
+      "family": "RF",
+      "own": true,
+      "depth": 6,
+      "trees": 128
+    },
+    "development_relative_MAE": [
+      1.1837576072410714,
+      1.016979526446678,
+      0.946796268234641,
+      0.9075633534057018,
+      0.824618402892987
+    ],
+    "maximum_development_packed_bytes": 260328
+  },
+  {
+    "config": {
+      "id": "RF_own_d6_n256",
+      "family": "RF",
+      "own": true,
+      "depth": 6,
+      "trees": 256
+    },
+    "development_relative_MAE": [
+      1.1844788529804717,
+      1.0171063911699556,
+      0.9467016688532338,
+      0.908020822202364,
+      0.8244508427841586
+    ],
+    "maximum_development_packed_bytes": 521412
+  },
+  {
+    "config": {
+      "id": "RF_own_d8_n1",
+      "family": "RF",
+      "own": true,
+      "depth": 8,
+      "trees": 1
+    },
+    "development_relative_MAE": [
+      1.2193381297986636,
+      1.0414162656482024,
+      0.98396714248548,
+      0.9644517069107814,
+      0.8953836457125317
+    ],
+    "maximum_development_packed_bytes": 4992
+  },
+  {
+    "config": {
+      "id": "RF_own_d8_n4",
+      "family": "RF",
+      "own": true,
+      "depth": 8,
+      "trees": 4
+    },
+    "development_relative_MAE": [
+      1.2361083657092624,
+      1.0681674736281248,
+      0.9622284363800975,
+      0.9239164147453561,
+      0.8551822151319874
+    ],
+    "maximum_development_packed_bytes": 22668
+  },
+  {
+    "config": {
+      "id": "RF_own_d8_n16",
+      "family": "RF",
+      "own": true,
+      "depth": 8,
+      "trees": 16
+    },
+    "development_relative_MAE": [
+      1.1990245076650723,
+      1.0332224179771667,
+      0.947440240384633,
+      0.9111389281545054,
+      0.8356638832062141
+    ],
+    "maximum_development_packed_bytes": 90636
+  },
+  {
+    "config": {
+      "id": "RF_own_d8_n64",
+      "family": "RF",
+      "own": true,
+      "depth": 8,
+      "trees": 64
+    },
+    "development_relative_MAE": [
+      1.1922508300837338,
+      1.0270458017857822,
+      0.948243138693666,
+      0.9100576217624643,
+      0.8328528611366135
+    ],
+    "maximum_development_packed_bytes": 358224
+  },
+  {
+    "config": {
+      "id": "RF_own_d8_n128",
+      "family": "RF",
+      "own": true,
+      "depth": 8,
+      "trees": 128
+    },
+    "development_relative_MAE": [
+      1.1926207381452147,
+      1.0260842072971288,
+      0.9481297051808025,
+      0.9090241088622525,
+      0.8307104972594911
+    ],
+    "maximum_development_packed_bytes": 714432
+  },
+  {
+    "config": {
+      "id": "RF_own_d8_n256",
+      "family": "RF",
+      "own": true,
+      "depth": 8,
+      "trees": 256
+    },
+    "development_relative_MAE": [
+      1.191758723598487,
+      1.0245055978487383,
+      0.9478103132889255,
+      0.909516127272715,
+      0.830181277163785
+    ],
+    "maximum_development_packed_bytes": 1426416
+  },
+  {
+    "config": {
+      "id": "RF_own_d12_n1",
+      "family": "RF",
+      "own": true,
+      "depth": 12,
+      "trees": 1
+    },
+    "development_relative_MAE": [
+      1.373977473589825,
+      1.175651975826893,
+      1.063079577953012,
+      1.0826769030076553,
+      1.020895956924963
+    ],
+    "maximum_development_packed_bytes": 19032
+  },
+  {
+    "config": {
+      "id": "RF_own_d12_n4",
+      "family": "RF",
+      "own": true,
+      "depth": 12,
+      "trees": 4
+    },
+    "development_relative_MAE": [
+      1.2518355781492165,
+      1.0790214156715898,
+      1.001801075311607,
+      0.959312851901399,
+      0.8933397020470103
+    ],
+    "maximum_development_packed_bytes": 82824
+  },
+  {
+    "config": {
+      "id": "RF_own_d12_n16",
+      "family": "RF",
+      "own": true,
+      "depth": 12,
+      "trees": 16
+    },
+    "development_relative_MAE": [
+      1.2186743156706916,
+      1.0514907152616437,
+      0.9672676365714339,
+      0.9276330940694922,
+      0.8602119657338626
+    ],
+    "maximum_development_packed_bytes": 319092
+  },
+  {
+    "config": {
+      "id": "RF_own_d12_n64",
+      "family": "RF",
+      "own": true,
+      "depth": 12,
+      "trees": 64
+    },
+    "development_relative_MAE": [
+      1.2060007909379686,
+      1.0410807768969474,
+      0.9616716960295387,
+      0.9215613842464251,
+      0.8528561955702378
+    ],
+    "maximum_development_packed_bytes": 1253616
+  },
+  {
+    "config": {
+      "id": "RF_own_d12_n128",
+      "family": "RF",
+      "own": true,
+      "depth": 12,
+      "trees": 128
+    },
+    "development_relative_MAE": [
+      1.2036630044468553,
+      1.0392754493767316,
+      0.9608351081144889,
+      0.9209590109101038,
+      0.8514627439161631
+    ],
+    "maximum_development_packed_bytes": 2505720
+  },
+  {
+    "config": {
+      "id": "RF_own_d12_n256",
+      "family": "RF",
+      "own": true,
+      "depth": 12,
+      "trees": 256
+    },
+    "development_relative_MAE": [
+      1.2042357634257834,
+      1.0386871217066416,
+      0.9595370734406409,
+      0.9205541729575022,
+      0.8489852984179534
+    ],
+    "maximum_development_packed_bytes": 4996320
+  },
+  {
+    "config": {
+      "id": "RF_all_d2_n1",
+      "family": "RF",
+      "own": false,
+      "depth": 2,
+      "trees": 1
+    },
+    "development_relative_MAE": [
+      1.2656794219841994,
+      1.1076687468351063,
+      1.0465613913736787,
+      0.9870901690097581,
+      0.9157413190823928
+    ],
+    "maximum_development_packed_bytes": 132
+  },
+  {
+    "config": {
+      "id": "RF_all_d2_n4",
+      "family": "RF",
+      "own": false,
+      "depth": 2,
+      "trees": 4
+    },
+    "development_relative_MAE": [
+      1.2402930580395422,
+      1.0788271087443224,
+      1.0134128012007555,
+      0.9541499562464436,
+      0.8700245171820425
+    ],
+    "maximum_development_packed_bytes": 528
+  },
+  {
+    "config": {
+      "id": "RF_all_d2_n16",
+      "family": "RF",
+      "own": false,
+      "depth": 2,
+      "trees": 16
+    },
+    "development_relative_MAE": [
+      1.2162871840494736,
+      1.0511568398890097,
+      0.989625364161402,
+      0.9408106227187796,
+      0.8612789983984629
+    ],
+    "maximum_development_packed_bytes": 2112
+  },
+  {
+    "config": {
+      "id": "RF_all_d2_n64",
+      "family": "RF",
+      "own": false,
+      "depth": 2,
+      "trees": 64
+    },
+    "development_relative_MAE": [
+      1.2103725436250035,
+      1.053694569358737,
+      0.9903446903398437,
+      0.9410075892659958,
+      0.8593509979115321
+    ],
+    "maximum_development_packed_bytes": 8448
+  },
+  {
+    "config": {
+      "id": "RF_all_d2_n128",
+      "family": "RF",
+      "own": false,
+      "depth": 2,
+      "trees": 128
+    },
+    "development_relative_MAE": [
+      1.2146435149638062,
+      1.058301098948653,
+      0.9942168791090626,
+      0.9428598711111459,
+      0.8610180997897858
+    ],
+    "maximum_development_packed_bytes": 16896
+  },
+  {
+    "config": {
+      "id": "RF_all_d2_n256",
+      "family": "RF",
+      "own": false,
+      "depth": 2,
+      "trees": 256
+    },
+    "development_relative_MAE": [
+      1.2146511581885766,
+      1.0570424101843143,
+      0.9928601123204787,
+      0.9408936386789812,
+      0.8585339356832304
+    ],
+    "maximum_development_packed_bytes": 33792
+  },
+  {
+    "config": {
+      "id": "RF_all_d4_n1",
+      "family": "RF",
+      "own": false,
+      "depth": 4,
+      "trees": 1
+    },
+    "development_relative_MAE": [
+      1.293712166620023,
+      1.084796752458983,
+      1.0096200082784996,
+      0.9565162449520931,
+      0.8592746916666467
+    ],
+    "maximum_development_packed_bytes": 564
+  },
+  {
+    "config": {
+      "id": "RF_all_d4_n4",
+      "family": "RF",
+      "own": false,
+      "depth": 4,
+      "trees": 4
+    },
+    "development_relative_MAE": [
+      1.2008147727742586,
+      1.0345953176966878,
+      1.0003720004481689,
+      0.9422788804343846,
+      0.9884595057307198
+    ],
+    "maximum_development_packed_bytes": 2256
+  },
+  {
+    "config": {
+      "id": "RF_all_d4_n16",
+      "family": "RF",
+      "own": false,
+      "depth": 4,
+      "trees": 16
+    },
+    "development_relative_MAE": [
+      1.1530103323292653,
+      1.0021129813136735,
+      0.9611676980997622,
+      0.9364146590797828,
+      0.9455014979453433
+    ],
+    "maximum_development_packed_bytes": 9024
+  },
+  {
+    "config": {
+      "id": "RF_all_d4_n64",
+      "family": "RF",
+      "own": false,
+      "depth": 4,
+      "trees": 64
+    },
+    "development_relative_MAE": [
+      1.1349578868406043,
+      0.9963412313364947,
+      0.9614244904073734,
+      0.935467008548239,
+      0.9322216255999667
+    ],
+    "maximum_development_packed_bytes": 36096
+  },
+  {
+    "config": {
+      "id": "RF_all_d4_n128",
+      "family": "RF",
+      "own": false,
+      "depth": 4,
+      "trees": 128
+    },
+    "development_relative_MAE": [
+      1.1436144275541638,
+      1.0009585007632233,
+      0.9632824069118922,
+      0.9352734067432551,
+      0.9226777484437578
+    ],
+    "maximum_development_packed_bytes": 72192
+  },
+  {
+    "config": {
+      "id": "RF_all_d4_n256",
+      "family": "RF",
+      "own": false,
+      "depth": 4,
+      "trees": 256
+    },
+    "development_relative_MAE": [
+      1.1462751360137073,
+      1.003937339185481,
+      0.9629578271435978,
+      0.9356056890257177,
+      0.9251263897056465
+    ],
+    "maximum_development_packed_bytes": 144384
+  },
+  {
+    "config": {
+      "id": "RF_all_d6_n1",
+      "family": "RF",
+      "own": false,
+      "depth": 6,
+      "trees": 1
+    },
+    "development_relative_MAE": [
+      1.4970168159952937,
+      1.1807005659991525,
+      1.0347669167223845,
+      1.0412414989010907,
+      0.9736192781526146
+    ],
+    "maximum_development_packed_bytes": 2040
+  },
+  {
+    "config": {
+      "id": "RF_all_d6_n4",
+      "family": "RF",
+      "own": false,
+      "depth": 6,
+      "trees": 4
+    },
+    "development_relative_MAE": [
+      1.2280407505240047,
+      1.0530602687539543,
+      0.9905257461996192,
+      0.9867156741591279,
+      1.0782672932012276
+    ],
+    "maximum_development_packed_bytes": 8124
+  },
+  {
+    "config": {
+      "id": "RF_all_d6_n16",
+      "family": "RF",
+      "own": false,
+      "depth": 6,
+      "trees": 16
+    },
+    "development_relative_MAE": [
+      1.1360286616625797,
+      0.9899738650976366,
+      0.9569915328557337,
+      0.9597670184888161,
+      0.9718948467518272
+    ],
+    "maximum_development_packed_bytes": 31776
+  },
+  {
+    "config": {
+      "id": "RF_all_d6_n64",
+      "family": "RF",
+      "own": false,
+      "depth": 6,
+      "trees": 64
+    },
+    "development_relative_MAE": [
+      1.1252834471914501,
+      0.9889509927106078,
+      0.9576317879455768,
+      0.9371102460689031,
+      0.9405889120311478
+    ],
+    "maximum_development_packed_bytes": 127752
+  },
+  {
+    "config": {
+      "id": "RF_all_d6_n128",
+      "family": "RF",
+      "own": false,
+      "depth": 6,
+      "trees": 128
+    },
+    "development_relative_MAE": [
+      1.1318562974442317,
+      0.991154013615172,
+      0.9590942638282676,
+      0.9372705427530393,
+      0.9389566730131714
+    ],
+    "maximum_development_packed_bytes": 257124
+  },
+  {
+    "config": {
+      "id": "RF_all_d6_n256",
+      "family": "RF",
+      "own": false,
+      "depth": 6,
+      "trees": 256
+    },
+    "development_relative_MAE": [
+      1.132906246324039,
+      0.992995850360559,
+      0.9598218756743843,
+      0.9412906185257711,
+      0.9451268369892375
+    ],
+    "maximum_development_packed_bytes": 513852
+  },
+  {
+    "config": {
+      "id": "RF_all_d8_n1",
+      "family": "RF",
+      "own": false,
+      "depth": 8,
+      "trees": 1
+    },
+    "development_relative_MAE": [
+      1.386590080658782,
+      1.132938328367402,
+      1.069770350391751,
+      1.1017982804795918,
+      0.9918858616921461
+    ],
+    "maximum_development_packed_bytes": 5496
+  },
+  {
+    "config": {
+      "id": "RF_all_d8_n4",
+      "family": "RF",
+      "own": false,
+      "depth": 8,
+      "trees": 4
+    },
+    "development_relative_MAE": [
+      1.2277908634453667,
+      1.0791736040391158,
+      1.022270903830762,
+      0.9946573548782633,
+      1.09137456233433
+    ],
+    "maximum_development_packed_bytes": 21552
+  },
+  {
+    "config": {
+      "id": "RF_all_d8_n16",
+      "family": "RF",
+      "own": false,
+      "depth": 8,
+      "trees": 16
+    },
+    "development_relative_MAE": [
+      1.1372229757694396,
+      0.9936643695608235,
+      0.9665750457760808,
+      0.9759234441637122,
+      0.9958826853981911
+    ],
+    "maximum_development_packed_bytes": 85020
+  },
+  {
+    "config": {
+      "id": "RF_all_d8_n64",
+      "family": "RF",
+      "own": false,
+      "depth": 8,
+      "trees": 64
+    },
+    "development_relative_MAE": [
+      1.1253154987080132,
+      0.989017319290082,
+      0.9596375017384026,
+      0.9424675498013633,
+      0.9425797240275381
+    ],
+    "maximum_development_packed_bytes": 343608
+  },
+  {
+    "config": {
+      "id": "RF_all_d8_n128",
+      "family": "RF",
+      "own": false,
+      "depth": 8,
+      "trees": 128
+    },
+    "development_relative_MAE": [
+      1.1296569206140639,
+      0.9901541885481081,
+      0.9609753308744082,
+      0.9462500346901189,
+      0.9453300581779959
+    ],
+    "maximum_development_packed_bytes": 693156
+  },
+  {
+    "config": {
+      "id": "RF_all_d8_n256",
+      "family": "RF",
+      "own": false,
+      "depth": 8,
+      "trees": 256
+    },
+    "development_relative_MAE": [
+      1.1339997894044298,
+      0.9957348222742385,
+      0.9618690034532346,
+      0.9510313625894344,
+      0.955759690531576
+    ],
+    "maximum_development_packed_bytes": 1383540
+  },
+  {
+    "config": {
+      "id": "RF_all_d12_n1",
+      "family": "RF",
+      "own": false,
+      "depth": 12,
+      "trees": 1
+    },
+    "development_relative_MAE": [
+      1.3948054953632136,
+      1.1510171188062355,
+      1.1564408394004901,
+      1.2289534028703188,
+      1.2248273605789057
+    ],
+    "maximum_development_packed_bytes": 18564
+  },
+  {
+    "config": {
+      "id": "RF_all_d12_n4",
+      "family": "RF",
+      "own": false,
+      "depth": 12,
+      "trees": 4
+    },
+    "development_relative_MAE": [
+      1.2591442160057833,
+      1.074689277684737,
+      1.0636712764246103,
+      1.0465015552711219,
+      1.1162299791078603
+    ],
+    "maximum_development_packed_bytes": 73392
+  },
+  {
+    "config": {
+      "id": "RF_all_d12_n16",
+      "family": "RF",
+      "own": false,
+      "depth": 12,
+      "trees": 16
+    },
+    "development_relative_MAE": [
+      1.1560286798717605,
+      1.005243190049888,
+      0.9917995245474933,
+      1.0035967747846877,
+      1.021920558006163
+    ],
+    "maximum_development_packed_bytes": 293604
+  },
+  {
+    "config": {
+      "id": "RF_all_d12_n64",
+      "family": "RF",
+      "own": false,
+      "depth": 12,
+      "trees": 64
+    },
+    "development_relative_MAE": [
+      1.13581334540702,
+      0.997196087044888,
+      0.9756790438484076,
+      0.96169700600084,
+      0.9654892402077344
+    ],
+    "maximum_development_packed_bytes": 1175568
+  },
+  {
+    "config": {
+      "id": "RF_all_d12_n128",
+      "family": "RF",
+      "own": false,
+      "depth": 12,
+      "trees": 128
+    },
+    "development_relative_MAE": [
+      1.1375699870770706,
+      0.9972525639818318,
+      0.9751856269474821,
+      0.9663637327318831,
+      0.9678228908136326
+    ],
+    "maximum_development_packed_bytes": 2358228
+  },
+  {
+    "config": {
+      "id": "RF_all_d12_n256",
+      "family": "RF",
+      "own": false,
+      "depth": 12,
+      "trees": 256
+    },
+    "development_relative_MAE": [
+      1.1391063545744566,
+      1.0000972444762108,
+      0.9748146909830897,
+      0.9682183136339545,
+      0.971342021644841
+    ],
+    "maximum_development_packed_bytes": 4703388
+  },
+  {
+    "config": {
+      "id": "ET_own_d2_n1",
+      "family": "ET",
+      "own": true,
+      "depth": 2,
+      "trees": 1
+    },
+    "development_relative_MAE": [
+      1.241915826644833,
+      1.074293094845845,
+      1.0330646291609307,
+      1.0052032486919484,
+      0.9338308208756825
+    ],
+    "maximum_development_packed_bytes": 132
+  },
+  {
+    "config": {
+      "id": "ET_own_d2_n4",
+      "family": "ET",
+      "own": true,
+      "depth": 2,
+      "trees": 4
+    },
+    "development_relative_MAE": [
+      1.091901730693712,
+      0.9869884589348766,
+      0.9690993565153865,
+      0.9485723119540128,
+      0.9054157111110331
+    ],
+    "maximum_development_packed_bytes": 528
+  },
+  {
+    "config": {
+      "id": "ET_own_d2_n16",
+      "family": "ET",
+      "own": true,
+      "depth": 2,
+      "trees": 16
+    },
+    "development_relative_MAE": [
+      1.0841461090644868,
+      0.9914069198356504,
+      0.9702645508389086,
+      0.9451957887622623,
+      0.8971048653569671
+    ],
+    "maximum_development_packed_bytes": 2112
+  },
+  {
+    "config": {
+      "id": "ET_own_d2_n64",
+      "family": "ET",
+      "own": true,
+      "depth": 2,
+      "trees": 64
+    },
+    "development_relative_MAE": [
+      1.0891067601589584,
+      0.9851783621321953,
+      0.9590620885977249,
+      0.9380340365967786,
+      0.8929606015317635
+    ],
+    "maximum_development_packed_bytes": 8448
+  },
+  {
+    "config": {
+      "id": "ET_own_d2_n128",
+      "family": "ET",
+      "own": true,
+      "depth": 2,
+      "trees": 128
+    },
+    "development_relative_MAE": [
+      1.0973884169168562,
+      0.9866405213046504,
+      0.9577603014476773,
+      0.9361301147628153,
+      0.8903126101597509
+    ],
+    "maximum_development_packed_bytes": 16896
+  },
+  {
+    "config": {
+      "id": "ET_own_d2_n256",
+      "family": "ET",
+      "own": true,
+      "depth": 2,
+      "trees": 256
+    },
+    "development_relative_MAE": [
+      1.0965548566593366,
+      0.98595019552344,
+      0.9571394608538614,
+      0.9349904687454375,
+      0.888570108446945
+    ],
+    "maximum_development_packed_bytes": 33792
+  },
+  {
+    "config": {
+      "id": "ET_own_d4_n1",
+      "family": "ET",
+      "own": true,
+      "depth": 4,
+      "trees": 1
+    },
+    "development_relative_MAE": [
+      1.2239909284313777,
+      1.045793310418361,
+      0.9919880456351602,
+      0.9576229331121261,
+      0.8930946317576014
+    ],
+    "maximum_development_packed_bytes": 564
+  },
+  {
+    "config": {
+      "id": "ET_own_d4_n4",
+      "family": "ET",
+      "own": true,
+      "depth": 4,
+      "trees": 4
+    },
+    "development_relative_MAE": [
+      1.1373181083683364,
+      0.9917025781465,
+      0.9455863095053164,
+      0.9138916743145415,
+      0.8468449507949575
+    ],
+    "maximum_development_packed_bytes": 2256
+  },
+  {
+    "config": {
+      "id": "ET_own_d4_n16",
+      "family": "ET",
+      "own": true,
+      "depth": 4,
+      "trees": 16
+    },
+    "development_relative_MAE": [
+      1.1326686859460438,
+      0.9896212727934497,
+      0.9429979394402289,
+      0.9128189767550513,
+      0.8461864330097972
+    ],
+    "maximum_development_packed_bytes": 8916
+  },
+  {
+    "config": {
+      "id": "ET_own_d4_n64",
+      "family": "ET",
+      "own": true,
+      "depth": 4,
+      "trees": 64
+    },
+    "development_relative_MAE": [
+      1.14692384530589,
+      1.001256664359973,
+      0.9517904529714937,
+      0.9191861815236962,
+      0.8511548121355625
+    ],
+    "maximum_development_packed_bytes": 34512
+  },
+  {
+    "config": {
+      "id": "ET_own_d4_n128",
+      "family": "ET",
+      "own": true,
+      "depth": 4,
+      "trees": 128
+    },
+    "development_relative_MAE": [
+      1.1508278106539807,
+      1.0026742642290711,
+      0.9523473325351827,
+      0.9188884330241316,
+      0.8491701124241038
+    ],
+    "maximum_development_packed_bytes": 69384
+  },
+  {
+    "config": {
+      "id": "ET_own_d4_n256",
+      "family": "ET",
+      "own": true,
+      "depth": 4,
+      "trees": 256
+    },
+    "development_relative_MAE": [
+      1.1500109380646941,
+      1.0016325241668949,
+      0.9526473551591036,
+      0.9182282566635576,
+      0.8484882896037593
+    ],
+    "maximum_development_packed_bytes": 139272
+  },
+  {
+    "config": {
+      "id": "ET_own_d6_n1",
+      "family": "ET",
+      "own": true,
+      "depth": 6,
+      "trees": 1
+    },
+    "development_relative_MAE": [
+      1.238592234957338,
+      1.0562130081608947,
+      0.9956038931115486,
+      0.9444540911923824,
+      0.8799932318850813
+    ],
+    "maximum_development_packed_bytes": 2040
+  },
+  {
+    "config": {
+      "id": "ET_own_d6_n4",
+      "family": "ET",
+      "own": true,
+      "depth": 6,
+      "trees": 4
+    },
+    "development_relative_MAE": [
+      1.2015504316144439,
+      1.030065300630856,
+      0.9654386444120021,
+      0.9195871915638362,
+      0.843940819186201
+    ],
+    "maximum_development_packed_bytes": 7908
+  },
+  {
+    "config": {
+      "id": "ET_own_d6_n16",
+      "family": "ET",
+      "own": true,
+      "depth": 6,
+      "trees": 16
+    },
+    "development_relative_MAE": [
+      1.1670043989515184,
+      1.004421797910741,
+      0.9471384608632004,
+      0.9069946833814955,
+      0.8322738260433075
+    ],
+    "maximum_development_packed_bytes": 29148
+  },
+  {
+    "config": {
+      "id": "ET_own_d6_n64",
+      "family": "ET",
+      "own": true,
+      "depth": 6,
+      "trees": 64
+    },
+    "development_relative_MAE": [
+      1.1625330573713866,
+      1.0016080412553363,
+      0.9424134547163517,
+      0.9062029387785427,
+      0.8287743306914308
+    ],
+    "maximum_development_packed_bytes": 116484
+  },
+  {
+    "config": {
+      "id": "ET_own_d6_n128",
+      "family": "ET",
+      "own": true,
+      "depth": 6,
+      "trees": 128
+    },
+    "development_relative_MAE": [
+      1.1670048599755516,
+      1.0047895780262603,
+      0.9444594095541964,
+      0.9079844336777092,
+      0.8302991094460279
+    ],
+    "maximum_development_packed_bytes": 230844
+  },
+  {
+    "config": {
+      "id": "ET_own_d6_n256",
+      "family": "ET",
+      "own": true,
+      "depth": 6,
+      "trees": 256
+    },
+    "development_relative_MAE": [
+      1.1659973582557728,
+      1.0035964312876737,
+      0.9444343218962045,
+      0.9080009672549781,
+      0.8301834324372913
+    ],
+    "maximum_development_packed_bytes": 462444
+  },
+  {
+    "config": {
+      "id": "ET_own_d8_n1",
+      "family": "ET",
+      "own": true,
+      "depth": 8,
+      "trees": 1
+    },
+    "development_relative_MAE": [
+      1.2795642348162357,
+      1.1011271863741812,
+      1.0276101156305562,
+      0.9808370769523337,
+      0.8644943892884841
+    ],
+    "maximum_development_packed_bytes": 6108
+  },
+  {
+    "config": {
+      "id": "ET_own_d8_n4",
+      "family": "ET",
+      "own": true,
+      "depth": 8,
+      "trees": 4
+    },
+    "development_relative_MAE": [
+      1.1975383406713966,
+      1.027984278188406,
+      0.9584628711181761,
+      0.9149407424695216,
+      0.8380814165123421
+    ],
+    "maximum_development_packed_bytes": 20148
+  },
+  {
+    "config": {
+      "id": "ET_own_d8_n16",
+      "family": "ET",
+      "own": true,
+      "depth": 8,
+      "trees": 16
+    },
+    "development_relative_MAE": [
+      1.1841485416582642,
+      1.0076593536682583,
+      0.9429749011983223,
+      0.9051301632525686,
+      0.8294785213668696
+    ],
+    "maximum_development_packed_bytes": 80556
+  },
+  {
+    "config": {
+      "id": "ET_own_d8_n64",
+      "family": "ET",
+      "own": true,
+      "depth": 8,
+      "trees": 64
+    },
+    "development_relative_MAE": [
+      1.1774946598444858,
+      1.0079870313582695,
+      0.9404083030149234,
+      0.9039578633216244,
+      0.8256206432390444
+    ],
+    "maximum_development_packed_bytes": 303216
+  },
+  {
+    "config": {
+      "id": "ET_own_d8_n128",
+      "family": "ET",
+      "own": true,
+      "depth": 8,
+      "trees": 128
+    },
+    "development_relative_MAE": [
+      1.1777403974706449,
+      1.0081969969603524,
+      0.9407044597474998,
+      0.9045670906819566,
+      0.8263480361048251
+    ],
+    "maximum_development_packed_bytes": 606720
+  },
+  {
+    "config": {
+      "id": "ET_own_d8_n256",
+      "family": "ET",
+      "own": true,
+      "depth": 8,
+      "trees": 256
+    },
+    "development_relative_MAE": [
+      1.1781727324634754,
+      1.0076268166314746,
+      0.9412240489075371,
+      0.9043140470089085,
+      0.8264497793102791
+    ],
+    "maximum_development_packed_bytes": 1232880
+  },
+  {
+    "config": {
+      "id": "ET_own_d12_n1",
+      "family": "ET",
+      "own": true,
+      "depth": 12,
+      "trees": 1
+    },
+    "development_relative_MAE": [
+      1.3225061716392308,
+      1.1540751877931512,
+      1.0684574972258336,
+      1.034746227274673,
+      0.9544297331806201
+    ],
+    "maximum_development_packed_bytes": 24036
+  },
+  {
+    "config": {
+      "id": "ET_own_d12_n4",
+      "family": "ET",
+      "own": true,
+      "depth": 12,
+      "trees": 4
+    },
+    "development_relative_MAE": [
+      1.2140521349559548,
+      1.0465553237990806,
+      0.9708789037555206,
+      0.9338975412035899,
+      0.859866247219044
+    ],
+    "maximum_development_packed_bytes": 85272
+  },
+  {
+    "config": {
+      "id": "ET_own_d12_n16",
+      "family": "ET",
+      "own": true,
+      "depth": 12,
+      "trees": 16
+    },
+    "development_relative_MAE": [
+      1.193249397598684,
+      1.0233730777129846,
+      0.9541053071667333,
+      0.9164566305336518,
+      0.8378069227814621
+    ],
+    "maximum_development_packed_bytes": 345408
+  },
+  {
+    "config": {
+      "id": "ET_own_d12_n64",
+      "family": "ET",
+      "own": true,
+      "depth": 12,
+      "trees": 64
+    },
+    "development_relative_MAE": [
+      1.1850951294897,
+      1.0127411054491253,
+      0.944619408654633,
+      0.9087146253112844,
+      0.832302519912199
+    ],
+    "maximum_development_packed_bytes": 1338360
+  },
+  {
+    "config": {
+      "id": "ET_own_d12_n128",
+      "family": "ET",
+      "own": true,
+      "depth": 12,
+      "trees": 128
+    },
+    "development_relative_MAE": [
+      1.1843758980168462,
+      1.013294117202056,
+      0.9435417617497986,
+      0.907912805728841,
+      0.8326467201482753
+    ],
+    "maximum_development_packed_bytes": 2655156
+  },
+  {
+    "config": {
+      "id": "ET_own_d12_n256",
+      "family": "ET",
+      "own": true,
+      "depth": 12,
+      "trees": 256
+    },
+    "development_relative_MAE": [
+      1.184013666378818,
+      1.0137666923145363,
+      0.9440658069106935,
+      0.9077959122161389,
+      0.8313585326162597
+    ],
+    "maximum_development_packed_bytes": 5237448
+  },
+  {
+    "config": {
+      "id": "ET_all_d2_n1",
+      "family": "ET",
+      "own": false,
+      "depth": 2,
+      "trees": 1
+    },
+    "development_relative_MAE": [
+      1.2650779946335173,
+      1.1135936259650203,
+      1.0509584017344897,
+      0.9863089853604435,
+      0.9012692929633531
+    ],
+    "maximum_development_packed_bytes": 132
+  },
+  {
+    "config": {
+      "id": "ET_all_d2_n4",
+      "family": "ET",
+      "own": false,
+      "depth": 2,
+      "trees": 4
+    },
+    "development_relative_MAE": [
+      1.1529860417813553,
+      1.0264934167904982,
+      0.9767895008449697,
+      0.9352775230021398,
+      0.8691572509700823
+    ],
+    "maximum_development_packed_bytes": 528
+  },
+  {
+    "config": {
+      "id": "ET_all_d2_n16",
+      "family": "ET",
+      "own": false,
+      "depth": 2,
+      "trees": 16
+    },
+    "development_relative_MAE": [
+      1.1021490968031422,
+      0.9859725808527505,
+      0.9417621777364339,
+      0.9075110892074009,
+      0.8585829142021589
+    ],
+    "maximum_development_packed_bytes": 2112
+  },
+  {
+    "config": {
+      "id": "ET_all_d2_n64",
+      "family": "ET",
+      "own": false,
+      "depth": 2,
+      "trees": 64
+    },
+    "development_relative_MAE": [
+      1.0803224991985845,
+      0.9865468831961022,
+      0.9470787215679799,
+      0.9153431112323087,
+      0.8663381318738471
+    ],
+    "maximum_development_packed_bytes": 8448
+  },
+  {
+    "config": {
+      "id": "ET_all_d2_n128",
+      "family": "ET",
+      "own": false,
+      "depth": 2,
+      "trees": 128
+    },
+    "development_relative_MAE": [
+      1.0827959187742704,
+      0.988601457593797,
+      0.9488522236617817,
+      0.916156817972044,
+      0.8637745701336206
+    ],
+    "maximum_development_packed_bytes": 16896
+  },
+  {
+    "config": {
+      "id": "ET_all_d2_n256",
+      "family": "ET",
+      "own": false,
+      "depth": 2,
+      "trees": 256
+    },
+    "development_relative_MAE": [
+      1.078233076644099,
+      0.9882691796231929,
+      0.9488299360592564,
+      0.9170484571762962,
+      0.8650118264487062
+    ],
+    "maximum_development_packed_bytes": 33792
+  },
+  {
+    "config": {
+      "id": "ET_all_d4_n1",
+      "family": "ET",
+      "own": false,
+      "depth": 4,
+      "trees": 1
+    },
+    "development_relative_MAE": [
+      1.2893212421323328,
+      1.108763212426451,
+      1.0316964471649823,
+      0.9683371540235252,
+      0.8713491183330185
+    ],
+    "maximum_development_packed_bytes": 564
+  },
+  {
+    "config": {
+      "id": "ET_all_d4_n4",
+      "family": "ET",
+      "own": false,
+      "depth": 4,
+      "trees": 4
+    },
+    "development_relative_MAE": [
+      1.1331094669252961,
+      1.019059708265882,
+      0.9743687428834792,
+      0.938351960757951,
+      0.8596905672139835
+    ],
+    "maximum_development_packed_bytes": 2256
+  },
+  {
+    "config": {
+      "id": "ET_all_d4_n16",
+      "family": "ET",
+      "own": false,
+      "depth": 4,
+      "trees": 16
+    },
+    "development_relative_MAE": [
+      1.1124213647202987,
+      0.9883239601727397,
+      0.9453224241689675,
+      0.9064737555114798,
+      0.8427056179619069
+    ],
+    "maximum_development_packed_bytes": 8988
+  },
+  {
+    "config": {
+      "id": "ET_all_d4_n64",
+      "family": "ET",
+      "own": false,
+      "depth": 4,
+      "trees": 64
+    },
+    "development_relative_MAE": [
+      1.0930887404963359,
+      0.983094494612797,
+      0.9434523875528121,
+      0.9086938481331718,
+      0.8470515337621496
+    ],
+    "maximum_development_packed_bytes": 35628
+  },
+  {
+    "config": {
+      "id": "ET_all_d4_n128",
+      "family": "ET",
+      "own": false,
+      "depth": 4,
+      "trees": 128
+    },
+    "development_relative_MAE": [
+      1.0896405147066162,
+      0.9796167690840752,
+      0.9426494471975828,
+      0.908807467491199,
+      0.8466540400906823
+    ],
+    "maximum_development_packed_bytes": 71112
+  },
+  {
+    "config": {
+      "id": "ET_all_d4_n256",
+      "family": "ET",
+      "own": false,
+      "depth": 4,
+      "trees": 256
+    },
+    "development_relative_MAE": [
+      1.0867991864066824,
+      0.9794964372540962,
+      0.9427044637423507,
+      0.9099351099343123,
+      0.8487708412956732
+    ],
+    "maximum_development_packed_bytes": 142584
+  },
+  {
+    "config": {
+      "id": "ET_all_d6_n1",
+      "family": "ET",
+      "own": false,
+      "depth": 6,
+      "trees": 1
+    },
+    "development_relative_MAE": [
+      1.3665565492604526,
+      1.1294469428786769,
+      1.0467461700069796,
+      1.0037575638035323,
+      0.8903411924585951
+    ],
+    "maximum_development_packed_bytes": 2076
+  },
+  {
+    "config": {
+      "id": "ET_all_d6_n4",
+      "family": "ET",
+      "own": false,
+      "depth": 6,
+      "trees": 4
+    },
+    "development_relative_MAE": [
+      1.1579304763862466,
+      1.014912115650034,
+      0.9774855248836957,
+      0.9808332770723603,
+      0.987550352652432
+    ],
+    "maximum_development_packed_bytes": 8484
+  },
+  {
+    "config": {
+      "id": "ET_all_d6_n16",
+      "family": "ET",
+      "own": false,
+      "depth": 6,
+      "trees": 16
+    },
+    "development_relative_MAE": [
+      1.07782116790027,
+      0.9702925391558502,
+      0.9389230688399247,
+      0.9157073679988269,
+      0.8776698522351486
+    ],
+    "maximum_development_packed_bytes": 31632
+  },
+  {
+    "config": {
+      "id": "ET_all_d6_n64",
+      "family": "ET",
+      "own": false,
+      "depth": 6,
+      "trees": 64
+    },
+    "development_relative_MAE": [
+      1.0768105401011188,
+      0.9671021126464541,
+      0.9374592424503118,
+      0.9102514736765551,
+      0.8653179691668854
+    ],
+    "maximum_development_packed_bytes": 127320
+  },
+  {
+    "config": {
+      "id": "ET_all_d6_n128",
+      "family": "ET",
+      "own": false,
+      "depth": 6,
+      "trees": 128
+    },
+    "development_relative_MAE": [
+      1.076453042070947,
+      0.9696467845499681,
+      0.9404785795615581,
+      0.9122857379507475,
+      0.8660099777974875
+    ],
+    "maximum_development_packed_bytes": 253092
+  },
+  {
+    "config": {
+      "id": "ET_all_d6_n256",
+      "family": "ET",
+      "own": false,
+      "depth": 6,
+      "trees": 256
+    },
+    "development_relative_MAE": [
+      1.0757243436111157,
+      0.9695285548169675,
+      0.9394415555039378,
+      0.9118018761946165,
+      0.8624757580558691
+    ],
+    "maximum_development_packed_bytes": 508596
+  },
+  {
+    "config": {
+      "id": "ET_all_d8_n1",
+      "family": "ET",
+      "own": false,
+      "depth": 8,
+      "trees": 1
+    },
+    "development_relative_MAE": [
+      1.3428254976134932,
+      1.1251178686707253,
+      1.0543977903896322,
+      1.0591445700669835,
+      1.2518814194557237
+    ],
+    "maximum_development_packed_bytes": 6252
+  },
+  {
+    "config": {
+      "id": "ET_all_d8_n4",
+      "family": "ET",
+      "own": false,
+      "depth": 8,
+      "trees": 4
+    },
+    "development_relative_MAE": [
+      1.1903227689272375,
+      1.0445893367026569,
+      1.008145769674904,
+      0.9894849221195946,
+      1.026401344114294
+    ],
+    "maximum_development_packed_bytes": 22776
+  },
+  {
+    "config": {
+      "id": "ET_all_d8_n16",
+      "family": "ET",
+      "own": false,
+      "depth": 8,
+      "trees": 16
+    },
+    "development_relative_MAE": [
+      1.0842242690315127,
+      0.9739383407903522,
+      0.9518852962900902,
+      0.9372949826029275,
+      0.9049403302465556
+    ],
+    "maximum_development_packed_bytes": 89268
+  },
+  {
+    "config": {
+      "id": "ET_all_d8_n64",
+      "family": "ET",
+      "own": false,
+      "depth": 8,
+      "trees": 64
+    },
+    "development_relative_MAE": [
+      1.0751638617316004,
+      0.9676222958929284,
+      0.9451252448206477,
+      0.9262750871129279,
+      0.8928466422824904
+    ],
+    "maximum_development_packed_bytes": 363120
+  },
+  {
+    "config": {
+      "id": "ET_all_d8_n128",
+      "family": "ET",
+      "own": false,
+      "depth": 8,
+      "trees": 128
+    },
+    "development_relative_MAE": [
+      1.0725584666836416,
+      0.9652061488579703,
+      0.9418406168233625,
+      0.9196536619070766,
+      0.8863694034780045
+    ],
+    "maximum_development_packed_bytes": 717996
+  },
+  {
+    "config": {
+      "id": "ET_all_d8_n256",
+      "family": "ET",
+      "own": false,
+      "depth": 8,
+      "trees": 256
+    },
+    "development_relative_MAE": [
+      1.0711543889876207,
+      0.9650296788631989,
+      0.9420873335320566,
+      0.919471902369868,
+      0.8872338095003522
+    ],
+    "maximum_development_packed_bytes": 1429296
+  },
+  {
+    "config": {
+      "id": "ET_all_d12_n1",
+      "family": "ET",
+      "own": false,
+      "depth": 12,
+      "trees": 1
+    },
+    "development_relative_MAE": [
+      1.4129524587350746,
+      1.2552627475023261,
+      1.235268786437019,
+      1.1433258297791327,
+      1.1723490925222062
+    ],
+    "maximum_development_packed_bytes": 25368
+  },
+  {
+    "config": {
+      "id": "ET_all_d12_n4",
+      "family": "ET",
+      "own": false,
+      "depth": 12,
+      "trees": 4
+    },
+    "development_relative_MAE": [
+      1.1930870462730627,
+      1.0661151952890031,
+      1.035117752142357,
+      1.0088531475863904,
+      1.0703567139402181
+    ],
+    "maximum_development_packed_bytes": 97476
+  },
+  {
+    "config": {
+      "id": "ET_all_d12_n16",
+      "family": "ET",
+      "own": false,
+      "depth": 12,
+      "trees": 16
+    },
+    "development_relative_MAE": [
+      1.0815776504258174,
+      0.9724651246629268,
+      0.9590021594523876,
+      0.9392754719654226,
+      0.9320834594449942
+    ],
+    "maximum_development_packed_bytes": 385728
+  },
+  {
+    "config": {
+      "id": "ET_all_d12_n64",
+      "family": "ET",
+      "own": false,
+      "depth": 12,
+      "trees": 64
+    },
+    "development_relative_MAE": [
+      1.0755513908946233,
+      0.9619023729684198,
+      0.9458003240728691,
+      0.9326391981856981,
+      0.917627833752186
+    ],
+    "maximum_development_packed_bytes": 1480956
+  },
+  {
+    "config": {
+      "id": "ET_all_d12_n128",
+      "family": "ET",
+      "own": false,
+      "depth": 12,
+      "trees": 128
+    },
+    "development_relative_MAE": [
+      1.0759548969409203,
+      0.9597594297186957,
+      0.9483764079956938,
+      0.9362055060221847,
+      0.9267513051387376
+    ],
+    "maximum_development_packed_bytes": 2913888
+  },
+  {
+    "config": {
+      "id": "ET_all_d12_n256",
+      "family": "ET",
+      "own": false,
+      "depth": 12,
+      "trees": 256
+    },
+    "development_relative_MAE": [
+      1.0752096301688152,
+      0.96052399222479,
+      0.9466222628017297,
+      0.9334668688271829,
+      0.9211748352448016
+    ],
+    "maximum_development_packed_bytes": 5791704
+  }
+]

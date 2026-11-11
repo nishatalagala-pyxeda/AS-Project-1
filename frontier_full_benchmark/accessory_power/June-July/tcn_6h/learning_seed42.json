@@ -1,0 +1,82 @@
+[
+  {
+    "epoch": 1,
+    "train_normalized_MAE": 0.5283172005682546,
+    "validation_normalized_MAE": 0.554778516292572
+  },
+  {
+    "epoch": 2,
+    "train_normalized_MAE": 0.48774135268284063,
+    "validation_normalized_MAE": 0.524483323097229
+  },
+  {
+    "epoch": 3,
+    "train_normalized_MAE": 0.4697305341555649,
+    "validation_normalized_MAE": 0.5094996690750122
+  },
+  {
+    "epoch": 4,
+    "train_normalized_MAE": 0.46064985066553527,
+    "validation_normalized_MAE": 0.5010257959365845
+  },
+  {
+    "epoch": 5,
+    "train_normalized_MAE": 0.45311994435881303,
+    "validation_normalized_MAE": 0.5003153681755066
+  },
+  {
+    "epoch": 6,
+    "train_normalized_MAE": 0.44882408557939546,
+    "validation_normalized_MAE": 0.5003491044044495
+  },
+  {
+    "epoch": 7,
+    "train_normalized_MAE": 0.44560373568254696,
+    "validation_normalized_MAE": 0.49590015411376953
+  },
+  {
+    "epoch": 8,
+    "train_normalized_MAE": 0.4443654178800839,
+    "validation_normalized_MAE": 0.5002338886260986
+  },
+  {
+    "epoch": 9,
+    "train_normalized_MAE": 0.44229993143868973,
+    "validation_normalized_MAE": 0.49307891726493835
+  },
+  {
+    "epoch": 10,
+    "train_normalized_MAE": 0.4405877894506141,
+    "validation_normalized_MAE": 0.4957449734210968
+  },
+  {
+    "epoch": 11,
+    "train_normalized_MAE": 0.4402103624598166,
+    "validation_normalized_MAE": 0.4924542009830475
+  },
+  {
+    "epoch": 12,
+    "train_normalized_MAE": 0.4381515647765921,
+    "validation_normalized_MAE": 0.5070966482162476
+  },
+  {
+    "epoch": 13,
+    "train_normalized_MAE": 0.4374232173217424,
+    "validation_normalized_MAE": 0.4922278821468353
+  },
+  {
+    "epoch": 14,
+    "train_normalized_MAE": 0.4357851488703739,
+    "validation_normalized_MAE": 0.4965871572494507
+  },
+  {
+    "epoch": 15,
+    "train_normalized_MAE": 0.4344950432337778,
+    "validation_normalized_MAE": 0.49674099683761597
+  },
+  {
+    "epoch": 16,
+    "train_normalized_MAE": 0.4337965901374242,
+    "validation_normalized_MAE": 0.5075046420097351
+  }
+]

@@ -1,0 +1,52 @@
+{
+  "10": {
+    "model": "Persistence",
+    "horizon_minutes": 10,
+    "development_mean_relative_MAE": 1.0,
+    "fold_relative_MAE": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "30": {
+    "model": "boosted_own6h",
+    "horizon_minutes": 30,
+    "development_mean_relative_MAE": 0.9422692378227698,
+    "fold_relative_MAE": [
+      0.9151475095873112,
+      0.9280678585297746,
+      0.9835923453512236
+    ]
+  },
+  "60": {
+    "model": "boosted_own6h",
+    "horizon_minutes": 60,
+    "development_mean_relative_MAE": 0.8744232537789604,
+    "fold_relative_MAE": [
+      0.8511629625446093,
+      0.8841323472511546,
+      0.8879744515411171
+    ]
+  },
+  "120": {
+    "model": "ridge_own24h",
+    "horizon_minutes": 120,
+    "development_mean_relative_MAE": 0.8742326206258689,
+    "fold_relative_MAE": [
+      0.8350412703178183,
+      0.8922682118109496,
+      0.8953883797488388
+    ]
+  },
+  "360": {
+    "model": "ridge_own24h",
+    "horizon_minutes": 360,
+    "development_mean_relative_MAE": 0.7885132685804702,
+    "fold_relative_MAE": [
+      0.7608282915692479,
+      0.8195228517013609,
+      0.7851886624708015
+    ]
+  }
+}

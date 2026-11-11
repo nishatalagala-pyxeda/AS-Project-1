@@ -1,0 +1,191 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Frontier forecasting benchmark</title><style>body{font:16px/1.5 system-ui;max-width:1200px;margin:40px auto;padding:0 24px;color:#23303b}table{border-collapse:collapse;font-size:14px;width:100%}th,td{padding:8px;border-bottom:1px solid #ddd;text-align:right}th{background:#eef2f5}th:first-child,td:first-child{text-align:left}img{max-width:100%}.note{padding:15px;background:#f3f5f7}code{overflow-wrap:anywhere}</style></head><body><h1>Accessory-power and waste-heat forecasting</h1>
+<p>Broad benchmark:15 learned model configurations and three baselines, five forecast horizons, histories from one to24 hours, three chronological development backtests, and reused October–December confirmation. Accessory power was completed first, followed by waste heat.</p>
+<p class="note">October–December was examined during earlier exploration. These are exploratory confirmation results, not performance on a new independent lockbox. Each horizon's model was selected using mean relative MAE in June–July, August and September, before this run scored confirmation.</p><h2>Accessory power</h2><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Horizon (min)</th>
+      <th>Selected model</th>
+      <th>MAE (kW)</th>
+      <th>Gain vs persistence (%)</th>
+      <th>Daily MAE difference 95% interval (kW)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>10</td>
+      <td>Boosted trees 6h</td>
+      <td>19.493</td>
+      <td>9.7</td>
+      <td>[-2.598, -1.637]</td>
+    </tr>
+    <tr>
+      <td>30</td>
+      <td>Boosted trees 6h</td>
+      <td>33.974</td>
+      <td>17.8</td>
+      <td>[-9.010, -5.803]</td>
+    </tr>
+    <tr>
+      <td>60</td>
+      <td>Boosted trees 6h</td>
+      <td>40.368</td>
+      <td>14.3</td>
+      <td>[-8.323, -5.295]</td>
+    </tr>
+    <tr>
+      <td>120</td>
+      <td>Ridge 24h target-only</td>
+      <td>46.733</td>
+      <td>10.4</td>
+      <td>[-7.363, -3.420]</td>
+    </tr>
+    <tr>
+      <td>360</td>
+      <td>Ridge 24h target-only</td>
+      <td>53.471</td>
+      <td>16.3</td>
+      <td>[-13.148, -7.725]</td>
+    </tr>
+  </tbody>
+</table><p>Positive gain means lower absolute error than holding the current value unchanged. A difference interval entirely below zero favors the selected forecast, conditional on this test period.</p><img src="accessory_power/comparison.png" alt="Accessory power comparison"><p><a href="accessory_power/report.html">Full accessory power report:all candidates, development stability, telemetry ablations, peak errors, interval widths and seeds</a></p><p>At one hour, high-demand MAE is 188.770 kW for the selected model versus 164.966 kW for persistence. Overall gains and performance during peaks are separate findings.</p><h3>Nominal 90% prediction intervals</h3><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Horizon (min)</th>
+      <th>Static coverage (%)</th>
+      <th>7-day coverage (%)</th>
+      <th>30-day coverage (%)</th>
+      <th>7-day width (kW)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>10</td>
+      <td>76.0</td>
+      <td>89.5</td>
+      <td>88.0</td>
+      <td>109.06</td>
+    </tr>
+    <tr>
+      <td>30</td>
+      <td>68.8</td>
+      <td>89.0</td>
+      <td>87.0</td>
+      <td>157.14</td>
+    </tr>
+    <tr>
+      <td>60</td>
+      <td>77.7</td>
+      <td>89.3</td>
+      <td>88.2</td>
+      <td>183.43</td>
+    </tr>
+    <tr>
+      <td>120</td>
+      <td>76.6</td>
+      <td>89.1</td>
+      <td>88.2</td>
+      <td>195.57</td>
+    </tr>
+    <tr>
+      <td>360</td>
+      <td>71.4</td>
+      <td>89.0</td>
+      <td>88.0</td>
+      <td>213.94</td>
+    </tr>
+  </tbody>
+</table><p>Exploratory diagnostic added after static intervals undercovered confirmation. Both 7-day and 30-day windows are reported without selecting a winner on confirmation. Only resolved forecast errors with target time &lt;= current forecast origin are used.</p><h2>Waste heat</h2><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Horizon (min)</th>
+      <th>Selected model</th>
+      <th>MAE (MW)</th>
+      <th>Gain vs persistence (%)</th>
+      <th>Daily MAE difference 95% interval (MW)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>10</td>
+      <td>Persistence</td>
+      <td>0.864</td>
+      <td>0.0</td>
+      <td>[0.000, 0.000]</td>
+    </tr>
+    <tr>
+      <td>30</td>
+      <td>Boosted trees 6h target-only</td>
+      <td>1.230</td>
+      <td>4.7</td>
+      <td>[-0.091, -0.032]</td>
+    </tr>
+    <tr>
+      <td>60</td>
+      <td>Boosted trees 6h target-only</td>
+      <td>1.454</td>
+      <td>7.2</td>
+      <td>[-0.157, -0.073]</td>
+    </tr>
+    <tr>
+      <td>120</td>
+      <td>Ridge 24h target-only</td>
+      <td>1.659</td>
+      <td>6.7</td>
+      <td>[-0.189, -0.053]</td>
+    </tr>
+    <tr>
+      <td>360</td>
+      <td>Ridge 24h target-only</td>
+      <td>1.929</td>
+      <td>16.7</td>
+      <td>[-0.483, -0.298]</td>
+    </tr>
+  </tbody>
+</table><p>Positive gain means lower absolute error than holding the current value unchanged. A difference interval entirely below zero favors the selected forecast, conditional on this test period.</p><img src="waste_heat/comparison.png" alt="Waste heat comparison"><p><a href="waste_heat/report.html">Full waste heat report:all candidates, development stability, telemetry ablations, peak errors, interval widths and seeds</a></p><p>At one hour, high-demand MAE is 6.524 MW for the selected model versus 5.268 MW for persistence. Overall gains and performance during peaks are separate findings.</p><h3>Nominal 90% prediction intervals</h3><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Horizon (min)</th>
+      <th>Static coverage (%)</th>
+      <th>7-day coverage (%)</th>
+      <th>30-day coverage (%)</th>
+      <th>7-day width (MW)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>10</td>
+      <td>88.4</td>
+      <td>90.2</td>
+      <td>90.7</td>
+      <td>4.43</td>
+    </tr>
+    <tr>
+      <td>30</td>
+      <td>90.8</td>
+      <td>90.2</td>
+      <td>91.3</td>
+      <td>5.88</td>
+    </tr>
+    <tr>
+      <td>60</td>
+      <td>91.4</td>
+      <td>90.4</td>
+      <td>91.7</td>
+      <td>6.69</td>
+    </tr>
+    <tr>
+      <td>120</td>
+      <td>91.0</td>
+      <td>90.0</td>
+      <td>91.4</td>
+      <td>7.17</td>
+    </tr>
+    <tr>
+      <td>360</td>
+      <td>90.0</td>
+      <td>89.6</td>
+      <td>91.1</td>
+      <td>8.34</td>
+    </tr>
+  </tbody>
+</table><p>Exploratory diagnostic motivated by static accessory-power intervals under-covering confirmation. Specified before waste-heat confirmation. Both 7-day and 30-day windows are reported without choosing one on confirmation. Only resolved forecast errors with target time &lt;= current forecast origin are used.</p><h2>Reading the results</h2><p>90% coverage is the fraction of actual readings inside the forecast intervals. Static bands use validation errors; rolling bands use only already-resolved errors. Coverage substantially below90% indicates that those uncertainty bands did not transfer reliably. Point-error improvements and uncertainty calibration are separate findings.</p><p>All models use the same complete-history forecast origins. This removes data around source gaps, including many May/June records. Fixed settings give broad coverage of model families rather than exhaustive tuning. Independent verification recalculates saved metrics and interval coverage, checks common timestamps and source hashes, and confirms selection used development scores.</p><p>Only already-observed telemetry is used. Original workbook unchanged. Waste heat remains a calculated estimate with the source’s fixed thermal constants and zero-clipping assumptions. No operating changes or causal efficiency claims are implied.</p><p><a href="run_benchmark.py">Benchmark code</a> · <a href="data.py">Data preparation</a> · <a href="reproduce.txt">Reproduction instructions</a></p></body></html>

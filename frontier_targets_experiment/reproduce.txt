@@ -1,0 +1,34 @@
+Use Python 3.12 with the pinned packages in requirements.txt in an isolated
+environment. This run used the bundled Python and additional libraries from
+/private/tmp/frontier_experiment_deps, on an Apple Silicon CPU.
+
+From this directory:
+python run_targets.py --task all --source "/absolute/path/Frontier HPC & Facility Data.xlsx" --deps /path/to/isolated/site-packages --output /path/to/results
+
+The six target tasks execute sequentially. Each saves its results and the
+combined report is updated after every task. Tasks can also be run individually
+with --task temperature, temperature_events, cooling_transitions, waste_heat,
+accessory_power or power_ramps. Use a new output directory to preserve this run.
+
+For the recorded directory and environment, additional waste-heat LSTM seeds:
+python replicate_heat.py
+
+This helper uses run_targets.py's default source/dependencies/output settings;
+matching arguments may also be passed through to its imported argument parser.
+
+Rebuild HTML/plot/combined JSON without training:
+python run_targets.py --report-only
+
+Models, histories and held-out predictions are stored in each target directory.
+The input workbook is read directly, never edited. All thresholds and input
+normalization parameters are determined before the test period. Alert cutoffs
+maximize validation F1, then remain fixed. Training/validation/test target dates
+do not overlap. Context from before a split is allowed as past information.
+
+Main screening uses LSTM seed42. Additional seeds43/44 are confirmations for
+waste heat, after screening identified an apparent gain. All seeds are reported;
+none is selected as a substitute for the original run. Numerical reproducibility
+can vary across hardware and library versions.
+
+The HTML's executive findings describe this recorded run. If changing model
+settings or data, revise those descriptions to match new measured results.

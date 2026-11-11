@@ -1,0 +1,54 @@
+{
+  "source": "/Users/nishatalagala/Downloads/Frontier HPC & Facility Data.xlsx",
+  "source_sha256": "56a48dd66382896890dfc2e4940ec90f894bb85795ee8e85ea2708dda05796bf",
+  "history_steps": 36,
+  "input_columns": [
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "I",
+    "O",
+    "P",
+    "Q",
+    "N"
+  ],
+  "calendar_features": [
+    "hour_sin",
+    "hour_cos",
+    "weekday_sin",
+    "weekday_cos"
+  ],
+  "input_notes": "Past calculated waste heat N is included for every model; no future inputs or H/PUE values are used.",
+  "splits": {
+    "train": {
+      "n": 26490,
+      "first_origin": "2023-01-01 05:50:00",
+      "last_origin": "2023-07-31 22:50:00",
+      "last_target": "2023-07-31 23:50:00"
+    },
+    "validation": {
+      "n": 8421,
+      "first_origin": "2023-08-01 00:00:00",
+      "last_origin": "2023-09-30 22:50:00",
+      "last_target": "2023-09-30 23:50:00"
+    },
+    "test": {
+      "n": 13242,
+      "first_origin": "2023-10-01 00:00:00",
+      "last_origin": "2023-12-31 22:50:00",
+      "last_target": "2023-12-31 23:50:00"
+    }
+  },
+  "normalization": "Training raw rows only; <=1.01 second timestamp offsets normalized; complete 10-minute grid; no imputation; exclude windows with any absent record.",
+  "configuration": "Fixed 32-unit LSTM, seed42, Adam .001, MAE or binary cross-entropy; max30 epochs/patience5. Trees: 31 leaves, 200 iterations, .05 learning rate, min30/leaf, L2=1. No tree hyperparameter search.",
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.5.4",
+    "pandas": "2.2.3",
+    "torch": "2.15.0",
+    "sklearn": "1.9.1"
+  }
+}

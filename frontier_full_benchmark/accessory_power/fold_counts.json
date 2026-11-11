@@ -1,0 +1,26 @@
+[
+  {
+    "fold": "June-July",
+    "train": 16595,
+    "validation": 1867,
+    "score": 6102
+  },
+  {
+    "fold": "August",
+    "train": 20136,
+    "validation": 4428,
+    "score": 3899
+  },
+  {
+    "fold": "September",
+    "train": 24600,
+    "validation": 3899,
+    "score": 4039
+  },
+  {
+    "fold": "confirmation",
+    "train": 28535,
+    "validation": 4039,
+    "score": 13212
+  }
+]

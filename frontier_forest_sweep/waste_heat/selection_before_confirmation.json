@@ -1,0 +1,142 @@
+[
+  {
+    "budget_bytes": null,
+    "horizon_minutes": 10,
+    "model": "ET_all_d2_n16",
+    "development_relative_MAE": 1.0047944489054428,
+    "maximum_development_packed_bytes": 2112
+  },
+  {
+    "budget_bytes": null,
+    "horizon_minutes": 30,
+    "model": "ET_own_d4_n256",
+    "development_relative_MAE": 0.9407677242600384,
+    "maximum_development_packed_bytes": 143052
+  },
+  {
+    "budget_bytes": null,
+    "horizon_minutes": 60,
+    "model": "ET_own_d8_n64",
+    "development_relative_MAE": 0.8729142374898662,
+    "maximum_development_packed_bytes": 372156
+  },
+  {
+    "budget_bytes": null,
+    "horizon_minutes": 120,
+    "model": "ET_own_d8_n128",
+    "development_relative_MAE": 0.8665975595322758,
+    "maximum_development_packed_bytes": 735024
+  },
+  {
+    "budget_bytes": null,
+    "horizon_minutes": 360,
+    "model": "ET_own_d12_n128",
+    "development_relative_MAE": 0.7938186331006802,
+    "maximum_development_packed_bytes": 3055476
+  },
+  {
+    "budget_bytes": 32768,
+    "horizon_minutes": 10,
+    "model": "ET_all_d2_n16",
+    "development_relative_MAE": 1.0047944489054428,
+    "maximum_development_packed_bytes": 2112
+  },
+  {
+    "budget_bytes": 32768,
+    "horizon_minutes": 30,
+    "model": "ET_own_d2_n128",
+    "development_relative_MAE": 0.946353131135857,
+    "maximum_development_packed_bytes": 16896
+  },
+  {
+    "budget_bytes": 32768,
+    "horizon_minutes": 60,
+    "model": "ET_own_d8_n4",
+    "development_relative_MAE": 0.8820587551691013,
+    "maximum_development_packed_bytes": 22092
+  },
+  {
+    "budget_bytes": 32768,
+    "horizon_minutes": 120,
+    "model": "ET_own_d6_n4",
+    "development_relative_MAE": 0.8696203754444372,
+    "maximum_development_packed_bytes": 8268
+  },
+  {
+    "budget_bytes": 32768,
+    "horizon_minutes": 360,
+    "model": "ET_own_d8_n4",
+    "development_relative_MAE": 0.8066365501142925,
+    "maximum_development_packed_bytes": 22092
+  },
+  {
+    "budget_bytes": 131072,
+    "horizon_minutes": 10,
+    "model": "ET_all_d2_n16",
+    "development_relative_MAE": 1.0047944489054428,
+    "maximum_development_packed_bytes": 2112
+  },
+  {
+    "budget_bytes": 131072,
+    "horizon_minutes": 30,
+    "model": "ET_own_d4_n128",
+    "development_relative_MAE": 0.9422020670570409,
+    "maximum_development_packed_bytes": 71616
+  },
+  {
+    "budget_bytes": 131072,
+    "horizon_minutes": 60,
+    "model": "ET_own_d8_n16",
+    "development_relative_MAE": 0.8754119437756643,
+    "maximum_development_packed_bytes": 101076
+  },
+  {
+    "budget_bytes": 131072,
+    "horizon_minutes": 120,
+    "model": "ET_own_d6_n64",
+    "development_relative_MAE": 0.8678287791509663,
+    "maximum_development_packed_bytes": 129840
+  },
+  {
+    "budget_bytes": 131072,
+    "horizon_minutes": 360,
+    "model": "ET_own_d8_n16",
+    "development_relative_MAE": 0.7968192430673429,
+    "maximum_development_packed_bytes": 101076
+  },
+  {
+    "budget_bytes": 524288,
+    "horizon_minutes": 10,
+    "model": "ET_all_d2_n16",
+    "development_relative_MAE": 1.0047944489054428,
+    "maximum_development_packed_bytes": 2112
+  },
+  {
+    "budget_bytes": 524288,
+    "horizon_minutes": 30,
+    "model": "ET_own_d4_n256",
+    "development_relative_MAE": 0.9407677242600384,
+    "maximum_development_packed_bytes": 143052
+  },
+  {
+    "budget_bytes": 524288,
+    "horizon_minutes": 60,
+    "model": "ET_own_d8_n64",
+    "development_relative_MAE": 0.8729142374898662,
+    "maximum_development_packed_bytes": 372156
+  },
+  {
+    "budget_bytes": 524288,
+    "horizon_minutes": 120,
+    "model": "ET_own_d8_n64",
+    "development_relative_MAE": 0.8668217269905808,
+    "maximum_development_packed_bytes": 372156
+  },
+  {
+    "budget_bytes": 524288,
+    "horizon_minutes": 360,
+    "model": "ET_own_d8_n64",
+    "development_relative_MAE": 0.7959629717679326,
+    "maximum_development_packed_bytes": 372156
+  }
+]

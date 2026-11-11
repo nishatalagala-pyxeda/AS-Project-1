@@ -1,0 +1,872 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Frontier target experiments</title><style>body{font:16px/1.5 system-ui;max-width:1200px;margin:40px auto;padding:0 24px;color:#23303b}table{border-collapse:collapse;font-size:13px}td,th{padding:7px 10px;border-bottom:1px solid #ddd;text-align:right}th{background:#f1f4f6}img{max-width:100%}pre{white-space:pre-wrap;font-size:13px}h1,h2{line-height:1.2}.note{background:#f2f5f7;padding:14px}.findings td,.findings th{text-align:left;vertical-align:top}.findings td:first-child{white-space:nowrap}td:first-child,th:first-child{text-align:left}</style></head><body><h1>Six prediction targets for Frontier</h1>
+<p>Sequential screening with fixed model settings. Same chronological split as the earlier power experiment: train January–July, validate August–September, test October–December. Every fitted target compares a 32-unit LSTM (one predeclared seed, 42) with histogram boosted trees. Simple baselines are essential. No test-driven tuning was performed.</p>
+<p class="note">Event thresholds are statistical definitions learned from training data. They are not facility operating limits. Forecasts assume input measurements are available without reporting delay.</p><h2>Findings</h2><table border="1" class="dataframe findings">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Target</th>
+      <th>Finding</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Coolant return temperatures</td>
+      <td>Persistence is best averaged across all loops. Loop 3 LSTM has a small 60-minute gain: 1.090 versus 1.114 °C MAE.</td>
+    </tr>
+    <tr>
+      <td>New high-temperature events</td>
+      <td>Simple logistic has the highest average precision (0.145). At its validation-chosen threshold, precision is 24.5% and recall is 18.1%. Trees and LSTM do not improve average precision; probability errors remain substantial.</td>
+    </tr>
+    <tr>
+      <td>Near-zero-flow transitions</td>
+      <td>Not evaluable: no qualifying transitions in validation or test. Two near-zero-flow episodes occur in April; only seven eligible positive training windows.</td>
+    </tr>
+    <tr>
+      <td>Waste heat</td>
+      <td>LSTM 60-minute MAE: 1.476–1.490 MW versus persistence 1.563 MW; 4.7–5.6% lower across 3 seed(s). Heat is a calculated quantity, not independently measured.</td>
+    </tr>
+    <tr>
+      <td>Accessory power</td>
+      <td>Strongest continuous-target improvement: trees reduce MAE about 17% at 30 minutes and 13% at 60 minutes. At 60 minutes: 41.0 versus 47.0 kW MAE.</td>
+    </tr>
+    <tr>
+      <td>Rapid power changes</td>
+      <td>Trees have highest average precision (0.183 versus logistic 0.119 and LSTM 0.153). At the validation-chosen threshold, precision is 19.2% and recall is 43.3%; most alert windows are false positives. Probability error is nearly the same as logistic.</td>
+    </tr>
+  </tbody>
+</table><p>Best next target: accessory power with trees. Waste heat with LSTM shows a smaller gain. Event ranking has some signal, but false positives and probability calibration limit its use.</p><img src="regression_comparison.png" alt="Regression comparison"><p>The temperature panel averages MAE across three loops. Plotted LSTM curves use the original seed42 run; extra waste-heat seeds are reported separately below.</p><h2>Coolant return temperatures</h2><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>target</th>
+      <th>horizon_minutes</th>
+      <th>unit</th>
+      <th>model</th>
+      <th>MAE</th>
+      <th>RMSE</th>
+      <th>bias</th>
+      <th>n</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Loop 1</td>
+      <td>10</td>
+      <td>°C</td>
+      <td>Persistence</td>
+      <td>1.2616</td>
+      <td>2.3775</td>
+      <td>0.0007</td>
+      <td>13242</td>
+    </tr>
+    <tr>
+      <td>Loop 1</td>
+      <td>30</td>
+      <td>°C</td>
+      <td>Persistence</td>
+      <td>1.7921</td>
+      <td>3.1093</td>
+      <td>0.0023</td>
+      <td>13242</td>
+    </tr>
+    <tr>
+      <td>Loop 1</td>
+      <td>60</td>
+      <td>°C</td>
+      <td>Persistence</td>
+      <td>2.1651</td>
+      <td>3.6045</td>
+      <td>0.0049</td>
+      <td>13242</td>
+    </tr>
+    <tr>
+      <td>Loop 2</td>
+      <td>10</td>
+      <td>°C</td>
+      <td>Persistence</td>
+      <td>1.2405</td>
+      <td>2.3123</td>
+      <td>0.0007</td>
+      <td>13242</td>
+    </tr>
+    <tr>
+      <td>Loop 2</td>
+      <td>30</td>
+      <td>°C</td>
+      <td>Persistence</td>
+      <td>1.7461</td>
+      <td>3.0011</td>
+      <td>0.0022</td>
+      <td>13242</td>
+    </tr>
+    <tr>
+      <td>Loop 2</td>
+      <td>60</td>
+      <td>°C</td>
+      <td>Persistence</td>
+      <td>2.1031</td>
+      <td>3.4764</td>
+      <td>0.0046</td>
+      <td>13242</td>
+    </tr>
+    <tr>
+      <td>Loop 3</td>
+      <td>10</td>
+      <td>°C</td>
+      <td>Persistence</td>
+      <td>0.6606</td>
+      <td>1.2452</td>
+      <td>0.0000</td>
+      <td>13242</td>
+    </tr>
+    <tr>
+      <td>Loop 3</td>
+      <td>30</td>
+      <td>°C</td>
+      <td>Persistence</td>
+      <td>0.9308</td>
+      <td>1.5489</td>
+      <td>0.0001</td>
+      <td>13242</td>
+    </tr>
+    <tr>
+      <td>Loop 3</td>
+      <td>60</td>
+      <td>°C</td>
+      <td>Persistence</td>
+      <td>1.1137</td>
+      <td>1.7673</td>
+      <td>0.0004</td>
+      <td>13242</td>
+    </tr>
+    <tr>
+      <td>Loop 1</td>
+      <td>10</td>
+      <td>°C</td>
+      <td>Trees</td>
+      <td>1.6995</td>
+      <td>2.6324</td>
+      <td>0.0993</td>
+      <td>13242</td>
+    </tr>
+    <tr>
+      <td>Loop 1</td>
+      <td>30</td>
+      <td>°C</td>
+      <td>Trees</td>
+      <td>2.0745</td>
+      <td>3.0520</td>
+      <td>-0.0056</td>
+      <td>13242</td>
+    </tr>
+    <tr>
+      <td>Loop 1</td>
+      <td>60</td>
+      <td>°C</td>
+      <td>Trees</td>
+      <td>2.2001</td>
+      <td>3.2814</td>
+      <td>-0.3765</td>
+      <td>13242</td>
+    </tr>
+    <tr>
+      <td>Loop 2</td>
+      <td>10</td>
+      <td>°C</td>
+      <td>Trees</td>
+      <td>1.7084</td>
+      <td>2.6208</td>
+      <td>0.0885</td>
+      <td>13242</td>
+    </tr>
+    <tr>
+      <td>Loop 2</td>
+      <td>30</td>
+      <td>°C</td>
+      <td>Trees</td>
+      <td>1.9759</td>
+      <td>2.9369</td>
+      <td>0.1083</td>
+      <td>13242</td>
+    </tr>
+    <tr>
+      <td>Loop 2</td>
+      <td>60</td>
+      <td>°C</td>
+      <td>Trees</td>
+      <td>2.1376</td>
+      <td>3.1729</td>
+      <td>-0.2949</td>
+      <td>13242</td>
+    </tr>
+    <tr>
+      <td>Loop 3</td>
+      <td>10</td>
+      <td>°C</td>
+      <td>Trees</td>
+      <td>1.1552</td>
+      <td>1.7433</td>
+      <td>0.5388</td>
+      <td>13242</td>
+    </tr>
+    <tr>
+      <td>Loop 3</td>
+      <td>30</td>
+      <td>°C</td>
+      <td>Trees</td>
+      <td>1.1041</td>
+      <td>1.5925</td>
+      <td>0.4072</td>
+      <td>13242</td>
+    </tr>
+    <tr>
+      <td>Loop 3</td>
+      <td>60</td>
+      <td>°C</td>
+      <td>Trees</td>
+      <td>1.0967</td>
+      <td>1.5575</td>
+      <td>0.1760</td>
+      <td>13242</td>
+    </tr>
+    <tr>
+      <td>Loop 1</td>
+      <td>10</td>
+      <td>°C</td>
+      <td>LSTM</td>
+      <td>1.2778</td>
+      <td>2.3208</td>
+      <td>-0.0326</td>
+      <td>13242</td>
+    </tr>
+    <tr>
+      <td>Loop 1</td>
+      <td>30</td>
+      <td>°C</td>
+      <td>LSTM</td>
+      <td>1.9024</td>
+      <td>3.0103</td>
+      <td>-0.5723</td>
+      <td>13242</td>
+    </tr>
+    <tr>
+      <td>Loop 1</td>
+      <td>60</td>
+      <td>°C</td>
+      <td>LSTM</td>
+      <td>2.2759</td>
+      <td>3.4439</td>
+      <td>-0.7828</td>
+      <td>13242</td>
+    </tr>
+    <tr>
+      <td>Loop 2</td>
+      <td>10</td>
+      <td>°C</td>
+      <td>LSTM</td>
+      <td>1.2534</td>
+      <td>2.2551</td>
+      <td>-0.0335</td>
+      <td>13242</td>
+    </tr>
+    <tr>
+      <td>Loop 2</td>
+      <td>30</td>
+      <td>°C</td>
+      <td>LSTM</td>
+      <td>1.8582</td>
+      <td>2.9093</td>
+      <td>-0.5706</td>
+      <td>13242</td>
+    </tr>
+    <tr>
+      <td>Loop 2</td>
+      <td>60</td>
+      <td>°C</td>
+      <td>LSTM</td>
+      <td>2.2178</td>
+      <td>3.3294</td>
+      <td>-0.7927</td>
+      <td>13242</td>
+    </tr>
+    <tr>
+      <td>Loop 3</td>
+      <td>10</td>
+      <td>°C</td>
+      <td>LSTM</td>
+      <td>0.6680</td>
+      <td>1.2039</td>
+      <td>0.0399</td>
+      <td>13242</td>
+    </tr>
+    <tr>
+      <td>Loop 3</td>
+      <td>30</td>
+      <td>°C</td>
+      <td>LSTM</td>
+      <td>0.9301</td>
+      <td>1.4570</td>
+      <td>-0.1043</td>
+      <td>13242</td>
+    </tr>
+    <tr>
+      <td>Loop 3</td>
+      <td>60</td>
+      <td>°C</td>
+      <td>LSTM</td>
+      <td>1.0902</td>
+      <td>1.6410</td>
+      <td>-0.1837</td>
+      <td>13242</td>
+    </tr>
+  </tbody>
+</table><p>10 minutes: lowest observed mean absolute error = Persistence (1.0542); averaged across three loops.</p><p>30 minutes: lowest observed mean absolute error = Persistence (1.4897); averaged across three loops.</p><p>60 minutes: lowest observed mean absolute error = Persistence (1.7940); averaged across three loops.</p><p>Residual forecasting: the target is a change from the current value. Persistence predicts zero change. LSTM outputs are standardized by each target’s training standard deviation; validation uses the corresponding normalized MAE. Trees predict each output separately.</p><p><a href="temperature/results.json">Detailed results and uncertainty checks</a></p><h2>New high-temperature events</h2><p>Currently all three return temperatures are at or below their training 95th percentiles; event = any loop exceeds its own threshold in next 60 minutes.</p><pre>{
+  "thresholds_C": [
+    37.11111068725586,
+    37.05555725097656,
+    41.72222137451172
+  ],
+  "counts": {
+    "train": {
+      "n": 24176,
+      "positives": 3545,
+      "prevalence": 0.14663302898406982
+    },
+    "validation": {
+      "n": 8302,
+      "positives": 129,
+      "prevalence": 0.015538424253463745
+    },
+    "test": {
+      "n": 13103,
+      "positives": 210,
+      "prevalence": 0.01602686382830143
+    }
+  },
+  "test_positive_clusters": 46,
+  "status": "Fitted"
+}</pre><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>model</th>
+      <th>AP</th>
+      <th>ROC_AUC</th>
+      <th>Brier</th>
+      <th>log_loss</th>
+      <th>threshold_chosen_on_validation</th>
+      <th>precision</th>
+      <th>recall</th>
+      <th>F1</th>
+      <th>alerts</th>
+      <th>n</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Prevalence</td>
+      <td>0.0160</td>
+      <td>0.5000</td>
+      <td>0.0328</td>
+      <td>0.1868</td>
+      <td>0.005</td>
+      <td>0.0160</td>
+      <td>1.0000</td>
+      <td>0.0315</td>
+      <td>13103</td>
+      <td>13103</td>
+    </tr>
+    <tr>
+      <td>Simple logistic</td>
+      <td>0.1445</td>
+      <td>0.6954</td>
+      <td>0.0355</td>
+      <td>0.1933</td>
+      <td>0.225</td>
+      <td>0.2452</td>
+      <td>0.1810</td>
+      <td>0.2082</td>
+      <td>155</td>
+      <td>13103</td>
+    </tr>
+    <tr>
+      <td>Trees</td>
+      <td>0.1410</td>
+      <td>0.8424</td>
+      <td>0.0367</td>
+      <td>0.1356</td>
+      <td>0.065</td>
+      <td>0.0590</td>
+      <td>0.7476</td>
+      <td>0.1094</td>
+      <td>2659</td>
+      <td>13103</td>
+    </tr>
+    <tr>
+      <td>LSTM</td>
+      <td>0.1005</td>
+      <td>0.7846</td>
+      <td>0.0518</td>
+      <td>0.1866</td>
+      <td>0.145</td>
+      <td>0.0464</td>
+      <td>0.7143</td>
+      <td>0.0871</td>
+      <td>3233</td>
+      <td>13103</td>
+    </tr>
+  </tbody>
+</table><p>Highest observed average precision: Simple logistic. Lowest observed Brier score: Prevalence. AP measures event ranking (higher is better); Brier measures probability error (lower is better). Alert thresholds maximize validation F1 and are then frozen.</p><p>Logistic regression on current maximum standardized distance to threshold; plus constant training prevalence.</p><p>Positive examples can be adjacent windows around the same physical event; their count is not a count of independent events.</p><p><a href="temperature_events/results.json">Detailed results and uncertainty checks</a></p><h2>Near-zero-flow transitions</h2><p>Currently normal total flow; event = flow falls below 5% of training median within 60 minutes.</p><pre>{
+  "flow_threshold_gpm": 164.16000366210938,
+  "counts": {
+    "train": {
+      "n": 26366,
+      "positives": 7,
+      "prevalence": 0.000265493436018005
+    },
+    "validation": {
+      "n": 8421,
+      "positives": 0,
+      "prevalence": 0.0
+    },
+    "test": {
+      "n": 13242,
+      "positives": 0,
+      "prevalence": 0.0
+    }
+  },
+  "status": "Not fitted: at least one split lacks both positive and negative examples; out-of-time event skill cannot be assessed.",
+  "episodes": [
+    {
+      "split": "train",
+      "episodes": [
+        {
+          "start": "2023-04-01 08:10:00",
+          "end": "2023-04-02 04:00:00",
+          "n": 120
+        },
+        {
+          "start": "2023-04-02 04:20:00",
+          "end": "2023-04-02 04:50:00",
+          "n": 4
+        }
+      ]
+    },
+    {
+      "split": "validation",
+      "episodes": []
+    },
+    {
+      "split": "test",
+      "episodes": []
+    }
+  ]
+}</pre><p><a href="cooling_transitions/results.json">Detailed results and uncertainty checks</a></p><h2>Waste heat</h2><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>target</th>
+      <th>horizon_minutes</th>
+      <th>unit</th>
+      <th>model</th>
+      <th>MAE</th>
+      <th>RMSE</th>
+      <th>bias</th>
+      <th>n</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Waste heat</td>
+      <td>10</td>
+      <td>MW</td>
+      <td>Persistence</td>
+      <td>0.8625</td>
+      <td>1.4915</td>
+      <td>-0.0001</td>
+      <td>13242</td>
+    </tr>
+    <tr>
+      <td>Waste heat</td>
+      <td>30</td>
+      <td>MW</td>
+      <td>Persistence</td>
+      <td>1.2885</td>
+      <td>2.0982</td>
+      <td>-0.0003</td>
+      <td>13242</td>
+    </tr>
+    <tr>
+      <td>Waste heat</td>
+      <td>60</td>
+      <td>MW</td>
+      <td>Persistence</td>
+      <td>1.5634</td>
+      <td>2.4954</td>
+      <td>-0.0003</td>
+      <td>13242</td>
+    </tr>
+    <tr>
+      <td>Waste heat</td>
+      <td>10</td>
+      <td>MW</td>
+      <td>Trees</td>
+      <td>1.3083</td>
+      <td>1.9151</td>
+      <td>0.3077</td>
+      <td>13242</td>
+    </tr>
+    <tr>
+      <td>Waste heat</td>
+      <td>30</td>
+      <td>MW</td>
+      <td>Trees</td>
+      <td>1.4598</td>
+      <td>2.0741</td>
+      <td>0.0245</td>
+      <td>13242</td>
+    </tr>
+    <tr>
+      <td>Waste heat</td>
+      <td>60</td>
+      <td>MW</td>
+      <td>Trees</td>
+      <td>1.5538</td>
+      <td>2.2532</td>
+      <td>-0.3326</td>
+      <td>13242</td>
+    </tr>
+    <tr>
+      <td>Waste heat</td>
+      <td>10</td>
+      <td>MW</td>
+      <td>LSTM</td>
+      <td>0.8556</td>
+      <td>1.4488</td>
+      <td>-0.0194</td>
+      <td>13242</td>
+    </tr>
+    <tr>
+      <td>Waste heat</td>
+      <td>30</td>
+      <td>MW</td>
+      <td>LSTM</td>
+      <td>1.2612</td>
+      <td>1.9656</td>
+      <td>-0.3421</td>
+      <td>13242</td>
+    </tr>
+    <tr>
+      <td>Waste heat</td>
+      <td>60</td>
+      <td>MW</td>
+      <td>LSTM</td>
+      <td>1.4897</td>
+      <td>2.2864</td>
+      <td>-0.5207</td>
+      <td>13242</td>
+    </tr>
+  </tbody>
+</table><p>10 minutes: lowest observed mean absolute error = LSTM (0.8556); units are MW.</p><p>30 minutes: lowest observed mean absolute error = LSTM (1.2612); units are MW.</p><p>60 minutes: lowest observed mean absolute error = LSTM (1.4897); units are MW.</p><p>Residual forecasting: the target is a change from the current value. Persistence predicts zero change. LSTM outputs are standardized by each target’s training standard deviation; validation uses the corresponding normalized MAE. Trees predict each output separately.</p><h3>Additional LSTM seeds</h3><p>These replications use the same architecture, inputs, validation checkpoint rule, and test set. They were run for waste heat after the initial screening identified a gain. No seed was selected as a replacement for the original result.</p><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>seed</th>
+      <th>horizon_minutes</th>
+      <th>MAE</th>
+      <th>RMSE</th>
+      <th>improvement_vs_persistence_pct</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>43</td>
+      <td>10</td>
+      <td>0.8550</td>
+      <td>1.4548</td>
+      <td>0.8722</td>
+    </tr>
+    <tr>
+      <td>43</td>
+      <td>30</td>
+      <td>1.2576</td>
+      <td>1.9737</td>
+      <td>2.3923</td>
+    </tr>
+    <tr>
+      <td>43</td>
+      <td>60</td>
+      <td>1.4904</td>
+      <td>2.2956</td>
+      <td>4.6671</td>
+    </tr>
+    <tr>
+      <td>44</td>
+      <td>10</td>
+      <td>0.8738</td>
+      <td>1.4398</td>
+      <td>-1.3088</td>
+    </tr>
+    <tr>
+      <td>44</td>
+      <td>30</td>
+      <td>1.2554</td>
+      <td>1.9375</td>
+      <td>2.5669</td>
+    </tr>
+    <tr>
+      <td>44</td>
+      <td>60</td>
+      <td>1.4763</td>
+      <td>2.2429</td>
+      <td>5.5715</td>
+    </tr>
+  </tbody>
+</table><p><a href="waste_heat/results.json">Detailed results and uncertainty checks</a></p><h2>Accessory power</h2><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>target</th>
+      <th>horizon_minutes</th>
+      <th>unit</th>
+      <th>model</th>
+      <th>MAE</th>
+      <th>RMSE</th>
+      <th>bias</th>
+      <th>n</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Accessory power</td>
+      <td>10</td>
+      <td>MW</td>
+      <td>Persistence</td>
+      <td>0.0216</td>
+      <td>0.0467</td>
+      <td>0.0000</td>
+      <td>13242</td>
+    </tr>
+    <tr>
+      <td>Accessory power</td>
+      <td>30</td>
+      <td>MW</td>
+      <td>Persistence</td>
+      <td>0.0413</td>
+      <td>0.0699</td>
+      <td>-0.0000</td>
+      <td>13242</td>
+    </tr>
+    <tr>
+      <td>Accessory power</td>
+      <td>60</td>
+      <td>MW</td>
+      <td>Persistence</td>
+      <td>0.0470</td>
+      <td>0.0775</td>
+      <td>-0.0000</td>
+      <td>13242</td>
+    </tr>
+    <tr>
+      <td>Accessory power</td>
+      <td>10</td>
+      <td>MW</td>
+      <td>Trees</td>
+      <td>0.0195</td>
+      <td>0.0384</td>
+      <td>0.0001</td>
+      <td>13242</td>
+    </tr>
+    <tr>
+      <td>Accessory power</td>
+      <td>30</td>
+      <td>MW</td>
+      <td>Trees</td>
+      <td>0.0342</td>
+      <td>0.0547</td>
+      <td>-0.0031</td>
+      <td>13242</td>
+    </tr>
+    <tr>
+      <td>Accessory power</td>
+      <td>60</td>
+      <td>MW</td>
+      <td>Trees</td>
+      <td>0.0410</td>
+      <td>0.0636</td>
+      <td>-0.0072</td>
+      <td>13242</td>
+    </tr>
+    <tr>
+      <td>Accessory power</td>
+      <td>10</td>
+      <td>MW</td>
+      <td>LSTM</td>
+      <td>0.0228</td>
+      <td>0.0384</td>
+      <td>0.0035</td>
+      <td>13242</td>
+    </tr>
+    <tr>
+      <td>Accessory power</td>
+      <td>30</td>
+      <td>MW</td>
+      <td>LSTM</td>
+      <td>0.0363</td>
+      <td>0.0565</td>
+      <td>-0.0025</td>
+      <td>13242</td>
+    </tr>
+    <tr>
+      <td>Accessory power</td>
+      <td>60</td>
+      <td>MW</td>
+      <td>LSTM</td>
+      <td>0.0417</td>
+      <td>0.0644</td>
+      <td>-0.0089</td>
+      <td>13242</td>
+    </tr>
+  </tbody>
+</table><p>10 minutes: lowest observed mean absolute error = Trees (0.0195); units are MW.</p><p>30 minutes: lowest observed mean absolute error = Trees (0.0342); units are MW.</p><p>60 minutes: lowest observed mean absolute error = Trees (0.0410); units are MW.</p><p>Residual forecasting: the target is a change from the current value. Persistence predicts zero change. LSTM outputs are standardized by each target’s training standard deviation; validation uses the corresponding normalized MAE. Trees predict each output separately.</p><p><a href="accessory_power/results.json">Detailed results and uncertainty checks</a></p><h2>Rapid power changes</h2><p>Within next 30 minutes, at least one total-power reading differs from current power by more than training 95th percentile of maximum 30-minute absolute changes.</p><pre>{
+  "change_threshold_MW": 7.176400184631348,
+  "counts": {
+    "train": {
+      "n": 26490,
+      "positives": 1324,
+      "prevalence": 0.04998112469911575
+    },
+    "validation": {
+      "n": 8421,
+      "positives": 78,
+      "prevalence": 0.009262558072805405
+    },
+    "test": {
+      "n": 13242,
+      "positives": 247,
+      "prevalence": 0.018652770668268204
+    }
+  },
+  "test_positive_clusters": 99,
+  "status": "Fitted"
+}</pre><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>model</th>
+      <th>AP</th>
+      <th>ROC_AUC</th>
+      <th>Brier</th>
+      <th>log_loss</th>
+      <th>threshold_chosen_on_validation</th>
+      <th>precision</th>
+      <th>recall</th>
+      <th>F1</th>
+      <th>alerts</th>
+      <th>n</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Prevalence</td>
+      <td>0.0187</td>
+      <td>0.5000</td>
+      <td>0.0193</td>
+      <td>0.1062</td>
+      <td>0.005</td>
+      <td>0.0187</td>
+      <td>1.0000</td>
+      <td>0.0366</td>
+      <td>13242</td>
+      <td>13242</td>
+    </tr>
+    <tr>
+      <td>Simple logistic</td>
+      <td>0.1187</td>
+      <td>0.7759</td>
+      <td>0.0181</td>
+      <td>0.0877</td>
+      <td>0.130</td>
+      <td>0.1702</td>
+      <td>0.2955</td>
+      <td>0.2160</td>
+      <td>429</td>
+      <td>13242</td>
+    </tr>
+    <tr>
+      <td>Trees</td>
+      <td>0.1826</td>
+      <td>0.8432</td>
+      <td>0.0181</td>
+      <td>0.0770</td>
+      <td>0.195</td>
+      <td>0.1924</td>
+      <td>0.4332</td>
+      <td>0.2665</td>
+      <td>556</td>
+      <td>13242</td>
+    </tr>
+    <tr>
+      <td>LSTM</td>
+      <td>0.1530</td>
+      <td>0.8080</td>
+      <td>0.0204</td>
+      <td>0.0904</td>
+      <td>0.075</td>
+      <td>0.0848</td>
+      <td>0.6599</td>
+      <td>0.1502</td>
+      <td>1923</td>
+      <td>13242</td>
+    </tr>
+  </tbody>
+</table><p>Highest observed average precision: Trees. Lowest observed Brier score: Trees. AP measures event ranking (higher is better); Brier measures probability error (lower is better). Alert thresholds maximize validation F1 and are then frozen.</p><p>Logistic regression on current power, last 10/30-minute absolute changes, and past-hour variability; plus constant training prevalence.</p><p>Positive examples can be adjacent windows around the same physical event; their count is not a count of independent events.</p><p><a href="power_ramps/results.json">Detailed results and uncertainty checks</a></p><h2>Method and limits</h2><p>History = six hours at 10-minute intervals. Inputs: three subloop return temperatures and flows, supply temperature, compute/accessory/total power, past calculated waste heat, hour and weekday sine/cosine terms. Both algorithms receive identical observed histories; tree inputs are flattened sequences. H (average return temperature with division errors) and PUE are excluded.</p>
+<p>Normalize timestamp offsets of at most 1.01 seconds; reindex a complete grid; do not impute. Exclude windows missing any of the 36 history or six future grid records. All target windows stay within their split. Historical context before split boundaries is allowed. Training-only normalization, thresholds and baseline fitting. LSTM uses Adam .001, batch256, maximum30 epochs, validation patience5; best checkpoint restored. Trees use 200 iterations, learning rate .05, 31 leaves, minimum30 samples per leaf, L2=1, MAE/log-loss as appropriate.</p>
+<p>One initial seed per new target is a screening experiment; additional seeds, where present, are reported separately. Fixed settings were not extensively optimized. Models are not refit on validation data. Day-level bootstrap intervals are exploratory, conditional on this final-quarter test, and do not represent other years or facilities. Failed or unavailable event evaluations are reported explicitly.</p>
+<p>Zero-flow records and temperature outliers are retained. Calculated waste heat inherits the workbook’s thermal constants and zero-clipping behavior. A year of data with no workload, weather, sensor calibration or maintenance labels cannot establish causes or safe control settings.</p><h2>Data provenance</h2><pre>{
+  "source": "/Users/nishatalagala/Downloads/Frontier HPC & Facility Data.xlsx",
+  "source_sha256": "56a48dd66382896890dfc2e4940ec90f894bb85795ee8e85ea2708dda05796bf",
+  "history_steps": 36,
+  "input_columns": [
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "I",
+    "O",
+    "P",
+    "Q",
+    "N"
+  ],
+  "calendar_features": [
+    "hour_sin",
+    "hour_cos",
+    "weekday_sin",
+    "weekday_cos"
+  ],
+  "input_notes": "Past calculated waste heat N is included for every model; no future inputs or H/PUE values are used.",
+  "splits": {
+    "train": {
+      "n": 26490,
+      "first_origin": "2023-01-01 05:50:00",
+      "last_origin": "2023-07-31 22:50:00",
+      "last_target": "2023-07-31 23:50:00"
+    },
+    "validation": {
+      "n": 8421,
+      "first_origin": "2023-08-01 00:00:00",
+      "last_origin": "2023-09-30 22:50:00",
+      "last_target": "2023-09-30 23:50:00"
+    },
+    "test": {
+      "n": 13242,
+      "first_origin": "2023-10-01 00:00:00",
+      "last_origin": "2023-12-31 22:50:00",
+      "last_target": "2023-12-31 23:50:00"
+    }
+  },
+  "normalization": "Training raw rows only; <=1.01 second timestamp offsets normalized; complete 10-minute grid; no imputation; exclude windows with any absent record.",
+  "configuration": "Fixed 32-unit LSTM, seed42, Adam .001, MAE or binary cross-entropy; max30 epochs/patience5. Trees: 31 leaves, 200 iterations, .05 learning rate, min30/leaf, L2=1. No tree hyperparameter search.",
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.5.4",
+    "pandas": "2.2.3",
+    "torch": "2.15.0",
+    "sklearn": "1.9.1"
+  }
+}</pre><p>Original workbook unchanged. <a href="run_targets.py">Reproduction code</a> · <a href="all_results.json">All results</a></p></body></html>

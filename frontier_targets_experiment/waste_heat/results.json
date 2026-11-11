@@ -1,0 +1,316 @@
+{
+  "task": "waste_heat",
+  "kind": "regression",
+  "outputs": [
+    {
+      "target": "Waste heat",
+      "horizon_minutes": 10,
+      "unit": "MW"
+    },
+    {
+      "target": "Waste heat",
+      "horizon_minutes": 30,
+      "unit": "MW"
+    },
+    {
+      "target": "Waste heat",
+      "horizon_minutes": 60,
+      "unit": "MW"
+    }
+  ],
+  "metrics": [
+    {
+      "target": "Waste heat",
+      "horizon_minutes": 10,
+      "unit": "MW",
+      "model": "Persistence",
+      "MAE": 0.8624877333641052,
+      "RMSE": 1.4914919137954712,
+      "bias": -0.00011703035852406174,
+      "n": 13242
+    },
+    {
+      "target": "Waste heat",
+      "horizon_minutes": 30,
+      "unit": "MW",
+      "model": "Persistence",
+      "MAE": 1.2884669303894043,
+      "RMSE": 2.098177909851074,
+      "bias": -0.0002825565170496702,
+      "n": 13242
+    },
+    {
+      "target": "Waste heat",
+      "horizon_minutes": 60,
+      "unit": "MW",
+      "model": "Persistence",
+      "MAE": 1.5633965730667114,
+      "RMSE": 2.4954018592834473,
+      "bias": -0.0002938663528766483,
+      "n": 13242
+    },
+    {
+      "target": "Waste heat",
+      "horizon_minutes": 10,
+      "unit": "MW",
+      "model": "Trees",
+      "MAE": 1.3082523567499085,
+      "RMSE": 1.915101961770211,
+      "bias": 0.30774853449485634,
+      "n": 13242
+    },
+    {
+      "target": "Waste heat",
+      "horizon_minutes": 30,
+      "unit": "MW",
+      "model": "Trees",
+      "MAE": 1.4597640567053245,
+      "RMSE": 2.074113810122776,
+      "bias": 0.02447446482118992,
+      "n": 13242
+    },
+    {
+      "target": "Waste heat",
+      "horizon_minutes": 60,
+      "unit": "MW",
+      "model": "Trees",
+      "MAE": 1.5537654630365394,
+      "RMSE": 2.253239363067089,
+      "bias": -0.33255825850117143,
+      "n": 13242
+    },
+    {
+      "target": "Waste heat",
+      "horizon_minutes": 10,
+      "unit": "MW",
+      "model": "LSTM",
+      "MAE": 0.8555991649627686,
+      "RMSE": 1.4487597942352295,
+      "bias": -0.019431017339229584,
+      "n": 13242
+    },
+    {
+      "target": "Waste heat",
+      "horizon_minutes": 30,
+      "unit": "MW",
+      "model": "LSTM",
+      "MAE": 1.2612122297286987,
+      "RMSE": 1.9656461477279663,
+      "bias": -0.34210410714149475,
+      "n": 13242
+    },
+    {
+      "target": "Waste heat",
+      "horizon_minutes": 60,
+      "unit": "MW",
+      "model": "LSTM",
+      "MAE": 1.4897074699401855,
+      "RMSE": 2.286409616470337,
+      "bias": -0.520697295665741,
+      "n": 13242
+    }
+  ],
+  "paired_vs_persistence": [
+    {
+      "target": "Waste heat",
+      "horizon_minutes": 10,
+      "unit": "MW",
+      "model": "Trees",
+      "mean_loss_difference_vs_baseline": 0.4457645754628496,
+      "day_bootstrap_95pct": [
+        0.3758021340346095,
+        0.5130136811021747
+      ]
+    },
+    {
+      "target": "Waste heat",
+      "horizon_minutes": 10,
+      "unit": "MW",
+      "model": "LSTM",
+      "mean_loss_difference_vs_baseline": -0.006888585165143013,
+      "day_bootstrap_95pct": [
+        -0.011056628364369851,
+        -0.0022794948158129454
+      ]
+    },
+    {
+      "target": "Waste heat",
+      "horizon_minutes": 30,
+      "unit": "MW",
+      "model": "Trees",
+      "mean_loss_difference_vs_baseline": 0.17129705694146127,
+      "day_bootstrap_95pct": [
+        0.11412457768811927,
+        0.22675575282089666
+      ]
+    },
+    {
+      "target": "Waste heat",
+      "horizon_minutes": 30,
+      "unit": "MW",
+      "model": "LSTM",
+      "mean_loss_difference_vs_baseline": -0.027254663407802582,
+      "day_bootstrap_95pct": [
+        -0.04500454408116914,
+        -0.008256020356306298
+      ]
+    },
+    {
+      "target": "Waste heat",
+      "horizon_minutes": 60,
+      "unit": "MW",
+      "model": "Trees",
+      "mean_loss_difference_vs_baseline": -0.009631162162855656,
+      "day_bootstrap_95pct": [
+        -0.06485731765281169,
+        0.042122006667110176
+      ]
+    },
+    {
+      "target": "Waste heat",
+      "horizon_minutes": 60,
+      "unit": "MW",
+      "model": "LSTM",
+      "mean_loss_difference_vs_baseline": -0.07368908822536469,
+      "day_bootstrap_95pct": [
+        -0.10560650191492202,
+        -0.04139373527605439
+      ]
+    }
+  ],
+  "lstm_training": {
+    "seed": 42,
+    "best_epoch": 1,
+    "best_validation_loss": 0.43769481778144836,
+    "seconds": 16.827609042011318
+  },
+  "tree_seconds": 41.62999766599387,
+  "validation_normalized_MAE": {
+    "LSTM": 0.43769481778144836,
+    "Trees": 0.437705069206578
+  },
+  "n_by_split": {
+    "train": 26490,
+    "validation": 8421,
+    "test": 13242
+  },
+  "elapsed_seconds": 58.46407966699917,
+  "additional_lstm_runs": [
+    {
+      "seed": 43,
+      "training": {
+        "seed": 43,
+        "best_epoch": 1,
+        "best_validation_loss": 0.4391353726387024,
+        "seconds": 13.60427237499971
+      },
+      "metrics": [
+        {
+          "horizon_minutes": 10,
+          "MAE": 0.8549655079841614,
+          "RMSE": 1.4548155069351196,
+          "improvement_vs_persistence_pct": 0.8721530437469482
+        },
+        {
+          "horizon_minutes": 30,
+          "MAE": 1.257642388343811,
+          "RMSE": 1.9736915826797485,
+          "improvement_vs_persistence_pct": 2.3923397064208984
+        },
+        {
+          "horizon_minutes": 60,
+          "MAE": 1.4904305934906006,
+          "RMSE": 2.295626640319824,
+          "improvement_vs_persistence_pct": 4.667144775390625
+        }
+      ],
+      "paired_vs_persistence": [
+        {
+          "horizon_minutes": 10,
+          "model": "LSTM",
+          "mean_loss_difference_vs_baseline": -0.007522259373217821,
+          "day_bootstrap_95pct": [
+            -0.010847677808740866,
+            -0.004246768216306987
+          ]
+        },
+        {
+          "horizon_minutes": 30,
+          "model": "LSTM",
+          "mean_loss_difference_vs_baseline": -0.030824650079011917,
+          "day_bootstrap_95pct": [
+            -0.04406588999020242,
+            -0.016539444858702033
+          ]
+        },
+        {
+          "horizon_minutes": 60,
+          "model": "LSTM",
+          "mean_loss_difference_vs_baseline": -0.0729660764336586,
+          "day_bootstrap_95pct": [
+            -0.10227988211517007,
+            -0.044639024316671
+          ]
+        }
+      ]
+    },
+    {
+      "seed": 44,
+      "training": {
+        "seed": 44,
+        "best_epoch": 2,
+        "best_validation_loss": 0.4383413791656494,
+        "seconds": 14.509170874996926
+      },
+      "metrics": [
+        {
+          "horizon_minutes": 10,
+          "MAE": 0.8737759590148926,
+          "RMSE": 1.439833641052246,
+          "improvement_vs_persistence_pct": -1.3087987899780273
+        },
+        {
+          "horizon_minutes": 30,
+          "MAE": 1.255393624305725,
+          "RMSE": 1.9375348091125488,
+          "improvement_vs_persistence_pct": 2.5668740272521973
+        },
+        {
+          "horizon_minutes": 60,
+          "MAE": 1.476292610168457,
+          "RMSE": 2.2428903579711914,
+          "improvement_vs_persistence_pct": 5.571455001831055
+        }
+      ],
+      "paired_vs_persistence": [
+        {
+          "horizon_minutes": 10,
+          "model": "LSTM",
+          "mean_loss_difference_vs_baseline": 0.011288214474916458,
+          "day_bootstrap_95pct": [
+            0.0011788812953841554,
+            0.021536387522264548
+          ]
+        },
+        {
+          "horizon_minutes": 30,
+          "model": "LSTM",
+          "mean_loss_difference_vs_baseline": -0.03307344391942024,
+          "day_bootstrap_95pct": [
+            -0.056374960487263634,
+            -0.008435785665192135
+          ]
+        },
+        {
+          "horizon_minutes": 60,
+          "model": "LSTM",
+          "mean_loss_difference_vs_baseline": -0.08710411936044693,
+          "day_bootstrap_95pct": [
+            -0.12687271297886824,
+            -0.04958765758630505
+          ]
+        }
+      ]
+    }
+  ]
+}

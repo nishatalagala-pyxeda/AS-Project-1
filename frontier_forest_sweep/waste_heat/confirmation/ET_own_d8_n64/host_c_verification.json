@@ -1,0 +1,6 @@
+{
+  "max_absolute_error_MW": 4.4619845418480963e-07,
+  "samples": 512,
+  "host_microseconds_per_call_including_python_wrapper": 10.185140638441226,
+  "note": "Host validation, not an ESP32 latency, RAM or energy measurement."
+}

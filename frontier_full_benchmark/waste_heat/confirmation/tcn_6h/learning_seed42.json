@@ -1,0 +1,22 @@
+[
+  {
+    "epoch": 1,
+    "train_normalized_MAE": 0.6230495987265169,
+    "validation_normalized_MAE": 0.4570906460285187
+  },
+  {
+    "epoch": 2,
+    "train_normalized_MAE": 0.5862434837014784,
+    "validation_normalized_MAE": 0.4595908522605896
+  },
+  {
+    "epoch": 3,
+    "train_normalized_MAE": 0.5776982576767283,
+    "validation_normalized_MAE": 0.46521082520484924
+  },
+  {
+    "epoch": 4,
+    "train_normalized_MAE": 0.5695741775638693,
+    "validation_normalized_MAE": 0.4662022292613983
+  }
+]

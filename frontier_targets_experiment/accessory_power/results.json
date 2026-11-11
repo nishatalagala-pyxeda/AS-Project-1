@@ -1,0 +1,198 @@
+{
+  "task": "accessory_power",
+  "kind": "regression",
+  "outputs": [
+    {
+      "target": "Accessory power",
+      "horizon_minutes": 10,
+      "unit": "MW"
+    },
+    {
+      "target": "Accessory power",
+      "horizon_minutes": 30,
+      "unit": "MW"
+    },
+    {
+      "target": "Accessory power",
+      "horizon_minutes": 60,
+      "unit": "MW"
+    }
+  ],
+  "metrics": [
+    {
+      "target": "Accessory power",
+      "horizon_minutes": 10,
+      "unit": "MW",
+      "model": "Persistence",
+      "MAE": 0.021555406972765923,
+      "RMSE": 0.046728070825338364,
+      "bias": 4.3045022835030977e-07,
+      "n": 13242
+    },
+    {
+      "target": "Accessory power",
+      "horizon_minutes": 30,
+      "unit": "MW",
+      "model": "Persistence",
+      "MAE": 0.041269123554229736,
+      "RMSE": 0.06985915452241898,
+      "bias": -2.37878657571855e-06,
+      "n": 13242
+    },
+    {
+      "target": "Accessory power",
+      "horizon_minutes": 60,
+      "unit": "MW",
+      "model": "Persistence",
+      "MAE": 0.04703112691640854,
+      "RMSE": 0.07750466465950012,
+      "bias": -1.0753677997854538e-05,
+      "n": 13242
+    },
+    {
+      "target": "Accessory power",
+      "horizon_minutes": 10,
+      "unit": "MW",
+      "model": "Trees",
+      "MAE": 0.019512988747706655,
+      "RMSE": 0.03840510754015183,
+      "bias": 0.0001226083689273013,
+      "n": 13242
+    },
+    {
+      "target": "Accessory power",
+      "horizon_minutes": 30,
+      "unit": "MW",
+      "model": "Trees",
+      "MAE": 0.034150930539284745,
+      "RMSE": 0.05465625072315918,
+      "bias": -0.0031035154486836808,
+      "n": 13242
+    },
+    {
+      "target": "Accessory power",
+      "horizon_minutes": 60,
+      "unit": "MW",
+      "model": "Trees",
+      "MAE": 0.04096356420052382,
+      "RMSE": 0.06363616206315019,
+      "bias": -0.007167771534390187,
+      "n": 13242
+    },
+    {
+      "target": "Accessory power",
+      "horizon_minutes": 10,
+      "unit": "MW",
+      "model": "LSTM",
+      "MAE": 0.02284320257604122,
+      "RMSE": 0.03844337537884712,
+      "bias": 0.003500888356938958,
+      "n": 13242
+    },
+    {
+      "target": "Accessory power",
+      "horizon_minutes": 30,
+      "unit": "MW",
+      "model": "LSTM",
+      "MAE": 0.03630024194717407,
+      "RMSE": 0.05652998760342598,
+      "bias": -0.0025262865237891674,
+      "n": 13242
+    },
+    {
+      "target": "Accessory power",
+      "horizon_minutes": 60,
+      "unit": "MW",
+      "model": "LSTM",
+      "MAE": 0.04168609902262688,
+      "RMSE": 0.06436086446046829,
+      "bias": -0.008899745531380177,
+      "n": 13242
+    }
+  ],
+  "paired_vs_persistence": [
+    {
+      "target": "Accessory power",
+      "horizon_minutes": 10,
+      "unit": "MW",
+      "model": "Trees",
+      "mean_loss_difference_vs_baseline": -0.0020424187080923003,
+      "day_bootstrap_95pct": [
+        -0.0027300048821200227,
+        -0.0014235631752478502
+      ]
+    },
+    {
+      "target": "Accessory power",
+      "horizon_minutes": 10,
+      "unit": "MW",
+      "model": "LSTM",
+      "mean_loss_difference_vs_baseline": 0.0012877947883680463,
+      "day_bootstrap_95pct": [
+        0.00043328488950001567,
+        0.002163331708252257
+      ]
+    },
+    {
+      "target": "Accessory power",
+      "horizon_minutes": 30,
+      "unit": "MW",
+      "model": "Trees",
+      "mean_loss_difference_vs_baseline": -0.007118190795862536,
+      "day_bootstrap_95pct": [
+        -0.00894124773785306,
+        -0.005386412361521922
+      ]
+    },
+    {
+      "target": "Accessory power",
+      "horizon_minutes": 30,
+      "unit": "MW",
+      "model": "LSTM",
+      "mean_loss_difference_vs_baseline": -0.0049688806757330894,
+      "day_bootstrap_95pct": [
+        -0.007061472614367188,
+        -0.002903476162237258
+      ]
+    },
+    {
+      "target": "Accessory power",
+      "horizon_minutes": 60,
+      "unit": "MW",
+      "model": "Trees",
+      "mean_loss_difference_vs_baseline": -0.006067564265416438,
+      "day_bootstrap_95pct": [
+        -0.007875910436457566,
+        -0.004446533849521765
+      ]
+    },
+    {
+      "target": "Accessory power",
+      "horizon_minutes": 60,
+      "unit": "MW",
+      "model": "LSTM",
+      "mean_loss_difference_vs_baseline": -0.0053450302220880985,
+      "day_bootstrap_95pct": [
+        -0.007091202730041346,
+        -0.0036387291973199168
+      ]
+    }
+  ],
+  "lstm_training": {
+    "seed": 42,
+    "best_epoch": 6,
+    "best_validation_loss": 0.22372078895568848,
+    "seconds": 28.60201987500477
+  },
+  "tree_seconds": 41.784435499997926,
+  "validation_normalized_MAE": {
+    "LSTM": 0.22372078895568848,
+    "Trees": 0.21188461028809585
+  },
+  "n_by_split": {
+    "train": 26490,
+    "validation": 8421,
+    "test": 13242
+  },
+  "elapsed_seconds": 70.39455300000554
+}

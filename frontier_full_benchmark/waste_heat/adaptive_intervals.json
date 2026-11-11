@@ -1,0 +1,406 @@
+{
+  "note": "Exploratory diagnostic motivated by static accessory-power intervals under-covering confirmation. Specified before waste-heat confirmation. Both 7-day and 30-day windows are reported without choosing one on confirmation. Only resolved forecast errors with target time <= current forecast origin are used.",
+  "rows": [
+    {
+      "fold": "June-July",
+      "horizon_minutes": 10,
+      "model": "Persistence",
+      "window_days": 7,
+      "coverage": 0.8967551622418879,
+      "mean_width_MW": 6.533324920700851,
+      "n": 6102,
+      "fallback_n": 1
+    },
+    {
+      "fold": "June-July",
+      "horizon_minutes": 10,
+      "model": "Persistence",
+      "window_days": 30,
+      "coverage": 0.8998688954441166,
+      "mean_width_MW": 6.564299307065161,
+      "n": 6102,
+      "fallback_n": 1
+    },
+    {
+      "fold": "June-July",
+      "horizon_minutes": 30,
+      "model": "boosted_own6h",
+      "window_days": 7,
+      "coverage": 0.8969190429367421,
+      "mean_width_MW": 7.800243175949902,
+      "n": 6102,
+      "fallback_n": 3
+    },
+    {
+      "fold": "June-July",
+      "horizon_minutes": 30,
+      "model": "boosted_own6h",
+      "window_days": 30,
+      "coverage": 0.9062602425434284,
+      "mean_width_MW": 8.026991091912247,
+      "n": 6102,
+      "fallback_n": 3
+    },
+    {
+      "fold": "June-July",
+      "horizon_minutes": 60,
+      "model": "boosted_own6h",
+      "window_days": 7,
+      "coverage": 0.8967551622418879,
+      "mean_width_MW": 8.3895958165726,
+      "n": 6102,
+      "fallback_n": 6
+    },
+    {
+      "fold": "June-July",
+      "horizon_minutes": 60,
+      "model": "boosted_own6h",
+      "window_days": 30,
+      "coverage": 0.9062602425434284,
+      "mean_width_MW": 8.682702349335855,
+      "n": 6102,
+      "fallback_n": 6
+    },
+    {
+      "fold": "June-July",
+      "horizon_minutes": 120,
+      "model": "ridge_own24h",
+      "window_days": 7,
+      "coverage": 0.8947885939036382,
+      "mean_width_MW": 8.261529755158305,
+      "n": 6102,
+      "fallback_n": 12
+    },
+    {
+      "fold": "June-July",
+      "horizon_minutes": 120,
+      "model": "ridge_own24h",
+      "window_days": 30,
+      "coverage": 0.9097017371353655,
+      "mean_width_MW": 8.59800696109575,
+      "n": 6102,
+      "fallback_n": 12
+    },
+    {
+      "fold": "June-July",
+      "horizon_minutes": 360,
+      "model": "ridge_own24h",
+      "window_days": 7,
+      "coverage": 0.8933136676499508,
+      "mean_width_MW": 8.716553563287036,
+      "n": 6102,
+      "fallback_n": 36
+    },
+    {
+      "fold": "June-July",
+      "horizon_minutes": 360,
+      "model": "ridge_own24h",
+      "window_days": 30,
+      "coverage": 0.911340544083907,
+      "mean_width_MW": 9.041580186049773,
+      "n": 6102,
+      "fallback_n": 36
+    },
+    {
+      "fold": "August",
+      "horizon_minutes": 10,
+      "model": "Persistence",
+      "window_days": 7,
+      "coverage": 0.8925365478327776,
+      "mean_width_MW": 6.121630529007199,
+      "n": 3899,
+      "fallback_n": 0
+    },
+    {
+      "fold": "August",
+      "horizon_minutes": 10,
+      "model": "Persistence",
+      "window_days": 30,
+      "coverage": 0.8856116953064889,
+      "mean_width_MW": 5.849363934813355,
+      "n": 3899,
+      "fallback_n": 0
+    },
+    {
+      "fold": "August",
+      "horizon_minutes": 30,
+      "model": "boosted_own6h",
+      "window_days": 7,
+      "coverage": 0.894588355988715,
+      "mean_width_MW": 7.66130609283612,
+      "n": 3899,
+      "fallback_n": 0
+    },
+    {
+      "fold": "August",
+      "horizon_minutes": 30,
+      "model": "boosted_own6h",
+      "window_days": 30,
+      "coverage": 0.8794562708386766,
+      "mean_width_MW": 7.332905355155282,
+      "n": 3899,
+      "fallback_n": 0
+    },
+    {
+      "fold": "August",
+      "horizon_minutes": 60,
+      "model": "boosted_own6h",
+      "window_days": 7,
+      "coverage": 0.8907412156963324,
+      "mean_width_MW": 8.49482998070798,
+      "n": 3899,
+      "fallback_n": 0
+    },
+    {
+      "fold": "August",
+      "horizon_minutes": 60,
+      "model": "boosted_own6h",
+      "window_days": 30,
+      "coverage": 0.8707360861759426,
+      "mean_width_MW": 8.010225016678346,
+      "n": 3899,
+      "fallback_n": 0
+    },
+    {
+      "fold": "August",
+      "horizon_minutes": 120,
+      "model": "ridge_own24h",
+      "window_days": 7,
+      "coverage": 0.8881764555014107,
+      "mean_width_MW": 8.329301063379063,
+      "n": 3899,
+      "fallback_n": 0
+    },
+    {
+      "fold": "August",
+      "horizon_minutes": 120,
+      "model": "ridge_own24h",
+      "window_days": 30,
+      "coverage": 0.8702231341369582,
+      "mean_width_MW": 7.917020814773613,
+      "n": 3899,
+      "fallback_n": 0
+    },
+    {
+      "fold": "August",
+      "horizon_minutes": 360,
+      "model": "ridge_own24h",
+      "window_days": 7,
+      "coverage": 0.8853552192869967,
+      "mean_width_MW": 9.179611692107985,
+      "n": 3899,
+      "fallback_n": 0
+    },
+    {
+      "fold": "August",
+      "horizon_minutes": 360,
+      "model": "ridge_own24h",
+      "window_days": 30,
+      "coverage": 0.8715055142344191,
+      "mean_width_MW": 8.674554051602366,
+      "n": 3899,
+      "fallback_n": 0
+    },
+    {
+      "fold": "September",
+      "horizon_minutes": 10,
+      "model": "Persistence",
+      "window_days": 7,
+      "coverage": 0.9098786828422877,
+      "mean_width_MW": 4.077103438779553,
+      "n": 4039,
+      "fallback_n": 0
+    },
+    {
+      "fold": "September",
+      "horizon_minutes": 10,
+      "model": "Persistence",
+      "window_days": 30,
+      "coverage": 0.9472641743005694,
+      "mean_width_MW": 5.339939145880905,
+      "n": 4039,
+      "fallback_n": 0
+    },
+    {
+      "fold": "September",
+      "horizon_minutes": 30,
+      "model": "boosted_own6h",
+      "window_days": 7,
+      "coverage": 0.9046793760831889,
+      "mean_width_MW": 6.176586381629377,
+      "n": 4039,
+      "fallback_n": 0
+    },
+    {
+      "fold": "September",
+      "horizon_minutes": 30,
+      "model": "boosted_own6h",
+      "window_days": 30,
+      "coverage": 0.9356276306016341,
+      "mean_width_MW": 7.067533431376895,
+      "n": 4039,
+      "fallback_n": 0
+    },
+    {
+      "fold": "September",
+      "horizon_minutes": 60,
+      "model": "boosted_own6h",
+      "window_days": 7,
+      "coverage": 0.9046793760831889,
+      "mean_width_MW": 7.176606149254303,
+      "n": 4039,
+      "fallback_n": 0
+    },
+    {
+      "fold": "September",
+      "horizon_minutes": 60,
+      "model": "boosted_own6h",
+      "window_days": 30,
+      "coverage": 0.9282000495172072,
+      "mean_width_MW": 8.041950265016286,
+      "n": 4039,
+      "fallback_n": 0
+    },
+    {
+      "fold": "September",
+      "horizon_minutes": 120,
+      "model": "ridge_own24h",
+      "window_days": 7,
+      "coverage": 0.9022035157217133,
+      "mean_width_MW": 7.63066092682761,
+      "n": 4039,
+      "fallback_n": 0
+    },
+    {
+      "fold": "September",
+      "horizon_minutes": 120,
+      "model": "ridge_own24h",
+      "window_days": 30,
+      "coverage": 0.9247338450111414,
+      "mean_width_MW": 8.047237682994423,
+      "n": 4039,
+      "fallback_n": 0
+    },
+    {
+      "fold": "September",
+      "horizon_minutes": 360,
+      "model": "ridge_own24h",
+      "window_days": 7,
+      "coverage": 0.8974993810349097,
+      "mean_width_MW": 8.511845929799977,
+      "n": 4039,
+      "fallback_n": 0
+    },
+    {
+      "fold": "September",
+      "horizon_minutes": 360,
+      "model": "ridge_own24h",
+      "window_days": 30,
+      "coverage": 0.9252290170834365,
+      "mean_width_MW": 8.82942250562414,
+      "n": 4039,
+      "fallback_n": 0
+    },
+    {
+      "fold": "confirmation",
+      "horizon_minutes": 10,
+      "model": "Persistence",
+      "window_days": 7,
+      "coverage": 0.9022101120193763,
+      "mean_width_MW": 4.4341086775121985,
+      "n": 13212,
+      "fallback_n": 0
+    },
+    {
+      "fold": "confirmation",
+      "horizon_minutes": 10,
+      "model": "Persistence",
+      "window_days": 30,
+      "coverage": 0.9065243717832274,
+      "mean_width_MW": 4.375698824136515,
+      "n": 13212,
+      "fallback_n": 0
+    },
+    {
+      "fold": "confirmation",
+      "horizon_minutes": 30,
+      "model": "boosted_own6h",
+      "window_days": 7,
+      "coverage": 0.9022858007871631,
+      "mean_width_MW": 5.883058319926078,
+      "n": 13212,
+      "fallback_n": 0
+    },
+    {
+      "fold": "confirmation",
+      "horizon_minutes": 30,
+      "model": "boosted_own6h",
+      "window_days": 30,
+      "coverage": 0.9131849833484711,
+      "mean_width_MW": 6.097968032017658,
+      "n": 13212,
+      "fallback_n": 0
+    },
+    {
+      "fold": "confirmation",
+      "horizon_minutes": 60,
+      "model": "boosted_own6h",
+      "window_days": 7,
+      "coverage": 0.9037238873751136,
+      "mean_width_MW": 6.6899401483655785,
+      "n": 13212,
+      "fallback_n": 0
+    },
+    {
+      "fold": "confirmation",
+      "horizon_minutes": 60,
+      "model": "boosted_own6h",
+      "window_days": 30,
+      "coverage": 0.9165152891310929,
+      "mean_width_MW": 7.022204461109666,
+      "n": 13212,
+      "fallback_n": 0
+    },
+    {
+      "fold": "confirmation",
+      "horizon_minutes": 120,
+      "model": "ridge_own24h",
+      "window_days": 7,
+      "coverage": 0.9004692703602786,
+      "mean_width_MW": 7.169281189155777,
+      "n": 13212,
+      "fallback_n": 0
+    },
+    {
+      "fold": "confirmation",
+      "horizon_minutes": 120,
+      "model": "ridge_own24h",
+      "window_days": 30,
+      "coverage": 0.9141689373297003,
+      "mean_width_MW": 7.487888378500782,
+      "n": 13212,
+      "fallback_n": 0
+    },
+    {
+      "fold": "confirmation",
+      "horizon_minutes": 360,
+      "model": "ridge_own24h",
+      "window_days": 7,
+      "coverage": 0.89585225552528,
+      "mean_width_MW": 8.336929947425384,
+      "n": 13212,
+      "fallback_n": 0
+    },
+    {
+      "fold": "confirmation",
+      "horizon_minutes": 360,
+      "model": "ridge_own24h",
+      "window_days": 30,
+      "coverage": 0.9109900090826522,
+      "mean_width_MW": 8.55055365827563,
+      "n": 13212,
+      "fallback_n": 0
+    }
+  ],
+  "future_error_violations": 0
+}

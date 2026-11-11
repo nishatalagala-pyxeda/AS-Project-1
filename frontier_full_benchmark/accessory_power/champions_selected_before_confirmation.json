@@ -1,0 +1,52 @@
+{
+  "10": {
+    "model": "boosted_6h",
+    "horizon_minutes": 10,
+    "development_mean_relative_MAE": 0.9267358434282099,
+    "fold_relative_MAE": [
+      0.9318587426012965,
+      0.9699417773027967,
+      0.8784070103805365
+    ]
+  },
+  "30": {
+    "model": "boosted_6h",
+    "horizon_minutes": 30,
+    "development_mean_relative_MAE": 0.8762614607727047,
+    "fold_relative_MAE": [
+      0.9588785310562505,
+      0.926520164600102,
+      0.7433856866617617
+    ]
+  },
+  "60": {
+    "model": "boosted_6h",
+    "horizon_minutes": 60,
+    "development_mean_relative_MAE": 0.8936030096454025,
+    "fold_relative_MAE": [
+      0.87777659395306,
+      0.9563476129081553,
+      0.8466848220749923
+    ]
+  },
+  "120": {
+    "model": "ridge_own24h",
+    "horizon_minutes": 120,
+    "development_mean_relative_MAE": 0.9028598001667714,
+    "fold_relative_MAE": [
+      0.8426234518113035,
+      0.9550093560483595,
+      0.9109465926406515
+    ]
+  },
+  "360": {
+    "model": "ridge_own24h",
+    "horizon_minutes": 360,
+    "development_mean_relative_MAE": 0.7943028957195227,
+    "fold_relative_MAE": [
+      0.7862270984138072,
+      0.8102774248888822,
+      0.7864041638558787
+    ]
+  }
+}
